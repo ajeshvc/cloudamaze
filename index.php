@@ -4,6 +4,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cloudamaze.com | get amazed!</title>
         <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+    <script type="text/javascript">
+    $(function() {
+        $('#popup a').lightBox();
+    });
+    </script>
+   	
+
+    
+    
     </head>
     <body>
         <div id="container">
