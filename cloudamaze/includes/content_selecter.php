@@ -11,7 +11,9 @@ if (isset($_GET['page'])) {
 switch ($page) {
     case 1: include 'register.php';
         break;
-    case 2: include 'hosting.php';
+    case 2: 
+        include 'connection.php'; 
+        include 'hosting.php';
         break;
     case 3: include 'checkout.php';
         break;

@@ -12,7 +12,7 @@
             <div id="MainContent">
                 <fieldset >
                         <legend>Domain Info</legend>
-                        <form id="MyContactForm" name="MyContactForm" method="post" action="">
+                        <form id="MyContactForm" name="MyContactForm" method="post" action="index.php?page=2">
                             <label for="name" id="nameLb">Domain Name </label>
                             <input type="text" name="name" id="name" placeholder="Domain Name" />
                             <button>Submit</button>
@@ -29,7 +29,7 @@
    
  <div id="buttons">
         <div id="skip-domain" class="button">
-            <div id="popup" ><a href="#" id="OpenContact"> Skip </a></div>
+            <div id="popup" ><a href="#" id="OpenContact"> Continue </a></div>
             <img src="images/blue-botton.png" class="adjusted"/>
         </div>
         <div id="register-domain" class="button">
