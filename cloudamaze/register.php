@@ -1,3 +1,12 @@
+<?php 
+ session_start();
+if(isset($_POST['name']) and $_POST['name']!=""){
+   
+    $_SESSION['domain']=$_POST['name'];
+    echo $_SESSION['domain'];
+   header( 'Location: index.php?page=2' ) ;   
+ }
+ ?>
 <div id="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Etiam mattis iaculis scelerisque. Nunc porta augue in
@@ -12,10 +21,10 @@
             <div id="MainContent">
                 <fieldset >
                         <legend>Domain Info</legend>
-                        <form id="MyContactForm" name="MyContactForm" method="post" action="index.php?page=2">
+                        <form id="MyContactForm" name="MyContactForm" method="post" action="index.php?page=1">
                             <label for="name" id="nameLb">Domain Name </label>
                             <input type="text" name="name" id="name" placeholder="Domain Name" />
-                            <button>Submit</button>
+                            <input type="submit" name="submit" value="Submit" >
                            
                         </form>
                        
