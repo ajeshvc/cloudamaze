@@ -20,7 +20,7 @@ switch ($page) {
     case 4: include 'congrats.php';
         break;
     default:
-        include 'home.php';
+        include 'register.php';
         break;
 }
 ?>
