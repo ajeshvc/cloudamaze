@@ -21,9 +21,9 @@ if(isset($_POST['name']) and $_POST['name']!=""){
             <div id="MainContent">
                 <fieldset >
                         <legend>Domain Info</legend>
-                        <form id="MyContactForm" name="MyContactForm" method="post" action="index.php?page=1">
+                        <form id="MyContactForm" name="MyContactForm" method="post" action="index.php?page=1" onsubmit="validate_domain()">
                             <label for="name" id="nameLb">Domain Name </label>
-                            <input type="text" name="name" id="name" placeholder="Domain Name" />
+                            <input type="text" name="name" id="txt_domain" placeholder="Domain Name" />
                             <input type="submit" name="submit" value="Submit" >
                            
                         </form>

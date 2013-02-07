@@ -9,6 +9,10 @@
         <link rel="stylesheet" type="text/css" href="css/lightboxstyle.css" media="screen" />
     
    	    <script type="text/javascript">
+                
+           
+
+                
 $(document).ready(function() {
 $('.error').hide(); //Hide error messages
 $('#MainResult').hide(); //we will hide this right now
@@ -41,13 +45,39 @@ $("#form-wapper").toggle("slow");
 
 });
 });
+
+
+
+
+
 </script>
 
 <script type="text/javascript">
-function setFocus()
-{
-document.getElementById("name").focus();
+
+     
+                function validate_domain(){
+   var txt_domain = document.getElementById('txt_domain').value;
+   var domain_array = txt_domain.split('.');
+
+  var domain = domain_array[0];
+//This is reguler expresion for domain validation
+  var reg = /^([A-Za-z0-9])+[A-Za-z0-9-]+([A-Za-z0-9])$/;
+
+if(domain == ''){
+    // alert("Please enter the domain name"); 
+     document.getElementsById('txt_domain').focus();
+     return false; 
+} 
+
+if(reg.test(domain) == false){
+   //alert("Invalid character in domain. Only letters, numbers or hyphens are allowed.");
+  document.getElementsById('txt_domain').focus();
+   return false;
 }
+   return true;
+}
+
+
 </script>    
     
     </head>
