@@ -43,20 +43,29 @@ if (isset($_POST["email"]) and $_POST["email"] != "") {
     VALUES('$currentdate','$domain','$hostingdetails') ");
 
 
-            $$to = "siddique@helloinfinity.com";
+            $to = "siddique@helloinfinity.com";
 
             $phone = $_POST["phone"];
             $message = $hostingdetails;
 
 
             $subject = "New Hosting Request";
-            $headers = "From: " . " " . $from . " " . $phone;
-            $message = $message . "\n\n\n" . "\n" . $phone;
+            $headers = "From: " . " " . $from . " " ;
+            $message = $message . "\n\n\n" . "\n" ."Phone : ". $phone;
+
 
             $message = str_replace("|", "\n\n", $message);
 
             if ($from != "" and $phone != "" and $message != "") {
                 mail($to, $subject, $message, $headers);
+                
+                
+                 $subject = "Your Hosting Request";
+                $headers = "From: " . " " . $to . " " ;
+                $message = str_replace("|", "\n\n", $hostingdetails);
+                 mail($from, $subject, $message, $headers);
+                 
+                 
                 header('Location:index.php?page=4');
             }
         }
@@ -84,7 +93,7 @@ $i = 0;
 <?php
 foreach ($planid as $value) {
 
-    $result = mysql_query(" select hosting_properties.name,hosting_plans.value from  (hosting_properties inner join hosting_plans on hosting_plans.pr_id= hosting_properties.pr_id order by   hosting_properties.pr_id ) where hosting_plans.plan_id=$value");
+  
     ?>
 
             <div style="float: left">
@@ -99,6 +108,15 @@ foreach ($planid as $value) {
                         <td colspan="2"><hr/></td>
                     </tr>
     <?php
+     $result = mysql_query(" 
+     
+     SELECT hosting_properties.name, hosting_plans.value
+FROM hosting_properties
+INNER JOIN hosting_plans ON hosting_plans.pr_id = hosting_properties.pr_id
+WHERE hosting_plans.plan_id =$value
+ORDER BY hosting_properties.pr_id 
+     
+     ");
     while ($row = mysql_fetch_array($result)) {
         ?>   
                         <tr>

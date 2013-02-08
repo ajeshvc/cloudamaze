@@ -19,6 +19,8 @@ switch ($page) {
         break;
     case 4: include 'congrats.php';
         break;
+    case 5: include 'test.php';
+        break;    
     default:
         include 'register.php';
         break;

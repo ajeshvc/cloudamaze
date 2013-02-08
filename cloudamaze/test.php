@@ -1,6 +1,7 @@
 <?php 
- 
+ session_start();
 if(isset($_POST['name']) and $_POST['name']!=""){
+   
     $_SESSION['domain']=$_POST['name'];
     echo $_SESSION['domain'];
    header( 'Location: index.php?page=2' ) ;   
@@ -20,7 +21,7 @@ if(isset($_POST['name']) and $_POST['name']!=""){
             <div id="MainContent">
                 <fieldset >
                         <legend>Domain Info</legend>
-                        <form id="MyContactForm" name="MyContactForm" method="post" action="index.php?page=1" onsubmit="validate_domain()">
+                        <form id="MyContactForm" name="MyContactForm" method="post" action="index.php?page=1" onsubmit="checkDomain()">
                             <label for="name" id="nameLb">Domain Name </label>
                             <input type="text" name="name" id="txt_domain" placeholder="Domain Name" />
                             <input type="submit" name="submit" value="Submit" >

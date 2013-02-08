@@ -3,3 +3,8 @@
     <img src="images/settings-gear.png" id="settings"/>
     <img src="images/logout-power.png" id="logout"/>
 </div>
+<?php 
+
+session_start();
+
+?>

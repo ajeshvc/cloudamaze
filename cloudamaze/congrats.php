@@ -1,6 +1,7 @@
 <div id="content">
     Congrats..!!!!
-    
+    <br/> Your Request is registerd..
+    will activate soon.. 
     adfgy gyfdgi dyhhi gyusg dfgdgfugd 
     
     <div id="buttons" >
@@ -12,3 +13,8 @@
     
     
 </div>
+
+<?php 
+//session_start();
+unset($_SESSION['domain']);
+?>
