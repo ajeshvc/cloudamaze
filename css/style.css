@@ -34,8 +34,13 @@ img.adjusted{
     font-weight: bold;
     text-shadow: 1px 1px 1px #000;
     float: right;
+    
 }
-
+.button a {color:#FFffff;}      /* unvisited link */
+.button a:visited {color:#ffffff;}  /* visited link */
+.button a:hover {color:#ffffff;}  /* mouse over link */
+.button a:active {color:#ffffff;}  /* selected link */
+.button a { text-decoration: none;}
 #buttons{
     position: absolute;
     width: 100%;
@@ -75,6 +80,7 @@ img.adjusted{
     -webkit-border-radius: 10px;
     background-color: white;
     z-index: -5;
+   text-align: center;
 }
 
 #tab-bar{
@@ -106,3 +112,4 @@ img.adjusted{
 body{
     font-family: 'Trebuchet MS',sans-serif;
 }
+
