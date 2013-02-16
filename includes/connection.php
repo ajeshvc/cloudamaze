@@ -1,9 +1,9 @@
 <?php
-$con = mysql_connect("localhost", "c70cloudamaze", "hello001");
+$con = mysql_connect($db_host, $db_user, $db_password);
 if (!$con) {
     die('Could not connect: ' . mysql_error());
 }
 
-mysql_select_db("c70cloudamaze", $con);
+mysql_select_db($db_name, $con);
 
 ?>
