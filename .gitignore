@@ -1,3 +1,5 @@
-error
-stats
-config.php
+/error
+/stats
+/config.php
+/nbproject/private/
+/nbproject
