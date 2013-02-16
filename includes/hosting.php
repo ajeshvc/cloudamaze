@@ -1,5 +1,4 @@
 <?php
-require_once 'config.php';
 
 if (!isset($_SESSION['domain'])) {
     header('Location: index.php?page=1');
