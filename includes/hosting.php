@@ -219,11 +219,11 @@ ORDER BY hosting_properties.pr_id
             <br/>
             <div align="center">
                 <h3> <?php 
-               if (isset($_POST["choice"])) {                   
+              
                     echo $more;
-                    }
+                   
                 ?></h3>
-                <h5><i>Drop in your Name,Phone number,Email and hit Confirm</i></h5>
+                <h4><i>Drop in your Name,Phone number,Email and hit Confirm</i></h4>
                 <table border="0">
                     <tr><td><i>Full Name </i></td> <td><input type="text" name="name" placeholder="Your Name" /></td></tr>
                     <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" placeholder="Phone" /> </td></tr>
