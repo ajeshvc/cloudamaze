@@ -134,6 +134,7 @@ $i = 0;
 while ($row = mysql_fetch_array($result)) {
     $plans[$i] = $row['name'];
     $planid[$i] = $row['plan_id'];
+    $more=$row['more'];
     $i++;
 }
 $i = 0;
@@ -217,6 +218,12 @@ ORDER BY hosting_properties.pr_id
             </textarea>
             <br/>
             <div align="center">
+                <h3> <?php 
+               if (isset($_POST["choice"])) {                   
+                    echo $more;
+                    }
+                ?></h3>
+         
                 <table border="0">
                     <tr><td><i>Full Name </i></td> <td><input type="text" name="name" placeholder="Your Name" /></td></tr>
                     <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" placeholder="Phone" /> </td></tr>
