@@ -58,6 +58,7 @@ if (isset($_POST["email"]) and $_POST["email"] != "") {
             $invoice = "#hi00" . mysql_insert_id();
             $_SESSION['invoice'] = $invoice;
             $from = $_POST["email"];
+            
             $to = $to_email;
 
             if ($from != "" and $phone != "" and $hostingdetails != "") {
