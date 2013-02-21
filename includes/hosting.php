@@ -73,7 +73,7 @@ if (isset($_POST["email"]) and $_POST["email"] != "") {
                 sleep(5);
                 include_once "includes/swift/lib/swift_required.php";
                 $from = array($_POST["email"] => $name);
-                $to = array('siddique@helloinfinity.com' => 'Siddique');
+                $to = $to_mandril_email;
 
                 $message = "Hello " . $name . ",
                             ||  This is a notice that an invoice has been generated on " . $currentdate . "
