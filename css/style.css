@@ -22,7 +22,7 @@ img.adjusted{
 }
 
 .button{
-    position: relative;
+    position: relative; 
     bottom: 0px;
     z-index: 15;
     width: 200px;
@@ -34,6 +34,7 @@ img.adjusted{
     font-weight: bold;
     text-shadow: 1px 1px 1px #000;
     float: right;
+   /* margin-top:400px; */
     
 }
 .button a {color:#FFffff;}      /* unvisited link */
@@ -64,8 +65,8 @@ img.adjusted{
     top: 30%;
     left: 10%;
     width: 80%;
-    height: 60%;
-    z-index: -6;
+    height:66%;
+    z-index: -6; 
 }
 
 #content{
@@ -81,6 +82,7 @@ img.adjusted{
     background-color: white;
     z-index: -5;
    text-align: center;
+   
 }
 
 #tab-bar{

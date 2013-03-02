@@ -12,6 +12,7 @@ switch ($page) {
         break;
     case 2:
         include 'connection.php';
+	require_once('captcha/recaptchalib.php');
         include 'hosting.php';
         break;
     case 3: include 'checkout.php';
