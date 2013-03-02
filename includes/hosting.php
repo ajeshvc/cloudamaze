@@ -67,26 +67,24 @@ if (isset($_POST["confirm"])) {
                 mysql_query("INSERT INTO hosting_details(date,domain,details) 
                          VALUES('$currentdate','$domain','$hostingdetailstodb') ");
 
-                $invoice = "#hi00" . mysql_insert_id();
-                $_SESSION['invoice'] = $invoice;
-                $from = $_POST["email"];
-                $to = $to_email;
-
+            $invoice = "#hi00" . mysql_insert_id();
+            $_SESSION['invoice'] = $invoice;
+            $from = $_POST["email"];
+            
+            $to = $to_email;
                 if ($from != "" and $phone != "" and $hostingdetails != "") {
 
 
-                    $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails;
-                    $subject = $name . "- New Hosting Request";
-                    $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
-                    $message = str_replace("|", "\n\n", $message);
-                    $message = str_replace("+", "", $message);
-                    $headers = "From: " . $name . " " . $from;
-                    mail($to, $subject, $message, $headers);
-                    sleep(5);
-                    include_once "includes/swift/lib/swift_required.php";
-                    $from = array($_POST["email"] => $name);
-                    $to = $to_mandril_email;
-
+                $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails;
+                $subject = $name . "- New Hosting Request";
+                $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
+                $message = str_replace("|", "\n\n", $message);
+                $message = str_replace("+", "", $message);
+                $headers = "From: " . $name . " " . $from;
+                mail($to, $subject, $message, $headers);
+                sleep(5);
+                include_once "includes/swift/lib/swift_required.php";
+                $from = array($_POST["email"] => $name);
                     $message = "Hello " . $name . ",
                             ||  This is a notice that an invoice has been generated on " . $currentdate . "
                             ||<b>Invoice Id </i>" . $invoice . "</i></b>
