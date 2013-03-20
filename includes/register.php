@@ -52,8 +52,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                    
                     </td>
                 </tr> 
-
-                <?php // to display given Domain Available or Not
+<?php // to display given Domain Available or Not
                 if ($status != "" && $exist) {
                     ?>
                     <tr><td id="tdheadNot"> Domain Already Exist :</td></tr> <?php

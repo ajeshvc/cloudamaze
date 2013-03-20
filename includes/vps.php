@@ -3,7 +3,7 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
     $_SESSION['planchoice'] = $_POST['vpsradio'];
 }
 
-if (isset($_POST["confirm"])) {
+  if (isset($_POST['confirm']) && $_POST['confirm'] == "Confirm") {
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
     if (!$resp->is_valid) {
         // What happens when the CAPTCHA was entered incorrectly
@@ -19,7 +19,7 @@ if (isset($_POST["confirm"])) {
         $name = $_POST["name"];
         $address = $_POST["address"];
         if (check_email_address($_POST["email"]) == TRUE && $phone != "" && $name != "" && $address != "") {
-            if (isset($_POST['confirm']) && $_POST['confirm'] == "Confirm") {
+          $addresstodb="|".$name."|".$address."|".$phone."|".$_POST["email"]."|";
                 if (isset($_POST['hostingname']) && $_POST['hostingname'] != "") {
                     $hostingname = $_POST['hostingname'];
                     //validate domain
@@ -27,24 +27,87 @@ if (isset($_POST["confirm"])) {
                         $vpsdetails = "";
                         $total = 0;
                         $extraip = $_POST['extraip'];
+                         $inusd=$extraip * 1.5;
                         if ($extraip) {
-                            $total = $extraip * 1.5;
-                            $extraip = "Extra IP : " . $extraip . " $" . $extraip * 1.5 . " USD";
+                           $extraip = "Extra IP : " . $extraip . " $" . $extraip * 1.5 . " USD";
                         } else {
                             $extraip = "Extra IP : None";
                         }
                         switch ($_SESSION['planchoice']) {
                             case 1:
-                                $vpsdetails = "choice 1 ";
-                                $total+=100;
+                                $vpsdetails = "|Plan Name : FogVZ
+                                    |Guaranteed RAM : 192 MB
+                                    |vSwap : 32 MB
+                                    |Disk Storage : 15GB
+                                    |Monthly Transfer : 300GB
+                                    |CPU Cores : 2
+                                    |IPv4 Addresses : 1
+                                    |Root Access : Yes
+                                    |Quick Backup : Yes
+                                    |Server Connection Speed : 100 megabit/second
+                                    |Managed Service Inclusive : No
+                                    ";
+                                $total=100;
                                 break;
                             case 2:
-                                $vpsdetails = "choice 2 ";
-                                $total+=200;
+                                $vpsdetails = "|Plan Name : StratusVZ
+                                    |Guaranteed RAM : 256 MB
+                                    |vSwap : 64 MB
+                                    |Disk Storage : 20GB
+                                    |Monthly Transfer : 500GB
+                                    |CPU Cores : 2
+                                    |IPv4 Addresses : 1
+                                    |Root Access : Yes
+                                    |Quick Backup : Yes
+                                    |Server Connection Speed : 100 megabit/second
+                                    |Managed Service Inclusive : No
+                                    ";
+                                $total=200;
                                 break;
                             case 3:
-                                $vpsdetails = "choice 3 ";
-                                $total+=300;
+                                $vpsdetails = "|Plan Name : CumulusVZ
+                                    |Guaranteed RAM : 512 MB
+                                    |vSwap : 96 MB
+                                    |Disk Storage : 35GB
+                                    |Monthly Transfer : 750GB
+                                    |CPU Cores : 2
+                                    |IPv4 Addresses : 1
+                                    |Root Access : Yes
+                                    |Quick Backup : Yes
+                                    |Server Connection Speed : 100 megabit/second
+                                    |Managed Service Inclusive : No
+                                    ";
+                                $total=300;
+                                break;
+                            case 4:
+                                $vpsdetails = "|Plan Name : NimbusVZ
+                                    |Guaranteed RAM : 1024 MB
+                                    |vSwap : 128 MB
+                                    |Disk Storage : 50GB
+                                    |Monthly Transfer : 1000GB
+                                    |CPU Cores : 4
+                                    |IPv4 Addresses : 2
+                                    |Root Access : Yes
+                                    |Quick Backup : Yes
+                                    |Server Connection Speed : 100 megabit/second
+                                    |Managed Service Inclusive : No
+                                    ";
+                                $total=300;
+                                break;
+                           case 5:
+                                $vpsdetails = "|Plan Name : CirrusVZ
+                                    |Guaranteed RAM : 1536MB
+                                    |vSwap : 256 MB
+                                    |Disk Storage : 75GB
+                                    |Monthly Transfer : 1500GB
+                                    |CPU Cores : 4
+                                    |IPv4 Addresses : 2
+                                    |Root Access : Yes
+                                    |Quick Backup : Yes
+                                    |Server Connection Speed : 100 megabit/second
+                                    |Managed Service Inclusive : No
+                                    ";
+                                $total=300;
                                 break;
                         }
                         $totalusdtoinr = "";
@@ -55,31 +118,87 @@ if (isset($_POST["confirm"])) {
                         $datajson = json_decode($data, TRUE);
                         $rate=$datajson['rate'];
                         //calculate INR
-                        $total*=$rate;
+                        if($inusd!=0){
+                        $total+=($inusd*$rate);
+                        }
+                        $total=  ceil($total);
                         
-                        
-                          $vpsdetails.=$extraip."Total : ".$total;
-                          $vpsdetailstodb=$vpsdetails;
+                         
+                          $vpsdetailstodb=$vpsdetails."|".$extraip."|Total : ".$total." INR";
 
 
                           // insert into db
                           $currentdate = date("Y/m/d");
-                          mysql_query("INSERT INTO vps_details(date,host_name,details)
-                          VALUES('$currentdate','$hostingname','$vpsdetailstodb') ");
+                          mysql_query("INSERT INTO vps_details(date,host_name,details,address)
+                          VALUES('$currentdate','$hostingname','$vpsdetailstodb','$addresstodb') ");
                           $id=mysql_insert_id();
                           $invoice = "#hivps00". $id;
-                          /*
+                          
                           //mail
-                          $vpsdetailstomail=$vpsdetails;
+                          $from = $_POST["email"];
+                          $to = $to_email;
+                          $vpsdetailstomail=$vpsdetails."|".$extraip."|+Total : ".$total." INR Only.";
+                          
+                    $message = "|VPS Details of - " . $hostingname . "|Invoice Id " . $invoice . $vpsdetailstomail;
+                    $subject = $name . "- New VPS Request";
+                    $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
+                    $message = str_replace("|", "\n\n", $message);
+                    $message = str_replace("+", "", $message);
+                    $headers = "From: " . $name . " " . $from;
+                    mail($to, $subject, $message, $headers);
+                    sleep(5);
+                    //mail via mandrill
+                    include_once "includes/swift/lib/swift_required.php";
+                    $from = array($_POST["email"] => $name);
+                    $message = "Hello " . $name . ",
+                            ||  This is a notice that an invoice has been generated on " . $currentdate . "
+                            ||<b>Invoice Id </i>" . $invoice . "</i></b>
+                            
+                            ||<b>Details of VPN Package you Purchased for your Host Name - " . $hostingname . "</b>|" . $vpsdetailstomail . "</b> 
+                            |" . "-----------------------------------------------
+                            ||<i>Your account will activated as soon as you complete the payment process.|you can pay your Hosting bill through NEFT.</i>
+                            ||<b>Our bank account details are:</b>
+                            |
+                            |Payments via NEFT to
+                            |Bank   : IDBI Bank
+                            |Branch : Vazuthacad,Thiruvananthapuram
+                            |Account Holder: HELLOINFINITY
+                            |IFSC Code     : IBKL0000046
+                            |Account Number: 0046102000016320
+                            |" . "Call +91 890-750-9611 after depositing amount.<br>-----------------------------------------------<br/><b>Cloudamaze - </b><i>get amazed!</i>";
+                    $message = str_replace("|", "<br/></br>", $message);
+                    $message = str_replace("+", "<b>", $message);
+                    $subject = "Hi " . $name . " Your VPS Request";
+
+                    //Sending mail via mandrill
+                      $transport = Swift_SmtpTransport::newInstance('smtp.mandrillapp.com', 587);
+                    $transport->setUsername($mandril_user_name);
+                    $transport->setPassword($mandril_key);
+                    $swift = Swift_Mailer::newInstance($transport);
+                    sleep(2);
+                    $html = "" . $message . "";
+                    $maildetails = new Swift_Message($subject);
+                    $maildetails->setFrom($to);
+                    $maildetails->setBody($html, 'text/html');
+                    $maildetails->setTo($from);
+                    $maildetails->addPart($message, 'text/plain');
+
+                    if ($recipients = $swift->send($maildetails, $failures)) {
+                       // echo 'Message successfully sent!';
+                    } else {
+                       // echo "There was an error:\n";
+                        //print_r($failures);
+                    }
+ 
                           $_SESSION['total']=$total;
                           $_SESSION['invoice'] = $invoice;
                           $_SESSION['domain'] = $hostingname;
                           unset($_SESSION['planchoice']);
                           header('Location:index.php?page=4');
-                         */
+                         
                     }
                 }
-            }
+            
         }
     }
 }

@@ -1,0 +1,145 @@
+body{
+font-family:"Trebuchet MS", sans-serif;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+.form_outer{
+	width:70%;
+	margin-left:15%;
+}
+.banner_outer{
+	width:100%;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border:1px solid #CCC;
+	overflow:hidden;
+}
+
+.data_text{
+	font-size:14px;
+	text-align:justify;
+	color:#333;
+	width:61%;
+	float:left;
+	position:relative;
+	padding:1% 2%;
+}
+.banner_img{
+	float:left;
+	position:relative;
+	width:35%;
+}
+.form_content{
+	width:100%;
+	position:relative;
+	margin-top:5%;
+	border:1px solid #60c9d9;
+	overflow:hidden;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;		
+}
+
+
+/* ----------- My Form ----------- */
+.myform{
+	margin:0 auto;
+	width:92%;
+	padding:4%;
+}
+
+/* ----------- stylized ----------- */
+#stylized{
+	/*border:solid 2px #b7ddf2;*/
+	background-color: rgb(246, 246, 246);
+}
+#stylized h1 {
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:1%;
+}
+#stylized p{
+	font-size:13px;
+	color:#666666;
+	margin-bottom:5%;
+	border-bottom:solid 1px #60c9d9;
+	padding-bottom:.5%;
+}
+#stylized label{
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:35%;
+	float:left;
+}
+#stylized .small{
+	color:#666666;
+	display:block;
+	font-size:13px;
+	font-weight:normal;
+	text-align:right;
+	width:100%;
+}
+#stylized input,textarea{
+	float:left;
+	font-size:12px;
+	padding:1% .5%;
+	border:solid 1px rgb(204, 204, 204);
+	width:50%;
+	margin:0 0 5% 3%;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+#stylized input:focus, textarea:focus{
+	box-shadow: 0 0 4px rgba(96, 201, 217, 1);
+ 	border: 1px solid rgba(96, 201, 217, 1);
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+#textarea{
+	columns:5;
+}
+
+#stylized button{
+	-moz-box-shadow:inset 0px 1px 0px 0px #CCCCCC;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #CCCCCC;
+	box-shadow:inset 0px 1px 0px 0px #CCCCCC;
+	background-color:#60c9d9;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #CCCCCC;
+	display:inline-block;
+	color:#ffffff;
+	font-family:"Trebuchet MS", sans-serif;
+	font-size:16px;
+	padding:.25% 2%;
+	text-decoration:none;
+	text-shadow: 0px 0px 2px #000000;
+	
+	position: relative; 
+    bottom: 0;
+    z-index: 15;
+    text-align: center;
+    line-height: 2em; /* Vertical Center*/      
+	min-width:10%;
+	margin: 1%;
+	
+	overflow:hidden;
+}
+
+
+#stylized button:hover {
+	background-color:#9cc33c;
+}
+#stylized button:active {
+	position:relative;
+	top:1px;
+}
+.btn_wrapper{
+	text-align: center;	
+}
