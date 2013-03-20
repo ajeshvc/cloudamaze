@@ -40,6 +40,13 @@ switch ($page) {
         include 'testimonials.php';
         include 'connectionclose.php';
         break;
+    case 7 :
+        include 'connection.php';   
+        include 'lib/emailcheck.php';
+         require_once('captcha/recaptchalib.php');
+        include 'corporate_email.php';
+        include 'connectionclose.php';
+        break;
     default:
         include 'home.php';
         break;

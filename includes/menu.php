@@ -11,7 +11,7 @@
  
  <li><a href="#">Services</a>
  	<ul>
-         <li><a href="#">Corporate Email</a></li>
+         <li><a href="index.php?page=7">Corporate Email</a></li>
         <li><a href="#">SSL Certificate</a></li>
        <li><a href="#">Payment Gateway</a></li>
        <li><a href="#">Server Management</a></li>
