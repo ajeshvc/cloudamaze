@@ -1,7 +1,8 @@
 <?php
-if (!isset($_SESSION['domain']) || !isset($_SESSION['invoice'])) {
-  header('Location: index.php?page=1');
+if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) || !isset($_SESSION['total']) || !isset($_SESSION['invoice']) ) {
+  header('Location: index.php?page=0');
 }
+
 ?>
 <div id="content" >
     
@@ -36,8 +37,7 @@ if (!isset($_SESSION['domain']) || !isset($_SESSION['invoice'])) {
       
     <div id="buttons" >
         <div id="skip-domain" class="button">
-            <div id="popup" ><a href="index.php?page=1" id="OpenContact"> Home </a></div>
-            <img src="images/blue-botton.png" class="adjusted"/>
+            <a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
         </div>
     </div>
 
@@ -47,4 +47,6 @@ if (!isset($_SESSION['domain']) || !isset($_SESSION['invoice'])) {
 <?php
 
 unset($_SESSION['domain']);
+unset($_SESSION['total']);
+unset($_SESSION['invoice']);
 ?>

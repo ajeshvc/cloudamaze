@@ -1,44 +1,141 @@
 <?php
-if (!isset($_SESSION['domain'])) {
-    header('Location: index.php?page=1');
+
+
+ if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) ) {
+  header('Location: index.php?page=0');
+  }
+
+  function getcoupontype($couponcode){
+      $coupontype="";
+ $result = mysql_query(" select coupon_type from coupon_settings where offer_id=( select offer_id from coupon where code='$couponcode' ) ");
+ $row = mysql_fetch_array($result);
+ if($row!=NULL){
+     $coupontype=$row['coupon_type'];
+ }   
+   return $coupontype;    
 }
 
-function check_email_address($email) {
-    // First, we check that there's one @ symbol, and that the lengths are right
-    if (!preg_match("/^[^@]{1,64}@[^@]{1,255}$/", $email)) {
-        // Email invalid because wrong number of characters in one section, or wrong number of @ symbols.
-        return false;
-    }
-    // Split it into sections to make life easier
-    $email_array = explode("@", $email);
-    $local_array = explode(".", $email_array[0]);
-    for ($i = 0; $i < sizeof($local_array); $i++) {
-        if (!preg_match("/^(([A-Za-z0-9!#$%&'*+\/=?^_`{|}~-][A-Za-z0-9!#$%&'*+\/=?^_`{|}~\.-]{0,63})|(\"[^(\\|\")]{0,62}\"))$/", $local_array[$i])) {
-            return false;
-        }
-    }
-    if (!preg_match("/^\[?[0-9\.]+\]?$/", $email_array[1])) {
-        // Check if domain is IP. If not, it should be valid domain name
-        $domain_array = explode(".", $email_array[1]);
-        if (sizeof($domain_array) < 2) {
-            return false;
-            // Not enough parts to domain
-        }
-        for ($i = 0; $i < sizeof($domain_array); $i++) {
-            if (!preg_match("/^(([A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9])|([A-Za-z0-9]+))$/", $domain_array[$i])) {
-                return false;
-            }
-        }
-    }
+function isCouponValid($couponcode){
+    $flag1=false;
+     $flag2=false;
+    $used="";
+    $apply_for_first="";
+    // check no of used coupon
+     $coupontype=getcoupontype($couponcode);      
+                      if($coupontype=="multiple"){ // if multiple coupon for a offer
+                          
+                          $result = mysql_query(" SELECT count( offer_id ) AS used
+                            FROM coupon
+                            WHERE STATUS = '0'
+                            AND offer_id = (SELECT offer_id FROM coupon WHERE code = '$couponcode' )  ");
+                            
+                          
+                      }elseif ($coupontype=="single") { // if single coupon for a offer
+                          
+                          $result = mysql_query(" SELECT count( code ) AS used
+                            FROM coupon_details
+                            WHERE coupon_type = 'single' and code='$couponcode'  ");
+                            
+                      }
+                      $row = mysql_fetch_array($result);
+                            if($row!=NULL){
+                                $used=$row['used']; 
+                              }
+                      
+    
 
-    return true;
+     
+     
+     //offer limit
+     $result = mysql_query(" SELECT apply_for_first
+FROM coupon_settings
+WHERE offer_id=(SELECT offer_id FROM coupon WHERE code = '$couponcode' )
+ ");
+     $row = mysql_fetch_array($result);
+     if($row!=NULL){
+        $apply_for_first=$row['apply_for_first']; 
+        
+     }
+     
+     // compare used and offer limits
+     if($used!="" && $apply_for_first!="" ){
+         if($used<$apply_for_first){
+             $flag1=true;
+         }
+         
+     }
+     
+   // check status and expire date
+    $exp_date="";
+    $status="";
+     $todays_date="";
+     
+   $result = mysql_query("  select expire,status from coupon,coupon_settings where coupon.offer_id=coupon_settings.offer_id and  coupon.code='$couponcode' ");
+   $row = mysql_fetch_array($result);
+   if($row!=NULL){
+     $exp_date=$row['expire'];
+     $status=$row['status'];
+     $todays_date = date("Y-m-d"); 
+     $today = strtotime($todays_date); 
+     $expiration_date = strtotime($exp_date); 
+     if ($expiration_date > $today && $status=='1') { 
+        
+         $flag2=true;
+     } 
+    
+  
+ }
+ 
+ if($flag1 && $flag2){
+  return true;  
+ }else{
+     return false;
+ }
+ 
 }
+
+
+
+
+function getOfferprice($couponcode){
+    $offerprice=0;
+    $result = mysql_query(" select offer_price from coupon where code='$couponcode'");
+ $row = mysql_fetch_array($result);
+ if($row!=NULL){
+     $offerprice=$row['offer_price'];
+   }  
+   return $offerprice;  
+ 
+}
+
+
+
+function isOfferpriceIn($couponcode){
+      $offerpricein="";
+ $result = mysql_query(" select offer_price_in from coupon where code='$couponcode'");
+ $row = mysql_fetch_array($result);
+ if($row!=NULL){
+     $offerpricein=$row['offer_price_in'];
+ }   
+   return $offerpricein;  
+ 
+}
+
 
 $plans[] = "";
 $planid[] = "";
 $hostingdetails = "";
 $captchaflag = 0;
+$hostingprpname[] = "";
+$hostingprpid[] = "";
+$couponcode="";
+$offerprice="";
+$discount="";
+$coupontext="";
 if (isset($_POST["confirm"])) {
+    
+   
+   
 
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
 
@@ -52,44 +149,81 @@ if (isset($_POST["confirm"])) {
         $captchaflag = 1;
     }
 
-    if (isset($_POST["email"]) and $_POST["email"] != "" and $captchaflag == 1) {
+    if (isset($_POST["email"]) && $_POST["email"] != "" && $captchaflag == 1) {
         $phone = $_POST["phone"];
         $name = $_POST["name"];
-        if (check_email_address($_POST["email"]) == TRUE and $phone != "" and $name != "") {
+        if (check_email_address($_POST["email"]) == TRUE && $phone != "" && $name != "") {
 
-            if (isset($_POST["hostingdetails"]) and $_POST["hostingdetails"] != "") {
+            if (isset($_POST["hostingdetails"]) && $_POST["hostingdetails"] != "") {
                 $hostingdetails = $_POST["hostingdetails"];
                 $currentdate = date("Y/m/d");
-
+                
+                
                 $domain = $_SESSION['domain'];
-                $hostingdetailstodb = "|" . $name . "|" . $phone . "|" . $_POST["email"] . $hostingdetails;
+                $hostingdetailstodb = "|" . $name . "|" . $phone . "|" . $_POST["email"] . $hostingdetails.$coupontext;
                 $hostingdetailstodb = str_replace("+", "", $hostingdetailstodb);
                 mysql_query("INSERT INTO hosting_details(date,domain,details) 
-                         VALUES('$currentdate','$domain','$hostingdetailstodb') ");
+                VALUES('$currentdate','$domain','$hostingdetailstodb') ");
+                 $id=mysql_insert_id();
+                $invoice = "#hi00". $id;
+                
+                $_SESSION['invoice'] = $invoice;
+               
+                //---------------------
+                 if (isset($_POST["coupon"])&& $_POST["coupon"]!=""){
+                     
+                $couponcode=$_POST["coupon"];
+                  if(isCouponValid($couponcode)){
+                   $flag=0;
+                   $offerprice=getOfferprice($couponcode);
+                   $offerpricein=isOfferpriceIn($couponcode);
+                   if($offerpricein=='RS'){
+                    $discount=$offerprice;  
+                    $flag=1;
+                   }elseif($offerpricein=='%'){
+                      $discount=$_SESSION['total']*($offerprice/100);   
+                      $flag=1;
+                    }
+                    if($flag==1){
+                      $finalprice=$_SESSION['total']-$discount;
+                    $_SESSION['total']=$finalprice;
+                    $coupontext="|"."Coupon Code Valid : ".$couponcode."|"."Discount RS : ".$discount."||"."+Grand Total RS : ".$finalprice." INR Only . ";  
+                        //select offer type    
+                      $coupontype=getcoupontype($couponcode);      
+                      if($coupontype=="multiple"){
+                           // set coupon as used
+                    mysql_query(" update coupon  set status='0' where code='$couponcode' ");     
+                      } 
+                      // store invoice and coupon code
+                     mysql_query(" insert into  coupon_details (id,code,coupon_type)values('$id','$couponcode','$coupontype') ");     
+                     
+                    }
+                    
+               } 
+    }
+                //---------------------
+    
+                $from = $_POST["email"];
 
-            $invoice = "#hi00" . mysql_insert_id();
-            $_SESSION['invoice'] = $invoice;
-            $from = $_POST["email"];
-            
-            $to = $to_email;
-                if ($from != "" and $phone != "" and $hostingdetails != "") {
+                $to = $to_email;
+                if ($from != "" && $phone != "" && $hostingdetails != "") {
 
 
-                $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails;
-                $subject = $name . "- New Hosting Request";
-                $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
-                $message = str_replace("|", "\n\n", $message);
-                $message = str_replace("+", "", $message);
-                $headers = "From: " . $name . " " . $from;
-                mail($to, $subject, $message, $headers);
-                sleep(5);
-                include_once "includes/swift/lib/swift_required.php";
-                $from = array($_POST["email"] => $name);
+                    $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails;
+                    $subject = $name . "- New Hosting Request";
+                    $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
+                    $message = str_replace("|", "\n\n", $message);
+                    $message = str_replace("+", "", $message);
+                    $headers = "From: " . $name . " " . $from;
+                    mail($to, $subject, $message, $headers);
+                    sleep(5);
+                    include_once "includes/swift/lib/swift_required.php";
+                    $from = array($_POST["email"] => $name);
                     $message = "Hello " . $name . ",
                             ||  This is a notice that an invoice has been generated on " . $currentdate . "
                             ||<b>Invoice Id </i>" . $invoice . "</i></b>
                             
-                            ||<b>Details of Hosting Package you Purchased for your Domain Name - " . $domain . "</b>|" . $hostingdetails . "</b> 
+                            ||<b>Details of Hosting Package you Purchased for your Domain Name - " . $domain . "</b>|" . $hostingdetails .$coupontext. "</b> 
                             |" . "-----------------------------------------------
                             ||<i>Your account will activated as soon as you complete the payment process.|you can pay your Hosting bill through NEFT.</i>
                             ||<b>Our bank account details are:</b>
@@ -100,7 +234,7 @@ if (isset($_POST["confirm"])) {
                             |Account Holder: HELLOINFINITY
                             |IFSC Code     : IBKL0000046
                             |Account Number: 0046102000016320
-                            |" . "<br>-----------------------------------------------<br/><b>Cloudamaze - </b><i>get amazed</i>";
+                            |" . "Call +91 890-750-9611 after depositing amount.<br>-----------------------------------------------<br/><b>Cloudamaze - </b><i>get amazed!</i>";
                     $message = str_replace("|", "<br/></br>", $message);
                     $message = str_replace("+", "<b>", $message);
                     $subject = "Hi " . $name . " Your Hosting Request";
@@ -148,105 +282,124 @@ while ($row = mysql_fetch_array($result)) {
     $i++;
 }
 $i = 0;
+// getting plan properties
+$result = mysql_query(" select * from hosting_properties order by pr_id asc ");
+while ($row = mysql_fetch_array($result)) {
+    $hostingprpname[$i] = $row['name'];
+    $hostingprpid[$i] = $row['pr_id'];
+    $i++;
+}
 ?>
 <div id="content" style="alignment-adjust: central; ">
-   
+
     <form  name="form" method="post" action="index.php?page=2">   
         <div style="float: left;text-align: left;width: 5%">&nbsp;</div>
-<?php
-foreach ($planid as $value) {
-    ?>
+        <div>
+            <table border="0"> 
+                <tr><th>Plan Name</th>
+<?php foreach ($hostingprpname as $hostprp) { ?>
+                        <th><?php echo $hostprp; ?></th>
+                    <?php } ?>
+                </tr>
+                    <?php
+                    $i = 0;
+                    $colorid = 1;
 
-            <div style="float: left;" >
-                <table border="0"> 
-                    <tr bgcolor="#9dc33c">
-                        <th colspan="2"><?php
-    echo $plans[$i];
-    if (isset($_POST["choice"])) {
-        $hostingdetails.="|" . $plans[$i];
-    }
-    ?></th>
-                    </tr>
-                    <tr bgcolor="#747474">
-                        <td colspan="2"><hr/></td>
-                    </tr>
-                            <?php
+                    foreach ($planid as $value) {
+                        ?>
+                    <tr bgcolor="<?php
+                    if ($colorid % 2 == 0) {
+                        echo '#FFFFFF';
+                    } else {
+                        echo '#61c8d9';
+                    }
+                    ?>" > 
+
+                        
+                        <th align="left" width="10%">
+                            <?php if (!isset($_POST["choice"])) { ?>  <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
+                            if (isset($_POST["choice"])) {
+                                $hostingdetails.="|" . $plans[$i];
+                            }
+                            ?></th>
+
+                        <?php
+                        foreach ($hostingprpid as $prpid) {
+
+
                             $result = mysql_query(" 
      
-     SELECT hosting_properties.name, hosting_plans.value,hosting_properties.pr_id
+SELECT  hosting_properties.name,hosting_plans.value,hosting_properties.pr_id ,hosting_plans.pr_id
 FROM hosting_properties
 INNER JOIN hosting_plans ON hosting_plans.pr_id = hosting_properties.pr_id
-WHERE hosting_plans.plan_id =$value
-ORDER BY hosting_properties.pr_id 
+WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
+
      
      ");
                             //#61c8d9 #9dc33c
-                            $colorid = 1;
-                            while ($row = mysql_fetch_array($result)) {
-                                ?>   
-                        <tr bgcolor="<?php
-                        if ($colorid % 2 == 0) {
-                            echo '#FFFFFF';
-                        } else {
-                            echo '#FFFFFF';
-                        }
-                        ?>" >
-                            <th><?php echo $row['name']; ?></th>
-                            <td><?php echo $row['value']; ?></td>
-                        </tr>
-        <?php
-        if (isset($_POST["choice"])) {
-            $hostingdetails.="|" . $row['name'] . "-" . $row['value'];
-            if ($row['pr_id'] == '11') {
-                $peryear = $row['value'] * 12;
-                $hostingdetails.="||+Total RS :" . $peryear . ".00 INR Only .";
-                $_SESSION['total'] = $peryear;
-            }
-        }
-        $colorid++;
-    }
-    ?>
-                </table>
-                    <?php if (!isset($_POST["choice"])) { ?>
-                    <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /><?php echo $plans[$i]; ?>
-                <?php } ?>
+                            ?>  <td><?php
+                            $row = mysql_fetch_array($result);
+                            if ($row != NULL) {
 
-            </div>
+                                echo $row['value'];
+                                if (isset($_POST["choice"])) {
+                                    $hostingdetails.="|" . $row['name'] . "-" . $row['value'];
+                                    if ($row['pr_id'] == '11') {
+                                        $peryear = $row['value'] * 12;
+                                        $hostingdetails.="||Total RS :" . $peryear . ".00 INR Only .";
+                                        $_SESSION['total'] = $peryear;
+                                    }
+                                }
+                            } else {
+                                echo "  ";
+                            }
+                            ?> </td>
 
-    <?php
-    $i++;
-}
+                            <?php }
+                        ?>
+                    </tr>
+                        <?php
+                        $colorid++;
+                        $i++;
+                        ?> </tr> <?php
+                }
+                ?>
 
 
 
-if (isset($_POST["choice"])) {
-    ?>
+
+
+            </table></div> <?php
+                if (isset($_POST["choice"])) {
+                    ?>
 
 
             <textarea name="hostingdetails" hidden="hidden" hidden  readonly="readonly">
-    <?php
-    echo $hostingdetails;
-    ?>
+            <?php
+            echo $hostingdetails;
+            ?>
             </textarea>
-           
+
             <div align="center" >
-                <h3> <?php echo $more; ?></h3>
-                <h4><i>Drop in your Name,Phone number,Email and hit Confirm</i></h4>
-                <table border="0">
-                    <tr><td><i>Full Name </i></td> <td><input type="text" name="name" placeholder="Your Name" /></td></tr>
-                    <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" placeholder="Phone" /> </td></tr>
-                    <tr><td><i>Email Address</i></td> <td> <input type="text" name="email" placeholder="Email" /> </td></tr>
+              
+               <p> <h3> <?php echo $more; ?></h3></p>
+                <h4><i>Drop in your Name,Phone number,Email,Coupon Code and hit Confirm</i></h4>
+                    <table border="0">
+                    <tr><td><i>Domain Name</i></td> <th align="left"><?php echo $_SESSION['domain']; ?></th></tr>
+                    <tr><td><i>Full Name </i></td> <td><input type="text" name="name" placeholder="Your Name" />*</td></tr>
+                    <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" placeholder="Phone" />*</td></tr>
+                    <tr><td><i>Email Address</i></td> <td> <input type="text" name="email" placeholder="Email" />*</td></tr>
+                      <tr><td><i>Coupon Code</i></td> <td> <input type="text" name="coupon" placeholder="Coupon Code" /> </td></tr>
                     <tr><td colspan="2"><?php echo recaptcha_get_html($publickey); ?></td></tr>	
-
-
-                </table>
-                 <div id="buttons" >
-                <div id="register-domain" class="button">
-                    <input  type="submit" name="confirm" value="Confirm" class="button" style="background-color: #60c8d8 "/>
+                 </table>
+                <div id="button_container" >
+                    <div id="register-domain" class="button">
+                        <input  type="submit" name="confirm" value="Confirm" class="btnclass" style="background-color: #60c8d8 "/>
+                     
+                    </div>
                 </div>
             </div>
-            </div>
-         
+
         </form>
     <?php
 }
