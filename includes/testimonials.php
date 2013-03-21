@@ -4,36 +4,23 @@
 <?php 
 $sql = "select * from  testimonial";
 $result = mysql_query($sql) or die(mysql_error());
-?><table style="text-align: left" align="left" border="0" width="25%" cellspacing="10"><?php
+?><?php
 while ($row = mysql_fetch_array($result)) {
      if($row['status']==1){
          ?>
-    
-        <tr>
-            <td colspan="2">
-                <?php echo "<b>".$row['name']."</b>"." From "."<b>". $row['company_name']."</b>"; ?>
-           </td>
-        </tr>
-        <tr>
-            <td width="20%" valign="left">
-                  Subject  
-            </td>
-            <td>
-              <b>  <?php echo $row['subject']; ?> </b>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-             <i>   <?php echo $row['testimonial']; ?> </i>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2"><hr/></td>
-        </tr>
+    <div style="width: 50%"/>
+        <blockquote class="testimonial">
+  <p> <u><?php echo $row['subject']; ?></u> <br/>
+<i> <?php echo $row['testimonial']; ?> </i></p>
+</blockquote>
+<div class="arrow-down"></div>
+<p class="testimonial-author"><?php echo "<b>".$row['name']."</b>"; ?> | <span> <?php echo $row['company_name']; ?></span></p>
+                
+</div>        
   <?php }
  }
  ?>
-     </table>
+    
 <?php ?>
        
 </div>   

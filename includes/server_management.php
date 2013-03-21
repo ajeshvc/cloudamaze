@@ -52,9 +52,9 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
        // insert into db
        $currentdate = date("Y/m/d");
                 mysql_query("INSERT INTO query_form(form_type,date,name,contact_point,address,phone,mobile,email,web,description) 
-                VALUES('1','$currentdate','$name','$cp','$address','$phone','$mobile','$email','$web','$des') ");
+                VALUES('3','$currentdate','$name','$cp','$address','$phone','$mobile','$email','$web','$des') ");
                  $id=mysql_insert_id();
-                 $invoice = "#hiEmail00". $id;
+                 $invoice = "#hiGway00". $id;
                  
               // mail   
                     $email_details="|Name           : $name".
@@ -89,9 +89,9 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
     <div class="form_content">
     	<div id="stylized" class="myform">
             <?php if($invoice==""){ ?>
-            <form id="form" name="form" method="post" action="index.php?page=7">
+            <form id="form" name="form" method="post" action="index.php?page=9">
                 <h1>Query From</h1>
-                <p>Corporate Email</p>
+                <p>Server Management</p>
                 
                 <div>
                     <label>Name *

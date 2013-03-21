@@ -47,6 +47,20 @@ switch ($page) {
         include 'corporate_email.php';
         include 'connectionclose.php';
         break;
+    case 8 :
+        include 'connection.php';   
+        include 'lib/emailcheck.php';
+         require_once('captcha/recaptchalib.php');
+        include 'payment_gateway.php';
+        include 'connectionclose.php';
+        break;
+    case 9 :
+        include 'connection.php';   
+        include 'lib/emailcheck.php';
+         require_once('captcha/recaptchalib.php');
+        include 'server_management.php';
+        include 'connectionclose.php';
+        break;
     default:
         include 'home.php';
         break;
