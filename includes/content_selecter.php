@@ -68,6 +68,13 @@ switch ($page) {
             include 'ssl_certificate.php';
             include 'connectionclose.php';
             break;
+   case 11 :
+        include 'connection.php';   
+            include 'lib/emailcheck.php';
+            require_once('captcha/recaptchalib.php');
+            include 'dedicated_hosting.php';
+            include 'connectionclose.php';
+        break;
     default:
         include 'home.php';
         break;

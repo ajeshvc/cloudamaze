@@ -8,7 +8,7 @@ $result = mysql_query($sql) or die(mysql_error());
 while ($row = mysql_fetch_array($result)) {
      if($row['status']==1){
          ?>
-    <div style="width: 50%"/>
+    <div style="width: 70%"/>
         <blockquote class="testimonial">
   <p> <u><?php echo $row['subject']; ?></u> <br/>
 <i> <?php echo $row['testimonial']; ?> </i></p>

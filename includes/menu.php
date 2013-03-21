@@ -5,7 +5,7 @@
      <ul>
        <li><a href="index.php?page=0">Shared Hosting</a></li>
        <li><a href="index.php?page=5">Virtual Private Servers</a></li>
-       <li><a href="#">Dedicated Hosting</a></li>
+       <li><a href="index.php?page=11">Dedicated Hosting</a></li>
      </ul>
  </li>     
  
@@ -82,6 +82,9 @@
                             break;
                         case 10: 
                              echo 'SSL Certificate';
+                            break;
+                         case 11: 
+                             echo 'Dedicated Hosting';
                             break;
                         default : echo 'Home';
                             break;
