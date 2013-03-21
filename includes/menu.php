@@ -12,7 +12,7 @@
  <li><a href="#">Services</a>
  	<ul>
          <li><a href="index.php?page=7">Corporate Email</a></li>
-        <li><a href="#">SSL Certificate</a></li>
+        <li><a href="index.php?page=10">SSL Certificate</a></li>
        <li><a href="index.php?page=8">Payment Gateway</a></li>
        <li><a href="index.php?page=9">Server Management</a></li>
        </ul>

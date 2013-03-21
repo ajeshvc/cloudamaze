@@ -225,8 +225,7 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span>Quick Backup</span></li>
         <li class="odd"><span>Server Connection Speed</span></li>        
         <li class="even"><span>Managed Service Inclusive</span></li>
-        <li class="even"><span class="pricing_no" id="crossmark">Select</span></li>
-    </ul>
+      </ul>
     
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">FogVZ</li>
@@ -241,7 +240,7 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
-        <li class="even"><span class="pricing_no" id="crossmark"><input type="radio" name="vpsradio" value="1" onclick="this.form.submit();" />Choose</span></li>
+        <li class="odd"><input type="radio" name="vpsradio" value="1" onclick="this.form.submit();" />Choose</li>
     </ul>
     
     <ul class="pricing_column gradient_yellow">
@@ -257,8 +256,8 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd">100 megabit/second</li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
-        <li class="even"><span class="pricing_no" id="crossmark"><input type="radio" name="vpsradio" value="2" onclick="this.form.submit();" />Choose</span></li>
-    </ul>
+        <li class="odd"><input type="radio" name="vpsradio" value="2" onclick="this.form.submit();" />Choose</li>
+  </ul>
     
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">CumulusVZ</li>
@@ -273,7 +272,7 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
-        <li class="even"><span class="pricing_no" id="crossmark"><input type="radio" name="vpsradio" value="3" onclick="this.form.submit();" />Choose</span></li>
+         <li class="odd"><input type="radio" name="vpsradio" value="3" onclick="this.form.submit();" />Choose</li>
     </ul>
     
     <ul class="pricing_column gradient_yellow">
@@ -289,8 +288,8 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
-        <li class="even"><span class="pricing_no" id="crossmark"><input type="radio" name="vpsradio" value="4" onclick="this.form.submit();" />Choose</span></li>
-    </ul>
+         <li class="odd"><input type="radio" name="vpsradio" value="4" onclick="this.form.submit();" />Choose</li>
+  </ul>
     
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">CirrusVZ</li>
@@ -305,8 +304,8 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
-        <li class="even"><span class="pricing_no" id="crossmark"><input type="radio" name="vpsradio" value="5" onclick="this.form.submit();" />Choose</span></li>
-    </ul>
+         <li class="odd"><input type="radio" name="vpsradio" value="5" onclick="this.form.submit();" />Choose</li>
+   </ul>
     
 </div>
         

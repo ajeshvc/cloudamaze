@@ -144,7 +144,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
             
             </form>
             <?php }  else { ?>
-            Your request has been received (Request ID :<?php echo $invoice; ?> ).<br/> We will be contacting you shortly. <br/>Thanks for contacting cloudamaze.
+            <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> Cloudamaze sales team will contact you shortly. <br/>Thanks for contacting cloudamaze.
 
             <br/>You can call +91 890 750 9611 for any inquires if needed.
             <div class="btn_wrapper">
