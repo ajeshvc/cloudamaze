@@ -55,7 +55,7 @@
         </div> 
         <div <?php if (isset($_GET['page']) && $_GET['page'] == 4) { ?> id="tri_div_front_active" <?php } else { ?> id="tri_div_end" <?php } ?>  ></div>   
 </div>
-<?php } else if(isset($_GET['page'])){ ?>
+<?php } else { ?>
   <div id="tab_bar_wrapper">	
     <div id="tri_div_start"></div>    
         <div id="tab_wrapper">
@@ -63,6 +63,7 @@
             <div  id="tab_item_active"   >
                 <div id="text_wrapper">
                     <?php 
+                    if(isset($_GET['page'])){
                     switch ($_GET['page']){
                         case 5: 
                             echo 'Virtual Private Servers';
@@ -84,6 +85,9 @@
                             break;
                         default : echo 'Home';
                             break;
+                    }
+                    }  else {
+                        echo 'Home';
                     }
                     ?>
                     
