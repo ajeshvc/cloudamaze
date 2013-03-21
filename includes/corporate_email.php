@@ -81,9 +81,9 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
 
 <div class="form_outer">
     <div class="banner_outer">
-        <img src="ar (2).jpg" class="banner_img"/>
+        <img src="images/queryform/corp-email.png" class="banner_img"/>
         <div class="data_text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in enim ut est mattis faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id pellentesque lacus. Fusce sit amet risus erat. Sed lorem nisl, tincidunt vitae pharetra et, interdum vel tellus. Sed ac erat non odio hendrerit hendrerit quis quis dui. Proin mollis nisl nec lacus pharetra in dictum metus aliquet. Aliquam facilisis est in magna venenatis hendrerit. Mauris a turpis lacus. Vivamus tincidunt velit at sapien auctor nec tristique dolor cursus.
+       CloudAmaze’s  Corporate email service is one of best acclaimed service. Real time delivery: It delivers emails in real-time, i.e., you click send, snap! Its in your recipient’s mailbox. You can access your email on Android, Blackberry, Ios, Windows phones, PC, Mac, Bada, Symbian, and on all Unix and Linux based machines. CloudAmaze’s Corporate email has a never down policy with 99.99% uptime. You won’t notice any down time. You will be assisted round the clock, out team is up 24x7 to provide you help.  Drop in a request so that we can contact you back. Please make a short description of what you would like to implement.
         </div>
     </div>
     <div class="form_content">

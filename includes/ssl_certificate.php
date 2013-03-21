@@ -130,9 +130,9 @@
 
 <div class="form_outer">
     <div class="banner_outer">
-        <img src="images/queryform/ssl_1.jpg" class="banner_img"/>
+        <img src="images/queryform/ssl_1.png" class="banner_img"/>
         <div class="data_text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in enim ut est mattis faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id pellentesque lacus. Fusce sit amet risus erat. Sed lorem nisl, tincidunt vitae pharetra et, interdum vel tellus. Sed ac erat non odio hendrerit hendrerit quis quis dui. Proin mollis nisl nec lacus pharetra in dictum metus aliquet. Aliquam facilisis est in magna venenatis hendrerit. Mauris a turpis lacus. Vivamus tincidunt velit at sapien auctor nec tristique dolor cursus.
+        SSL certificates are used to prove that website/Network is genuine. CloudAmaze offers best in class and higly secure SSL certificates from Thawte. Thwate certificates are well known and trusted around world, used by banks, corporate, individuals and more. Please drop in a request if you are planning to buy an SSL certificate for your website/VPN network. Our team contact you.
         </div>
     </div>
 <?php if (!isset($_POST['sslradio']) && $invoice=="" ) { ?>
@@ -169,7 +169,7 @@
             <div class="single_section_container">
                 
                 <div class="data_text">
-                    &nbsp;thawte-Acclaimed and Trusted brand
+                    <img src="images/queryform/ssl_6.png" class="img_icon_small"/> thawte - Acclaimed and Trusted brand
                 </div>
             </div>
             <div class="single_section_container">

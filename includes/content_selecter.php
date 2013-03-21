@@ -75,6 +75,9 @@ switch ($page) {
             include 'dedicated_hosting.php';
             include 'connectionclose.php';
         break;
+    case 12:
+         include 'contact_us.php';
+        break;
     default:
         include 'home.php';
         break;

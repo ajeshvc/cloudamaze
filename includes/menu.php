@@ -17,11 +17,11 @@
        <li><a href="index.php?page=9">Server Management</a></li>
        </ul>
  </li>
- <li><a href="#">Blog</a></li>
+ <li><a href="http://blog.cloudamaze.com/">Blog</a></li>
  <li><a href="index.php?page=6">Testimonials</a></li>
  <li><a href="#">Downloads</a></li>
  <li><a href="http://www.cloudamaze.com/support">24/7 Support</a></li>
- <li><a href="#">Contact Us</a></li>
+ <li><a href="index.php?page=12">Contact Us</a></li>
 </ul>
 <?php if ((isset($_GET['page']) &&  $_GET['page']==1) || (isset($_GET['page']) &&  $_GET['page']==2) || (isset($_GET['page']) &&  $_GET['page']==3) || (isset($_GET['page']) &&  $_GET['page']==4)  ){ ?>
 <div id="tab_bar_wrapper">	
@@ -85,6 +85,9 @@
                             break;
                          case 11: 
                              echo 'Dedicated Hosting';
+                            break;
+                        case 12: 
+                             echo 'Contact Us';
                             break;
                         default : echo 'Home';
                             break;

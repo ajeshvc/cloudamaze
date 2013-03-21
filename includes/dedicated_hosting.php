@@ -81,9 +81,9 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
 
 <div class="form_outer">
     <div class="banner_outer">
-        <img src="ar (2).jpg" class="banner_img"/>
+        <img src="images/queryform/dedicated-server.png" class="banner_img"/>
         <div class="data_text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in enim ut est mattis faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id pellentesque lacus. Fusce sit amet risus erat. Sed lorem nisl, tincidunt vitae pharetra et, interdum vel tellus. Sed ac erat non odio hendrerit hendrerit quis quis dui. Proin mollis nisl nec lacus pharetra in dictum metus aliquet. Aliquam facilisis est in magna venenatis hendrerit. Mauris a turpis lacus. Vivamus tincidunt velit at sapien auctor nec tristique dolor cursus.
+        CloudAmaze’s dedicated hosting plans are made to suit both corporate and organisations. It allows you to choose a dedicated hosting for you which is managed by our team. Payments are flexible, you can choose a monthly payment mode or yearly. Servers are highly reliable with an uptime of 99.995%. You can also choose low uptime servers for test purposes. Drop in a request so that we can contact you back. Please make a short description of what you would like to implement.
         </div>
     </div>
     <div class="form_content">
