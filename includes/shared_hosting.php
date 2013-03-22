@@ -157,7 +157,7 @@ if (isset($_POST["confirm"])) {
         $captchaflag = 1;
     }
 
-    if (isset($_POST["email"]) && $_POST["email"] != "" && $captchaflag == 1) {
+    if (isset($_POST["email"]) && $_POST["email"] != "" && $captchaflag == 1 && $_SESSION['domain'] !="") {
         $phone = $_POST["phone"];
         $name = $_POST["name"];
         if (check_email_address($_POST["email"]) == TRUE && $phone != "" && $name != "") {
