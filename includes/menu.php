@@ -3,7 +3,7 @@
  <li><a href="index.php?page=1&skip=false">Domain</a></li>
  <li><a href="index.php?page=0">Hosting</a>
      <ul>
-       <li><a href="index.php?page=0">Shared Hosting</a></li>
+       <li><a href="index.php?page=13">Shared Hosting</a></li>
        <li><a href="index.php?page=5">Virtual Private Servers</a></li>
        <li><a href="index.php?page=11">Dedicated Hosting</a></li>
      </ul>
@@ -88,6 +88,9 @@
                             break;
                         case 12: 
                              echo 'Contact Us';
+                            break;
+                        case 13: 
+                             echo 'Shared Hosting';
                             break;
                         default : echo 'Home';
                             break;

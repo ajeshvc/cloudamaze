@@ -78,6 +78,14 @@ switch ($page) {
     case 12:
          include 'contact_us.php';
         break;
+    case 13:
+        include 'connection.php';
+        include 'lib/emailcheck.php';
+        include 'lib/tld.php';
+	require_once('captcha/recaptchalib.php');
+        include 'shared_hosting.php';
+        include 'connectionclose.php';
+        break;
     default:
         include 'home.php';
         break;
