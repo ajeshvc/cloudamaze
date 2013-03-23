@@ -1,5 +1,8 @@
 <?php
-
+$name="";
+$phone="";
+$email="";
+$couponcode="";
 /*
  if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) ) {
   header('Location: index.php?page=0');
@@ -133,14 +136,43 @@ $couponcode="";
 $offerprice="";
 $discount="";
 $coupontext="";
+
+if (isset($_POST["back"])) {
+    if(isset($_SESSION['choice'])){
+        unset($_SESSION['choice']); 
+    }
+}
 if (isset($_POST["confirm"])) {
-    
+ 
+    $name="";
+$phone="";
+$email="";
+$couponcode="";
+   
+if(isset($_POST['name'])){
+ $name=$_POST['name'];   
+ }
+ if(isset($_POST['phone'])){
+ $phone=$_POST['phone'];   
+ }
+ if(isset($_POST['email']) && check_email_address($_POST["email"]) == TRUE){
+ $email=$_POST['email'];   
+ }
+ if(isset($_POST['coupon'])){
+ $couponcode=$_POST['coupon'];   
+ }
+ 
    if (isset($_POST['domain']) && $_POST['domain'] != "") {
         $domain = $_POST['domain'];
         //validate domain
         if (preg_match("/^($label)\\.($tld)$/", $domain, $match) && in_array($match[2], $tld_list)) {
             $_SESSION['domain'] = $domain;
           
+        }
+        else{
+            if(isset($_SESSION['domain'])){
+               $_SESSION['domain']="";
+            }
         }
     }
    
@@ -268,19 +300,24 @@ if (isset($_POST["confirm"])) {
                     }
 
 
-
+                    unset($_SESSION['choice']);
                     header('Location:index.php?page=4');
                 }
             }
         }
     }
 }
-if (isset($_POST["choice"])) {
-    $planid[0] = $_POST["choice"];
+if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice']!="" )) {
+    if (isset($_POST["choice"])){
+    $_SESSION['choice']=$_POST["choice"];
+   }
+    $planid[0] = $_SESSION['choice'];
     $result = mysql_query(" select * from plans  where plan_id=$planid[0] ");
+    
 } else {
     $result = mysql_query(" select * from plans order by plan_id asc ");
 }
+
 
 $i = 0;
 while ($row = mysql_fetch_array($result)) {
@@ -325,8 +362,8 @@ while ($row = mysql_fetch_array($result)) {
 
                         
                         <th align="left" width="10%">
-                            <?php if (!isset($_POST["choice"])) { ?>  <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
-                            if (isset($_POST["choice"])) {
+                           <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])   ) { ?>   <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
+                             if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
                                 $hostingdetails.="|" . $plans[$i];
                             }
                             ?></th>
@@ -350,7 +387,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                             if ($row != NULL) {
 
                                 echo $row['value'];
-                                if (isset($_POST["choice"])) {
+                                if (isset($_POST["choice"])  || (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
                                     $hostingdetails.="|" . $row['name'] . "-" . $row['value'];
                                     if ($row['pr_id'] == '11') {
                                         $peryear = $row['value'] * 12;
@@ -378,7 +415,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
 
 
             </table></div> <?php
-                if (isset($_POST["choice"])) {
+                  if (isset($_POST["choice"])|| (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
                     ?>
 
 
@@ -394,10 +431,10 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                 <h4><i>Drop in your Name,Phone number,Email,Coupon Code and hit Confirm</i></h4>
                     <table border="0">
                         <tr><td><i>Domain Name</i></td> <td><input type="text" name="domain" placeholder="Domain Name" value="<?php echo $_SESSION['domain'];  ?>" />*</td></tr>
-                    <tr><td><i>Full Name </i></td> <td><input type="text" name="name" placeholder="Your Name" />*</td></tr>
-                    <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" placeholder="Phone" />*</td></tr>
-                    <tr><td><i>Email Address</i></td> <td> <input type="text" name="email" placeholder="Email" />*</td></tr>
-                      <tr><td><i>Coupon Code</i></td> <td> <input type="text" name="coupon" placeholder="Coupon Code" /> </td></tr>
+                        <tr><td><i>Full Name </i></td> <td><input type="text" name="name" placeholder="Your Name" value="<?php echo $name; ?>" />*</td></tr>
+                    <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" placeholder="Phone" value="<?php echo $phone; ?>" />*</td></tr>
+                    <tr><td><i>Email Address</i></td> <td> <input type="text" name="email" placeholder="Email" value="<?php echo $email; ?>" />*</td></tr>
+                      <tr><td><i>Coupon Code</i></td> <td> <input type="text" name="coupon" placeholder="Coupon Code" value="<?php echo $couponcode; ?>" /> </td></tr>
                     <tr><td colspan="2"><?php echo recaptcha_get_html($publickey); ?></td></tr>	
                  </table>
                 <div id="button_container" >
@@ -405,6 +442,9 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                         <input  type="submit" name="confirm" value="Confirm" class="btnclass" style="background-color: #60c8d8 "/>
                      
                     </div>
+                    <div id="register-domain" class="button">
+                        <input  type="submit" name="back" value="Back" class="btnclass" style="background-color: #60c8d8 "/>
+                     </div>
                 </div>
             </div>
 

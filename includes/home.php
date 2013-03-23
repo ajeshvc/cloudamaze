@@ -18,7 +18,7 @@ unset($_SESSION['domain']);
   
     <div id="buttons">
         <div id="skip-domain">
-            <a href="index.php?page=1&skip=true" class="btnclass"> Skip </a>
+            <a href="index.php?page=13" class="btnclass"> Skip </a>
         </div>
         <div id="register-domain">
             <a href="index.php?page=1&skip=false" class="btnclass"> Register domain </a>

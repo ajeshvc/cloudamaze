@@ -1,7 +1,7 @@
 <ul id="menu-bar">
  <li class="current"><a href="index.php">Home</a></li>
  <li><a href="index.php?page=1&skip=false">Domain</a></li>
- <li><a href="index.php?page=0">Hosting</a>
+ <li><a href="index.php?page=13">Hosting</a>
      <ul>
        <li><a href="index.php?page=13">Shared Hosting</a></li>
        <li><a href="index.php?page=5">Virtual Private Servers</a></li>
@@ -90,7 +90,7 @@
                              echo 'Contact Us';
                             break;
                         case 13: 
-                             echo 'Shared Hosting';
+                             echo 'Hosting';
                             break;
                         default : echo 'Home';
                             break;
