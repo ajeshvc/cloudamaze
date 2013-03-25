@@ -35,6 +35,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                         <input type="text" name="domain" placeholder="" value="<?php echo $domainname; ?>" id="txt_domain" <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> readonly="readonly" <?php } ?> />
                     </div>
                 </div>
+                <?php if ((!isset($_POST['check']))|| isset($_POST['check']) && $_POST['check'] != "Submit") { ?>
                 <div class="domain_container">
                     <div class="domail_text_wrapper">
                         .com
@@ -44,6 +45,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
     id="atag">&#9660</a>
                     </div>
                 </div>
+                <?php } ?>
                     <input type="submit" id="search_btn_container" class="btnclass" name="check" <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'true' ) || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> value="Submit"  <?php } else { ?> value="Check" <?php } ?>  />        
                 </div>
             </div>
