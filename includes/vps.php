@@ -1,9 +1,39 @@
 <?php
-if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
+$hostingname="";
+$extraip="";
+$name="";
+$address="";
+$phone="";
+$email="";
+
+if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "" ) {
     $_SESSION['planchoice'] = $_POST['vpsradio'];
 }
 
+if (isset($_POST["back"])) {
+    if(isset($_SESSION['planchoice'])){
+        unset($_SESSION['planchoice']); 
+    }
+}
   if (isset($_POST['confirm']) && $_POST['confirm'] == "Confirm") {
+ if(isset($_POST['name'])){
+ $name=$_POST['name'];   
+ }
+ if(isset($_POST['phone'])){
+ $phone=$_POST['phone'];   
+ }
+ if(isset($_POST['email']) && check_email_address($_POST["email"]) == TRUE){
+ $email=$_POST['email'];   
+ }
+ if(isset($_POST['address'])){
+ $address=$_POST['address'];   
+ }
+ if(isset($_POST['hostingname'])){
+ $hostingname=$_POST['hostingname'];   
+ }
+ if(isset($_POST['extraip'])){
+ $extraip=$_POST['extraip'];   
+ }
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
     if (!$resp->is_valid) {
         // What happens when the CAPTCHA was entered incorrectly
@@ -209,7 +239,7 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <div style="float: left;text-align: left; width: 5%">&nbsp;</div>
         <div></div> 
 
-<?php if (!isset($_POST['vpsradio'])) { ?>
+<?php if (!isset($_POST['vpsradio'])|| ((isset($_SESSION['planchoice']) && $_SESSION['planchoice']!="" ))) { ?>
         
    <div class="pricing_table pricing_six">
   	<ul class="pricing_column_first">
@@ -226,7 +256,7 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="odd"><span>Server Connection Speed</span></li>        
         <li class="even"><span>Managed Service Inclusive</span></li>
       </ul>
-    
+    <?php  if(!isset($_SESSION['planchoice'])||( isset($_SESSION['planchoice'])&& $_SESSION['planchoice']=='1')){?>
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">FogVZ</li>
         <li class="pricing_header2">&#8377; 190 <span>/mo.</span></li>
@@ -240,9 +270,13 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
+        <?php if ( !isset($_SESSION['planchoice'])){ ?>
         <li class="odd"><input type="radio" name="vpsradio" value="1" onclick="this.form.submit();" />Choose</li>
+        <?php } ?>
     </ul>
-    
+    <?php } ?> 
+      <?php  if(!isset($_SESSION['planchoice'])||( isset($_SESSION['planchoice'])&& $_SESSION['planchoice']=='2')){?>
+   
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">StratusVZ</li>
         <li class="pricing_header2">&#8377; 270<span>/mo.</span></li>
@@ -256,9 +290,13 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd">100 megabit/second</li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
+        <?php if ( !isset($_SESSION['planchoice'])){ ?>
         <li class="odd"><input type="radio" name="vpsradio" value="2" onclick="this.form.submit();" />Choose</li>
-  </ul>
-    
+        <?php } ?>
+    </ul>
+     <?php } ?> 
+        <?php  if(!isset($_SESSION['planchoice'])||( isset($_SESSION['planchoice'])&& $_SESSION['planchoice']=='3')){?>
+   
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">CumulusVZ</li>
         <li class="pricing_header2">&#8377; 430 <span>/mo.</span></li>
@@ -272,9 +310,13 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
-         <li class="odd"><input type="radio" name="vpsradio" value="3" onclick="this.form.submit();" />Choose</li>
+        <?php if ( !isset($_SESSION['planchoice'])){ ?>
+        <li class="odd"><input type="radio" name="vpsradio" value="3" onclick="this.form.submit();" />Choose</li>
+        <?php } ?>
     </ul>
-    
+     <?php } ?> 
+     <?php  if(!isset($_SESSION['planchoice'])||( isset($_SESSION['planchoice'])&& $_SESSION['planchoice']=='4')){?>
+   
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">NimbusVZ</li>
         <li class="pricing_header2">&#8377; 590<span>/mo.</span></li>
@@ -288,9 +330,13 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
-         <li class="odd"><input type="radio" name="vpsradio" value="4" onclick="this.form.submit();" />Choose</li>
-  </ul>
-    
+        <?php if ( !isset($_SESSION['planchoice'])){ ?>
+        <li class="odd"><input type="radio" name="vpsradio" value="4" onclick="this.form.submit();" />Choose</li>
+        <?php } ?>
+    </ul>
+     <?php } ?> 
+      <?php  if(!isset($_SESSION['planchoice'])||( isset($_SESSION['planchoice'])&& $_SESSION['planchoice']=='5')){?>
+   
     <ul class="pricing_column gradient_yellow">
         <li class="pricing_header1">CirrusVZ</li>
         <li class="pricing_header2">&#8377; 850<span>/mo.</span></li>
@@ -304,38 +350,44 @@ if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") {
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="odd"><span>100 megabit/second</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
+        <?php if ( !isset($_SESSION['planchoice'])){ ?>
          <li class="odd"><input type="radio" name="vpsradio" value="5" onclick="this.form.submit();" />Choose</li>
-   </ul>
-    
+        <?php } ?>
+    </ul>
+     <?php } ?> 
+     
 </div>
         
         
         
            
 <?php } ?> 
-<?php if (isset($_POST['vpsradio']) && $_POST['vpsradio'] != "") { ?>
+<?php if ((isset($_POST['vpsradio']) && $_POST['vpsradio'] != "")||  (isset($_SESSION['planchoice']) && $_SESSION['planchoice']!="" )) { ?>
             <div align="center" >
                 <p> <h3></h3></p>
                 <h4><i>Drop in your Hosting Name,Name,Address ,Phone number,Email and hit Confirm</i></h4>
                 <table border="0">
-                    <tr><td><i>Host Name</i></td> <th align="left"><input type="text" name="hostingname" placeholder="Server Nick Name" />*</th></tr>
+                    <tr><td><i>Host Name</i></td> <th align="left"><input type="text" value="<?php echo $hostingname; ?>" name="hostingname" placeholder="Server Nick Name" />*</th></tr>
                     <tr><td><i>Extra IP Address</i></td> <td><select name="extraip">
-                                <option value="0">None</option>
+                                <option value="0" <?php if($extraip=='0'){ ?> selected="selected" <?php } ?> >None</option>
     <?php for ($i = 1; $i <= 20; $i++) {
-        ?><option value='<?php echo $i; ?>'><?php echo $i . ' Extra IP $' . (1.5 * $i) . ' USD'; ?></option>
+        ?><option value='<?php echo $i; ?>' <?php if($extraip==$i){ ?> selected="selected" <?php } ?> ><?php echo $i . ' Extra IP $' . (1.5 * $i) . ' USD'; ?></option>
     <?php } ?>
 
                             </select></td></tr>
-                    <tr><td><i>Full Name </i></td> <td><input type="text" name="name" placeholder="Your Name" />*</td></tr>
-                    <tr><td><i>Address</i></td> <td><input type="text" name="address" placeholder="Your Address" />*</td></tr>
-                    <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" placeholder="Phone" />*</td></tr>
-                    <tr><td><i>Email Address</i></td> <td> <input type="text" name="email" placeholder="Email" />*</td></tr>
+                    <tr><td><i>Full Name </i></td> <td><input type="text" name="name" value="<?php echo $name; ?>" placeholder="Your Name" />*</td></tr>
+                    <tr><td><i>Address</i></td> <td><input type="text" name="address" value="<?php echo $address; ?>" placeholder="Your Address" />*</td></tr>
+                    <tr><td><i>Phone Number</i></td> <td><input type="text" name="phone" value="<?php echo $phone; ?>" placeholder="Phone" />*</td></tr>
+                    <tr><td><i>Email Address</i></td> <td> <input type="text" name="email" value="<?php echo $email; ?>" placeholder="Email" />*</td></tr>
                     <tr><td colspan="2"><?php echo recaptcha_get_html($publickey); ?></td></tr>	
                 </table>
                 <div id="buttons" >
                     <div id="register-domain" class="button">
                         <input  type="submit" name="confirm" value="Confirm" class="button" style="background-color: #60c8d8 "/>
                     </div>
+                     <div id="register-domain" class="button">
+                        <input  type="submit" name="back" value="Back" class="btnclass" style="background-color: #60c8d8 "/>
+                     </div>
                 </div>
             </div>
 <?php } ?>

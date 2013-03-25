@@ -15,6 +15,7 @@ ob_start();
             <title>Cloudamaze.com | get amazed!</title>
             <link rel="stylesheet" href="css/style.css" type="text/css"/>
             <script type="text/javascript" src="js/jquery.min.js"></script>
+             <script type="text/javascript" src="js/toggletld.js"></script>
             <link rel="stylesheet" type="text/css" href="css/formstyle.css" />
             <!--Start of Zopim Live Chat Script-->
             <script type="text/javascript">
