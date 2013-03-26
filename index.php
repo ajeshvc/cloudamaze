@@ -47,7 +47,7 @@ ob_start();
             <div id="outer-content">
                 <?php require 'includes/menu.php'; ?>
                 <div id="inner-content">
-                    <?php require 'includes/content_selecter.php'; ?>                      
+                    <?php  require 'includes/content_selecter.php'; ?>                      
                 </div>                  
             </div>    
             <?php

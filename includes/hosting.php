@@ -320,9 +320,8 @@ while ($row = mysql_fetch_array($result)) {
 <div id="content" style="alignment-adjust: central; ">
 
     <form  name="form" method="post" action="index.php?page=2">   
-        <div style="float: left;text-align: left;width: 5%">&nbsp;</div>
-        <div>
-            <table border="0"> 
+        <div class="pricing_table pricing_six">
+           ....
                 <tr><th>Plan Name</th>
 <?php foreach ($hostingprpname as $hostprp) { ?>
                         <th><?php echo $hostprp; ?></th>
@@ -396,7 +395,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
 
 
 
-            </table></div> <?php
+        </div> .... <?php
                 if (isset($_POST["choice"])|| (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
                     ?>
 

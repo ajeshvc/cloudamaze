@@ -13,3 +13,25 @@ function eToggle(anctag,darg)
 	text.innerHTML = "&#9650;";
   }
 } 
+
+
+
+function moredomainToggle(moretag,domaintxt,content) 
+{
+  var moretag = document.getElementById(moretag);
+  var domaintxt = document.getElementById(domaintxt);
+  var content=document.getElementById(content);
+  if( domaintxt.style.display == "block") 
+  {
+    domaintxt.style.display = "none";
+//    content.style.display = "block";
+    content.style.visibility = "visible";
+    
+  }
+  else 
+  {
+    domaintxt.style.display = "block";
+    content.style.visibility = "hidden";  
+//    content.style.height = "1px";
+  }
+} 
