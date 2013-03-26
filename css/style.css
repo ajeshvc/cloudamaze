@@ -746,3 +746,71 @@ ul {
 	width:100%;
 	position:relative;	
 }
+
+/* hosting plan */
+
+	.hosting_content_outer{
+		position:relative;
+		width:110%;
+		height:auto;
+		background-color:#FFF;
+	}
+	.hosting_content{
+		width:100%;
+	}
+	.hosting_table_div{
+		width:100%;
+		position:relative;
+		font-family: 'Trebuchet MS',sans-serif;
+		font-size: 13px;
+		font-weight: normal;
+		color: rgb(49, 49, 49);	
+	}
+	.hosting_row_div{
+		width:100%;
+		height:auto;
+		position:relative;	
+	}
+	.hosting_col_div{
+		width:7%;
+		height:auto;
+		position:relative;
+		float:left;
+		margin-right:1px;
+		padding:.5%;
+		text-align:center;
+	}
+	#odd{
+		background-color: rgb(246, 246, 246);
+    	border-bottom: 1px solid rgb(204, 204, 204);
+		padding:1% .5%;
+                text-align: left;
+	}
+        
+	#even{
+		background-color: rgb(239, 239, 239);
+    	border-bottom: 1px solid rgb(204, 204, 204);
+		padding:1% .5%;
+                 text-align: left;
+	}
+        
+	#header1{
+		min-height:68px;
+		font-size:16px;  
+		font-family:'trebuchet ms';
+		font-weight: normal;
+		text-shadow: 0px 0px 15px #000000;
+		line-height: 20px;
+		color: rgb(255, 255, 255);    
+		border-radius: 9px 9px 0px 0px;
+		-webkit-border-radius: 9px 9px 0px 0px;
+		-moz-border-radius: 9px 9px 0px 0px;;
+		-o-border-radius: 9px 9px 0px 0px;
+		background-color: #60c8d8;
+                
+	}
+        
+	#header2{
+		text-align:left;
+		font-size:12px;
+	}

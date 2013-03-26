@@ -320,38 +320,39 @@ while ($row = mysql_fetch_array($result)) {
 <div id="content" style="alignment-adjust: central; ">
 
     <form  name="form" method="post" action="index.php?page=2">   
-        <div class="pricing_table pricing_six">
-           ....
-                <tr><th>Plan Name</th>
+        <div class="hosting_content_outer">
+        <div class="hosting_table_div">                
+           <div class="hosting_row_div">
+                <div class="hosting_col_div" id="header1">
+                 	Plan Name 
+                </div>
 <?php foreach ($hostingprpname as $hostprp) { ?>
-                        <th><?php echo $hostprp; ?></th>
+                     <div class="hosting_col_div" id="header1">
+                   <?php echo $hostprp; ?>
+                    </div>   
                     <?php } ?>
-                </tr>
+            </div>
                     <?php
                     $i = 0;
                     $colorid = 1;
 
                     foreach ($planid as $value) {
                         ?>
-                    <tr bgcolor="<?php
-                    if ($colorid % 2 == 0) {
-                        echo '#FFFFFF';
-                    } else {
-                        echo '#61c8d9';
-                    }
-                    ?>" > 
-
-                        
-                        <th align="left" width="10%">
+            
+                    
+                <div class="hosting_row_div">      
+                <div class="hosting_col_div" <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd"<?php } ?> >
+                 	<span id="header2">
                             <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])   ) { ?>  <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
                             if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
                                 $hostingdetails.="|" . $plans[$i];
                             }
-                            ?></th>
-
+                            ?></span>
+                </div>
                         <?php
                         foreach ($hostingprpid as $prpid) {
-
+                                 ?>  <div class="hosting_col_div" <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd"<?php } ?>>
+                    <?php
 
                             $result = mysql_query(" 
      
@@ -362,8 +363,8 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
 
      
      ");
-                            //#61c8d9 #9dc33c
-                            ?>  <td><?php
+                          
+                           
                             $row = mysql_fetch_array($result);
                             if ($row != NULL) {
 
@@ -379,23 +380,27 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                             } else {
                                 echo "  ";
                             }
-                            ?> </td>
+                            ?> 
+                </div>
 
                             <?php }
                         ?>
-                    </tr>
+                 </div>  
                         <?php
                         $colorid++;
                         $i++;
-                        ?> </tr> <?php
+                        ?> <?php
+                        
                 }
                 ?>
 
 
+       
+        </div>
+        </div>
 
 
-
-        </div> .... <?php
+       <?php
                 if (isset($_POST["choice"])|| (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
                     ?>
 
@@ -429,8 +434,9 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                 </div>
             </div>
 
-        </form>
+       
     <?php
 }
 ?>
+         </form>
 </div>
