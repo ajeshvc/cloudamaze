@@ -118,8 +118,6 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
              
              
 </div>
-   
-                
     <!--            Domain more div-->
     <div id="domaintxt" style="display: none">     
         <div class="hidden_container">
