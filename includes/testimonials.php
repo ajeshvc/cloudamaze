@@ -2,7 +2,11 @@
 
 <div style="width:100%;height:auto;">
 <?php 
-$sql = "select * from  testimonial";
+$sql = "select *
+FROM testimonial
+WHERE status = 1
+ORDER BY RAND()
+LIMIT 4";
 $result = mysql_query($sql) or die(mysql_error());
 ?><?php
 while ($row = mysql_fetch_array($result)) {
