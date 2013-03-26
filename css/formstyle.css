@@ -95,7 +95,8 @@ ul {
 	padding-right:10px;
 }
 .pricing_table .pricing_column_first, .pricing_table .pricing_column {
-    height: 100%;
+    height: auto;
+	margin-bottom:2%;
     float: left;
     margin-right: 1px;
     position: relative;
@@ -129,8 +130,7 @@ font-family:"Trebuchet MS", sans-serif;
 p, h1, form, button{border:0; margin:0; padding:0;}
 .spacer{clear:both; height:1px;}
 .form_outer{
-	width:70%;
-	margin-left:15%;
+	width:100%;
 }
 .banner_outer{
 	width:100%;
@@ -278,7 +278,7 @@ p, h1, form, button{border:0; margin:0; padding:0;}
 	font-size:16px;
 	text-align:justify;
 	color:#333;
-	width:45%;
+	width:44%;
 	float:left;
 	position:relative;
 	padding:2%;
@@ -290,6 +290,7 @@ p, h1, form, button{border:0; margin:0; padding:0;}
 
 #left_container{
 	float:right;
+	margin-right:1px;
 }
 
 .single_section_container{
