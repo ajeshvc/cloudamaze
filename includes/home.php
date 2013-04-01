@@ -2,6 +2,9 @@
 <?php
 $_SESSION['domain']='';
 unset($_SESSION['domain']);
+if(isset($_SESSION['choice'])){
+        unset($_SESSION['choice']); 
+    }
 ?>
 <div id="content">
 
