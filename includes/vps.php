@@ -74,8 +74,8 @@ if (isset($_POST["back"])) {
                                     |IPv4 Addresses : 1
                                     |Root Access : Yes
                                     |Quick Backup : Yes
-                                    |Server Connection Speed : 100 megabit/second
-                                    |Managed Service Inclusive : No
+                                    |Connection Speed : 100 mb/s
+                                    |Managed Service : No
                                     ";
                                 $total=100;
                                 break;
@@ -89,8 +89,8 @@ if (isset($_POST["back"])) {
                                     |IPv4 Addresses : 1
                                     |Root Access : Yes
                                     |Quick Backup : Yes
-                                    |Server Connection Speed : 100 megabit/second
-                                    |Managed Service Inclusive : No
+                                    |Connection Speed : 100 mb/s
+                                    |Managed Service : No
                                     ";
                                 $total=200;
                                 break;
@@ -104,8 +104,8 @@ if (isset($_POST["back"])) {
                                     |IPv4 Addresses : 1
                                     |Root Access : Yes
                                     |Quick Backup : Yes
-                                    |Server Connection Speed : 100 megabit/second
-                                    |Managed Service Inclusive : No
+                                    |Connection Speed : 100 mb/s
+                                    |Managed Service : No
                                     ";
                                 $total=300;
                                 break;
@@ -119,8 +119,8 @@ if (isset($_POST["back"])) {
                                     |IPv4 Addresses : 2
                                     |Root Access : Yes
                                     |Quick Backup : Yes
-                                    |Server Connection Speed : 100 megabit/second
-                                    |Managed Service Inclusive : No
+                                    |Connection Speed : 100 mb/s
+                                    |Managed Service : No
                                     ";
                                 $total=300;
                                 break;
@@ -134,8 +134,8 @@ if (isset($_POST["back"])) {
                                     |IPv4 Addresses : 2
                                     |Root Access : Yes
                                     |Quick Backup : Yes
-                                    |Server Connection Speed : 100 megabit/second
-                                    |Managed Service Inclusive : No
+                                    |Connection Speed : 100 mb/s
+                                    |Managed Service : No
                                     ";
                                 $total=300;
                                 break;
@@ -234,7 +234,7 @@ if (isset($_POST["back"])) {
 }
 ?>
 
-<div id="content" style="alignment-adjust: central; padding-bottom:5%">
+<div id="content" style="alignment-adjust: central; padding-bottom:5%;left:10%;">
     <form  name="form" method="post" action="index.php?page=5">   
         <div style="float: left;text-align: left; width: 5%">&nbsp;</div>
         <div></div> 
@@ -253,8 +253,8 @@ if (isset($_POST["back"])) {
         <li class="even"><span>IPv4 Addresses</span></li>
         <li class="odd"><span>Root Access</span></li>
         <li class="even"><span>Quick Backup</span></li>
-        <li class="odd"><span>Server Connection Speed</span></li>        
-        <li class="even"><span>Managed Service Inclusive</span></li>
+        <li class="odd"><span>Connection Speed</span></li>        
+        <li class="even"><span>Managed Service</span></li>
       </ul>
     <?php  if(!isset($_SESSION['planchoice'])||( isset($_SESSION['planchoice'])&& $_SESSION['planchoice']=='1')){?>
     <ul class="pricing_column gradient_yellow">
@@ -268,7 +268,7 @@ if (isset($_POST["back"])) {
         <li class="even"><span>1</span></li>
         <li class="odd"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
-        <li class="odd"><span>100 megabit/second</span></li>
+        <li class="odd"><span>100 mb/s</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
         <?php if ( !isset($_SESSION['planchoice'])){ ?>
         <li class="odd"><input type="radio" name="vpsradio" value="1" onclick="this.form.submit();" />Choose</li>
@@ -288,7 +288,7 @@ if (isset($_POST["back"])) {
         <li class="even">1</li>
         <li class="odd"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
-        <li class="odd">100 megabit/second</li>
+        <li class="odd">100 mb/s</li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
         <?php if ( !isset($_SESSION['planchoice'])){ ?>
         <li class="odd"><input type="radio" name="vpsradio" value="2" onclick="this.form.submit();" />Choose</li>
@@ -308,7 +308,7 @@ if (isset($_POST["back"])) {
         <li class="even"><span>1</span></li>
         <li class="odd"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
-        <li class="odd"><span>100 megabit/second</span></li>
+        <li class="odd"><span>100 mb/s</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
         <?php if ( !isset($_SESSION['planchoice'])){ ?>
         <li class="odd"><input type="radio" name="vpsradio" value="3" onclick="this.form.submit();" />Choose</li>
@@ -328,7 +328,7 @@ if (isset($_POST["back"])) {
         <li class="even"><span>2</span></li>
         <li class="odd"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
-        <li class="odd"><span>100 megabit/second</span></li>
+        <li class="odd"><span>100 mb/s</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
         <?php if ( !isset($_SESSION['planchoice'])){ ?>
         <li class="odd"><input type="radio" name="vpsradio" value="4" onclick="this.form.submit();" />Choose</li>
@@ -348,7 +348,7 @@ if (isset($_POST["back"])) {
         <li class="even"><span>2</span></li>
         <li class="odd"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
         <li class="even"><span class="pricing_yes" id="checkmark">&#10004;</span></li>
-        <li class="odd"><span>100 megabit/second</span></li>
+        <li class="odd"><span>100 mb/s</span></li>
         <li class="even"><span class="pricing_no" id="crossmark">&#10008;</span></li>
         <?php if ( !isset($_SESSION['planchoice'])){ ?>
          <li class="odd"><input type="radio" name="vpsradio" value="5" onclick="this.form.submit();" />Choose</li>
@@ -383,10 +383,10 @@ if (isset($_POST["back"])) {
                 </table>
                 <div id="buttons" >
                     <div id="register-domain" class="button">
-                        <input  type="submit" name="confirm" value="Confirm" class="button" style="background-color: #60c8d8 "/>
+                        <input  type="submit" name="confirm" value="Confirm" class="btnclass" style="background-color: #60c8d8 "/>
                     </div>
                      <div id="register-domain" class="button">
-                        <input  type="submit" name="back" value="Back" class="btnclass" style="background-color: #60c8d8 "/>
+                        <input  type="submit" name="back" value="Change Plan" class="btnclass" style="background-color: #60c8d8 "/>
                      </div>
                 </div>
             </div>

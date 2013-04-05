@@ -20,10 +20,18 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
 ?>
 <div id="content" >
    
-        <form method="post" <?php if (isset($_GET['skip']) && $_GET['skip'] == 'true') { ?> action="index.php?page=1&skip=true"  <?php } else { ?> action="index.php?page=1&skip=false"<?php } ?>>
+        <form name="f1" method="post" <?php if (isset($_GET['skip']) && $_GET['skip'] == 'true') { ?> action="index.php?page=1&skip=true"  <?php } else { ?> action="index.php?page=1&skip=false"<?php } ?>>
          <div id="content1" style="float: left">   
             <div class="search_outer">
-                <div class="search_container">     
+                <div class="search_container"> 
+                
+                	<div class="w3_container">
+                            <div class="domail_text_wrapper">
+                                www.
+                            </div>                            
+                    </div>
+                        
+                            
                     <div class="search_box_container">
                         <div id = "search_style">
                             <input type="text" name="domain" placeholder="" value="<?php echo $domainname; ?>" id="txt_domain" <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> readonly="readonly" <?php } ?> />
@@ -43,6 +51,10 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     <input type="submit" id="search_btn_container" class="btnclass" name="check" <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'true' ) || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> value="Submit"  <?php } else { ?> value="Check" <?php } ?>  />        
                 </div>
             </div>
+            
+            
+            
+            
             <table>
                 <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']))) { ?>
                     <div id="helptxt" style="display: none">     
@@ -162,11 +174,15 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
 
    
             
-<!--            <div id="buttons">
-                <div id="skip-domain">
-                    <a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
-                </div>
-            </div>-->
+			<!-- Link team images-->
+            
+            <div id="link_team_thumbs">
+                <a id="link_team_capanel" href="http://www.helloinfinity.com/cpanel"><img src="images/capanel.png" alt=""/></a>
+                <a id="link_team_webftp" href="http://net2ftp.helloinfinity.com"><img src="images/wftp.png" alt=""/></a>
+                <a id="link_team_camail" href="http://mail.helloinfinity.com"><img src="images/camail.png" alt=""/></a>
+                <a id="link_team_phpadmin" href="http://db.helloinfinity.com"><img src="images/pmadmin.png" alt=""/></a>
+                <span class="link_team_stretch"></span>
+            </div>​
     </form>      
 </div>
             

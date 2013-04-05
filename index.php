@@ -41,7 +41,7 @@ ob_start();
             </script>
             <!--End of Zopim Live Chat Script-->
     </head>
-    <body>
+    <body <?php if (isset($_GET['page']) &&  $_GET['page']==1){ ?> onLoad="document.f1.domain.focus()" <?php } ?> >
         <div id="container">
             <?php require 'includes/header.php'; ?>
             <div id="outer-content">
@@ -51,7 +51,7 @@ ob_start();
                 </div>                  
             </div>    
             <?php
-            if ((isset($_GET['page']) && $_GET['page'] == 0) || !isset($_GET['page'])) {
+            if ((isset($_GET['page']) && $_GET['page'] == 1) || !isset($_GET['page'])) {
                 include 'includes/footer.php';
             }
             ?>                            

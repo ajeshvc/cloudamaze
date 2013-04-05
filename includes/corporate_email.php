@@ -82,7 +82,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
 <div class="form_outer">
     <div class="banner_outer">
         <img src="images/queryform/corp-email.png" class="banner_img"/>
-        <div class="data_text">
+        <div class="data_text" style="margin-top: 4%;">
        CloudAmaze’s  Corporate email service is one of best acclaimed service. Real time delivery: It delivers emails in real-time, i.e., you click send, snap! Its in your recipient’s mailbox. You can access your email on Android, Blackberry, Ios, Windows phones, PC, Mac, Bada, Symbian, and on all Unix and Linux based machines. CloudAmaze’s Corporate email has a never down policy with 99.99% uptime. You won’t notice any down time. You will be assisted round the clock, out team is up 24x7 to provide you help.  Drop in a request so that we can contact you back. Please make a short description of what you would like to implement.
         </div>
     </div>
@@ -133,7 +133,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
                     <span class="small">Brief description of requirement</span>
                     </label>
                     <textarea name="des" id="des"><?php echo $des ?></textarea> 
-                    <?php echo recaptcha_get_html($publickey); ?>
+                    <div class="captcha_div"><?php echo recaptcha_get_html($publickey); ?></div>
                     
                 </div>
                 <div class="btn_wrapper">
@@ -144,13 +144,14 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
             
             </form>
             <?php }  else { ?>
-            <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> Cloudamaze sales team will contact you shortly. <br/>Thanks for contacting cloudamaze.
-
-            <br/>You can call +91 890 750 9611 for any inquires if needed.
-            <div class="btn_wrapper">
-                	<a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
-                </div>
-
+            <div id="confirm_page">
+                    <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> We will contact you.
+                    <br/>You can call +91 890 750 9611 for any inquires if needed.
+                    <div class="btn_wrapper_cnfrm" id="confirm_page_btn">
+                            <a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
+                    </div>
+            	</div>
+				</br>
          <?php   } ?>
 		</div>    
     </div>

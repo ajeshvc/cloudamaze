@@ -4,7 +4,7 @@
     font-weight: normal;
     color: rgb(49, 49, 49);
 	position:relative;
-	padding-bottom:5%;
+	width:110%;
 }
 .pricing_column {
     height: 100%;
@@ -42,8 +42,7 @@ ul {
 
 
 .pricing_table li.pricing_header1 {
-    height: auto;
-	min-height: 50px;
+    min-height: 50px;
     font-size:16px;  
 	font-family:'trebuchet ms';
 	font-weight: normal;
@@ -65,7 +64,7 @@ ul {
 }
 .pricing_table li.pricing_header2 {
     height: 60px;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: bold;
     line-height: 50px;
     border-bottom: 1px solid rgb(204, 204, 204);
@@ -129,8 +128,7 @@ font-family:"Trebuchet MS", sans-serif;
 p, h1, form, button{border:0; margin:0; padding:0;}
 .spacer{clear:both; height:1px;}
 .form_outer{
-	width:70%;
-	margin-left:15%;
+	width:100%;
 }
 .banner_outer{
 	width:100%;
@@ -166,12 +164,16 @@ p, h1, form, button{border:0; margin:0; padding:0;}
 	-webkit-border-radius:8px;		
 }
 
+#confirm_page{
+	text-align:center;		
+}
+
 
 /* ----------- My Form ----------- */
 .myform{
 	margin:0 auto;
 	width:92%;
-	padding:4%;
+	padding:4% 4% 2% 4%;
 }
 
 /* ----------- stylized ----------- */
@@ -262,10 +264,18 @@ p, h1, form, button{border:0; margin:0; padding:0;}
 	top:1px;
 }
 .btn_wrapper{
-	text-align: center;	
+	text-align: center;
+	margin-top:100%;
+	width:auto;
+	height:auto;	
 }
 
-
+.btn_wrapper_cnfrm{
+	text-align: center;
+	margin-top:1%;
+	width:auto;
+	height:auto;	
+}
 
 
 /*new styles*/
@@ -286,6 +296,7 @@ p, h1, form, button{border:0; margin:0; padding:0;}
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	border:1px solid #9cc33c;
+	margin-right:1px;
 }
 
 #left_container{
@@ -341,5 +352,6 @@ h4{
 }
 
 .table_container{
-	margin:5%;	
+	margin:5%;
+        margin-left: 18%;
 }

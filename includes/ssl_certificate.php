@@ -12,6 +12,12 @@
     if (isset($_POST['sslradio']) && $_POST['sslradio'] != "" ) {
     $_SESSION['choice']=$_POST['sslradio'];    
     }
+    
+    if (isset($_POST["back"])) {
+    if(isset($_SESSION['choice'])){
+        unset($_SESSION['choice']); 
+    }
+}
     if(isset($_POST['submit']) && $_POST['submit']=='Submit'){
    
     $flag=1;
@@ -56,40 +62,40 @@
        //collect data 
        switch ($_SESSION['choice']) {
                             case 1:
-                                $ssldetails = "|Plan Name 	: SSL 123 Certificate
-                                               |1 Year 		: 1,250
-                                               |2 Year 		: 2,290
-                                               |1 Year Renewal  : 1,250
-                                               |2 Year Renewal	: 2,290
-                                               |1 Year Add License : 885
-                                               |2 Year Add License : 1,510";
+                                $ssldetails = "|Plan Name 	: SSL 123
+                                               |1 Year 		: 1,500
+                                               |2 Year 		: 2,750
+                                               |1 Year Renewal  : 1,500
+                                               |2 Year Renewal	: 2,750
+                                               |1 Year Add License : 1050
+                                               |2 Year Add License : 1,800";
                                 break;
                             case 2: 
-                                 $ssldetails = "|Plan Name 	: Web Server Certificate
-                                                |1 Year 		: 4,110
-                                                |2 Year 		: 7,230
-                                                |1 Year Renewal  : 3,850
-                                                |2 Year Renewal	: 6,710
-                                                |1 Year Add License : 2,550
-                                                |2 Year Add License : 4,630";
+                                 $ssldetails = "|Plan Name 	: Web Server
+                                                |1 Year 		: 4,925
+                                                |2 Year 		: 8,675
+                                                |1 Year Renewal  : 4,625
+                                                |2 Year Renewal	: 8,050
+                                                |1 Year Add License : 3,050
+                                                |2 Year Add License : 5,555";
                                 break;
                             case 3:
                                 $ssldetails="|Plan Name 	: SGC SuperCert
-                                             |1 Year 		: 9,830
-                                             |2 Year 		: 18,150
-                                             |1 Year Renewal  : 7,750
-                                             |2 Year Renewal	: 15,550
-                                             |1 Year Add License : 6,190
-                                             |2 Year Add License : 11,910";
+                                             |1 Year 		: 11,800
+                                             |2 Year 		: 21,750
+                                             |1 Year Renewal  : 9,300
+                                             |2 Year Renewal	: 18,650
+                                             |1 Year Add License : 7,425
+                                             |2 Year Add License : 14,300";
                                 break;
                             case 4:
-                                $ssldetails="|Plan Name 	: Web Server Wild Card Certificate
-                                                |1 Year 		: 18,150
-                                                |2 Year 		: 28,550
-                                                |1 Year Renewal  : 18,150
-                                                |2 Year Renewal	: 28,550
-                                                |1 Year Add License : 11,910
-                                                |2 Year Add License : 20,750";
+                                $ssldetails="|Plan Name 	: Web Server Wild Card
+                                                |1 Year 		: 21,700
+                                                |2 Year 		: 34,250
+                                                |1 Year Renewal  : 21,700
+                                                |2 Year Renewal	: 34,250
+                                                |1 Year Add License : 14,300
+                                                |2 Year Add License : 25,000";
                                 break;
                             
        }
@@ -131,8 +137,8 @@
 <div class="form_outer">
     <div class="banner_outer">
         <img src="images/queryform/ssl_1.png" class="banner_img"/>
-        <div class="data_text">
-        SSL certificates are used to prove that website/Network is genuine. CloudAmaze offers best in class and higly secure SSL certificates from Thawte. Thwate certificates are well known and trusted around world, used by banks, corporate, individuals and more. Please drop in a request if you are planning to buy an SSL certificate for your website/VPN network. Our team contact you.
+        <div class="data_text" style="margin-top: 4%;">
+       SSL certificates are used to prove that website/Network is genuine. CloudAmaze offers best in class and higly secure SSL certificates from Thawte. Thwate certificates are well known and trusted around world, used by banks, corporate, individuals and more. Please drop in a request if you are planning to buy an SSL certificate for your website/VPN network. Our team contact you.
         </div>
     </div>
 <?php if (!isset($_POST['sslradio']) && $invoice=="" ) { ?>
@@ -160,16 +166,16 @@
             </div>
             <div class="single_section_container">
                 <div class="data_text">
-                    &#9632; and many more websites!
+                    &#9632; Many more Websites!
                 </div>
             </div>        	
         </div>
        
         <div class="section_container" id="left_container">
             <div class="single_section_container">
-                
+                <img src="images/queryform/ssl_6.png" class="img_icon_small"/>
                 <div class="data_text">
-                    <img src="images/queryform/ssl_6.png" class="img_icon_small"/> thawte - Acclaimed and Trusted brand
+                     Thawte - Acclaimed and Trusted brand
                 </div>
             </div>
             <div class="single_section_container">
@@ -220,47 +226,47 @@
         </ul>
 
         <ul class="pricing_column gradient_yellow">
-            <li class="pricing_header1">SSL 123 Certificate</li>
-            <li class="odd"><span>&#8377; 1,250</span></li>
-            <li class="even"><span>&#8377; 2,290</span></li>
-            <li class="odd"><span>&#8377; 1,250</span></li>
-            <li class="even"><span>&#8377; 2,290</span></li>
-            <li class="odd"><span>&#8377; 885</span></li>
-            <li class="even"><span>&#8377; 1,510</span></li>
+            <li class="pricing_header1">SSL 123</li>
+            <li class="odd"><span>&#8377; 1,500</span></li>
+            <li class="even"><span>&#8377; 2,750</span></li>
+            <li class="odd"><span>&#8377; 1,500</span></li>
+            <li class="even"><span>&#8377; 2,750</span></li>
+            <li class="odd"><span>&#8377; 1050</span></li>
+            <li class="even"><span>&#8377; 1,800</span></li>
             <li class="odd"><input type="radio" name="sslradio" value="1" onclick="this.form.submit();" />Choose</li>
         </ul>
 
         <ul class="pricing_column gradient_yellow">
-            <li class="pricing_header1">Web Server Certificate</li>
-            <li class="odd"><span>&#8377; 4,110</span></li>
-            <li class="even"><span>&#8377; 7,230</span></li>
-            <li class="odd"><span>&#8377; 3,850</span></li>
-            <li class="even"><span>&#8377; 6,710</span></li>
-            <li class="odd"><span>&#8377; 2,550</span></li>
-            <li class="even"><span>&#8377; 4,630</span></li>
+            <li class="pricing_header1">Web Server</li>
+            <li class="odd"><span>&#8377; 4,925</span></li>
+            <li class="even"><span>&#8377; 8,675</span></li>
+            <li class="odd"><span>&#8377; 4,625</span></li>
+            <li class="even"><span>&#8377; 8,050</span></li>
+            <li class="odd"><span>&#8377; 3,050</span></li>
+            <li class="even"><span>&#8377; 5,555</span></li>
             <li class="odd"><input type="radio" name="sslradio" value="2" onclick="this.form.submit();" />Choose</li>
        
         </ul>
 
         <ul class="pricing_column gradient_yellow">
             <li class="pricing_header1">SGC SuperCert</li>
-            <li class="odd"><span>&#8377; 9,830</span></li>
-            <li class="even"><span>&#8377; 18,150</span></li>
-            <li class="odd"><span>&#8377; 7,750</span></li>
-            <li class="even"><span>&#8377; 15,550</span></li>
-            <li class="odd"><span>&#8377; 6,190</span></li>
-            <li class="even"><span>&#8377; 11,910</span></li>
+            <li class="odd"><span>&#8377; 11,800</span></li>
+            <li class="even"><span>&#8377; 21,750</span></li>
+            <li class="odd"><span>&#8377; 9,300</span></li>
+            <li class="even"><span>&#8377; 18,650</span></li>
+            <li class="odd"><span>&#8377; 7,425</span></li>
+            <li class="even"><span>&#8377; 14,300</span></li>
             <li class="odd"><input type="radio" name="sslradio" value="3" onclick="this.form.submit();" />Choose</li>
         </ul>
 
         <ul class="pricing_column gradient_yellow">
-            <li class="pricing_header1">Web Server Wild Card Certificate</li>
-            <li class="odd"><span>&#8377; 18,150</span></li>
-            <li class="even"><span>&#8377; 28,550</span></li>
-            <li class="odd"><span>&#8377; 18,150</span></li>
-            <li class="even"><span>&#8377; 28,550</span></li>
-            <li class="odd"><span>&#8377; 11,910</span></li>
-            <li class="even"><span>&#8377; 20,750</span></li>
+            <li class="pricing_header1">Web Server Wild Card</li>
+            <li class="odd"><span>&#8377; 21,700</span></li>
+            <li class="even"><span>&#8377; 34,250</span></li>
+            <li class="odd"><span>&#8377; 21,700</span></li>
+            <li class="even"><span>&#8377; 34,250</span></li>
+            <li class="odd"><span>&#8377; 14,300</span></li>
+            <li class="even"><span>&#8377; 25,000</span></li>
              <li class="odd"><input type="radio" name="sslradio" value="4" onclick="this.form.submit();" />Choose</li>
         </ul>
 
@@ -284,6 +290,9 @@
     	<div id="stylized" class="myform">
            
             <form id="form" name="form" method="post" action="index.php?page=10">
+                <div id="register-domain" class="button">
+                        <input  type="submit" name="back" value="Change Plan" class="btnclass" style="background-color: #60c8d8;width: 100%; "/>
+                     </div>
                 <h1>Query From</h1>
                 <p>SSL Certificate</p>
                 
@@ -327,8 +336,7 @@
                     <span class="small">Brief description of requirement</span>
                     </label>
                     <textarea name="des" id="des"><?php echo $des ?></textarea> 
-                    <?php echo recaptcha_get_html($publickey); ?>
-                    
+                    <div class="captcha_div"><?php echo recaptcha_get_html($publickey); ?></div>
                 </div>
                 <div class="btn_wrapper">
                 	<button type="reset">Reset</button>
@@ -346,18 +354,15 @@
                 
                 
                 ?>
-      <div class="form_outer">
-          <div class="form_content">
-              <div id="stylized" class="myform">
-            <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> Cloudamaze sales team will contact you shortly. <br/>Thanks for contacting cloudamaze.
-
-            <br/>You can call +91 890 750 9611 for any inquires if needed.
-            <div class="btn_wrapper">
-                	<a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
-                </div>
-              </div>
-              </div>
-      </div>
+               	<div id="confirm_page">
+                    <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> We will contact you.
+                    <br/>You can call +91 890 750 9611 for any inquires if needed.
+                    <div class="btn_wrapper_cnfrm" id="confirm_page_btn">
+                            <a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
+                    </div>
+            	</div>
+                </br>
+              
          <?php   } ?>
 
  </form>

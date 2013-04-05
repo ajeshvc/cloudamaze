@@ -342,7 +342,7 @@ while ($row = mysql_fetch_array($result)) {
 <div class="hosting_content_outer">
         <div class="hosting_table_div">                
            <div class="hosting_row_div">
-                <div class="hosting_col_div" id="header1">
+                <div class="first_hosting_col_div" id="first_header1">
                  	Plan Name 
                 </div>
 <?php foreach ($hostingprpname as $hostprp) { ?>
@@ -360,7 +360,7 @@ while ($row = mysql_fetch_array($result)) {
             
                     
                 <div class="hosting_row_div">      
-                <div class="hosting_col_div" <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd"<?php } ?> >
+                <div class="first_hosting_col_div" <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd"<?php } ?> >
                  	<span id="header2">
                             <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])   ) { ?>  <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
                             if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
@@ -448,7 +448,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                      
                     </div>
                     <div id="register-domain" class="button">
-                        <input  type="submit" name="back" value="All Plans" class="btnclass" style="background-color: #60c8d8 "/>
+                        <input  type="submit" name="back" value="Change Plan" class="btnclass" style="background-color: #60c8d8 "/>
                      </div>
                 </div>
             </div>

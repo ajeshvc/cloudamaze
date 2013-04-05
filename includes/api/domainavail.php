@@ -44,7 +44,7 @@ $domainsuggestionsarray[]="";
 $flag=0;
 $status="";
 $exist=false;
-$limit=5;
+$limit=7;
 if (isset($_GET['skip']) && $_GET['skip']=='false' ){
 if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" && isset($_POST['tld']) && $_POST['tld'] != "") {
 
@@ -84,18 +84,34 @@ if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" 
     // Domain Suggestions
     $stack=array("");
     $i = 0;
+    
     foreach ($datajson[$domainname] as $sugdomain => $sugtld) {
         $stack[$i] = $sugdomain;
         $i++;
     }
+
    // echo '<br/>Sugg names : <br/>';
     $i = 0;
     foreach ($stack as $value) {
+        if (!empty($datajson[$domainname][$value])){
         foreach ($datajson[$domainname][$value] as $sugdomain => $sugtld) {
             if ($datajson[$domainname][$value][$sugdomain] == "available") {
                // echo $value . '.' . $sugdomain;
-                $domainsuggestionsarray[$i]=$value . '.' . $sugdomain;
+                
+                // check one more times is sugested domain is already exist or not 
+                $url = 'https://test.httpapi.com/api/domains/available.json?auth-userid=' . $api_user_id . '&api-key=' . $api_key . '&domain-name=' . $value . '&tlds=' .$sugdomain. '&suggest-alternative=false';
+                $data = "";
+                $data = helloInfinityCallAPI('GET', $url, $data);
+                $datasugjson = json_decode($data, TRUE);
+               // print_r($datasugjson);
+                $fulldomainname = $value . "." . $sugdomain;
+               // echo $fulldomainname . $datasugjson[$fulldomainname]["status"];
+               if ($datasugjson[$fulldomainname]["status"] == "available") {
+                    $domainsuggestionsarray[$i]=$value . '.' . $sugdomain;
                 $i++;
+               }
+                
+                
                 if ($i == $limit) {
 
                     break;
@@ -107,6 +123,7 @@ if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" 
 
             break;
         }
+    }
     }
     // domain suggestions end
 }

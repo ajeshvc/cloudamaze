@@ -82,7 +82,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
 <div class="form_outer">
     <div class="banner_outer">
         <img src="images/queryform/server-mgmt.png" class="banner_img"/>
-        <div class="data_text">
+        <div class="data_text" style="margin-top: 4%;">
         Our Technical team are experts in GNU/Linux server configuration, maintenance and management. We can set up a sever for you and transfer with full access to you or you can allow us to manage on your behalf. Payments are flexible, Monthly/Yearly payment modes are available. Drop in a request so that we can contact you back. Please make a short description of what you would like to implement.
         </div>
     </div>
@@ -133,7 +133,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
                     <span class="small">Brief description of requirement</span>
                     </label>
                     <textarea name="des" id="des"><?php echo $des ?></textarea> 
-                    <?php echo recaptcha_get_html($publickey); ?>
+                    <div class="captcha_div"><?php echo recaptcha_get_html($publickey); ?></div>
                     
                 </div>
                 <div class="btn_wrapper">
@@ -144,13 +144,14 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
             
             </form>
             <?php }  else { ?>
-            Your request has been received (Request ID :<?php echo $invoice; ?> ).<br/> We will be contacting you shortly. <br/>Thanks for contacting cloudamaze.
-
-            <br/>You can call +91 890 750 9611 for any inquires if needed.
-            <div class="btn_wrapper">
-                	<a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
-                </div>
-
+            <div id="confirm_page">
+                    <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> We will contact you.
+                    <br/>You can call +91 890 750 9611 for any inquires if needed.
+                    <div class="btn_wrapper_cnfrm" id="confirm_page_btn">
+                            <a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
+                    </div>
+            	</div>
+                </br>
          <?php   } ?>
 		</div>    
     </div>
