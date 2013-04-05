@@ -23,7 +23,7 @@
      <li><a href="http://blog.cloudamaze.com/" target="_blank">Blog</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==6){ ?>   class="current" <?php  } ?> ><a href="index.php?page=6">Testimonials</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==14){ ?>   class="current" <?php  } ?>><a href="index.php?page=14">Downloads</a></li>
-     <li><a href="http://www.cloudamaze.com/support" target="_blank">24/7 Support</a></li>
+     <li><a href="index.php?page=15" >24/7 Support</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">Contact Us</a></li>
     </ul>
 </div>
@@ -140,6 +140,9 @@
                             break;
                         case 14: 
                              echo 'Downloads';
+                            break;
+                        case 15: 
+                             echo '24/7 Support';
                             break;
                         default : echo 'Home';
                             break;

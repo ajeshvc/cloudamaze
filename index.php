@@ -12,7 +12,9 @@ ob_start();
     <head>
         <link rel="icon"  href="images/ca.ico"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>Cloudamaze.com | get amazed!</title>
+            <meta name="description" content="india's first 99.95% uptime cloud hosting service. foss cloud hosting service with isp config">
+            <meta name="keywords" content="cloud hosting india,cloud hosting service,web mail,email hosting,corporate email,cloud mail server,cloud server ,indian host">
+                <title>Cloudamaze | High uptime cheap cloud hosting in india</title>
             <link rel="stylesheet" href="css/style.css" type="text/css"/>
             <script type="text/javascript" src="js/jquery.min.js"></script>
              <script type="text/javascript" src="js/toggletld.js"></script>

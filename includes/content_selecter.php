@@ -70,6 +70,8 @@ include 'connectionclose.php';
 break;
 case 14: include 'downloads.php';
 break;
+case 15: include 'support.php';
+break;
 default:        include 'home.php';        
     
                  break;

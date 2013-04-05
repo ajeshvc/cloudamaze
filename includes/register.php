@@ -65,18 +65,17 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                                Most Popular Domain Extensions:
                                <br/>
                                 <br/>
-                               <?php    $tldmostarray=array('net','in','biz','org','us','eu','co.uk','info','mobi'); ?>
-                              <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)) { ?> checked="checked" <?php } ?> />com 
-                              <?php  $i=2;         
+                               <?php    $tldmostarray=array('net','in','biz','org','us','eu','co.uk','co.in','info','mobi'); ?>
+                                <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> />com 
+                              <?php  $i=1;         
                             foreach ($tldmostarray as $value) {
-                                   if($i%5==0){?><?php   } ?>
+                                   if($i%7==0){?><br/><?php   } ?>
                                  <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> /><?php echo $value; ?>
-                                 <?php  if($i%5==0){   $i=0; } 
+                                 <?php  if($i%7==0){   $i=0; } 
                                     $i++; } ?>
-                                <input type="checkbox" name="tld[]" value="net" <?php if (in_array("net", $tldarray)) { ?> checked="checked" <?php } ?> />net &nbsp;&nbsp;
                                 <div class="arrow_wrapper">
                                     <a style="text-decoration: none;" href="javascript:moredomainToggle('moretag','domaintxt','content1');" 
-                                       id="moretag"  class="link_more">More >></a>
+                                       id="moretag"  class="link_more">More>></a>
                                 </div>
                             </div>
                         </div>
@@ -135,12 +134,12 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
         <div class="hidden_container">
            
 <!--            <div class="trans_bg">-->
-                <div class="trans_content_outer">
+<div class="trans_content_outer">
                     <div class="trans_content">
                         <div class="cust_table_div">
                             Other Domain Extensions: 
                             <?php 
-                            $tldmorearray=array('asia','name','tel','co.in','tv','me','ws','bz',
+                            $tldmorearray=array('asia','name','tel','tv','me','ws','bz',
                                          'cc','org.uk','me.uk','net.in','org.in','ind.in','firm.in',
                                          'gen.in','mn','us.com','eu.com','uk.com','uk.net','gb.com',
                                          'gb.net','de.com','cn.com','qc.com','kr.com','ae.org','br.com',
@@ -159,7 +158,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                            
                           </div> 
                         <div class="trans_button_container">
-                            <div class="arrow_wrapper">
+                            <div class="arrow_wrapper" style="padding: 5%">
                                 <a style="text-decoration: none;" href="javascript:moredomainToggle('moretag','domaintxt','content1');" 
                                    id="moretag"  class="btnclass">OK</a>
                             </div>
@@ -172,18 +171,18 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
     </div>
     <!--end domain more div-->
 
-   
+   </form>  
             
 			<!-- Link team images-->
             
             <div id="link_team_thumbs">
-                <a id="link_team_capanel" href="http://www.helloinfinity.com/cpanel"><img src="images/capanel.png" alt=""/></a>
-                <a id="link_team_webftp" href="http://net2ftp.helloinfinity.com"><img src="images/wftp.png" alt=""/></a>
-                <a id="link_team_camail" href="http://mail.helloinfinity.com"><img src="images/camail.png" alt=""/></a>
-                <a id="link_team_phpadmin" href="http://db.helloinfinity.com"><img src="images/pmadmin.png" alt=""/></a>
+                <a id="link_team_capanel" href="http://capanel.cloudamaze.com"><img src="images/capanel.png" alt=""/></a>
+                <a id="link_team_webftp" href="http://webftp.cloudamaze.com"><img src="images/wftp.png" alt=""/></a>
+                <a id="link_team_camail" href="http://mail.cloudamaze.com"><img src="images/camail.png" alt=""/></a>
+                <a id="link_team_phpadmin" href="http://db.cloudamaze.com"><img src="images/pmadmin.png" alt=""/></a>
                 <span class="link_team_stretch"></span>
-            </div>​
-    </form>      
+            </div>
+        
 </div>
             
             
