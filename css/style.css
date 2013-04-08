@@ -25,14 +25,12 @@
 blockquote{		
 	
 	font-size:16px;
-
 	font-family:'Raleway', sans-serif;
-	
 }
 
 #link_team_thumbs { 
   
-	width: 100%;
+        width: 100%;
 	margin-top:34%;
 	margin-left: auto; 
 	margin-right: auto;	
@@ -41,7 +39,6 @@ blockquote{
 	text-justify: distribute-all-lines;	
 	position:absolute;
 	z-index:-8;
-
 }
 
 #link_team_thumbs a {
@@ -289,6 +286,7 @@ img.adjusted{
 body{
 
     font-family: 'Raleway', sans-serif;
+
 
 }
 
@@ -682,7 +680,9 @@ body{
 
 	color:#FFF;
 
-	text-shadow: 1px 1px 2px #000000;	
+	text-shadow: 1px 1px 2px #000000;
+
+	color:#FFF;
 
 }
 
@@ -752,11 +752,14 @@ body{
 
   font-weight: normal;
 
+
   font-family: 'Raleway', sans-serif;
 
   font-style: normal;
 
   font-size: 16px;
+
+  font-style: normal;
 
   color: #FFFFFF;
 
@@ -873,6 +876,7 @@ body{
 
   font-family:'Raleway', sans-serif;
 
+
   font-weight: normal;
 
   text-shadow: 0px 0px 0px #FFFFFF;
@@ -972,13 +976,16 @@ body{
 
 	font-family:'Raleway', sans-serif;
 
+
 	font-size:16px;
 
 	padding:10px 24px;
 
 	text-decoration:none;
 
+
 	text-shadow: 1px 1px 2px #000000;
+
 	
 	
 	/*position: relative; 
@@ -1193,7 +1200,9 @@ body{
 		padding-top:6px;	
 		font-size:18px;
 		color:#666;
+
 		font-family:'Raleway', sans-serif;	
+
                 outline-width: 0;
 	}
 	.domail_text_wrapper{
@@ -1202,9 +1211,11 @@ body{
 		padding:15% 0% 0% 18%;	
 		font-size:18px;
 		color:#666;
+
 		font-family:'Raleway', sans-serif;
 		position:relative;
 		float:left;
+
                 
 	}
 	.arrow_wrapper{
@@ -1213,7 +1224,9 @@ body{
 		padding:20% 5%;	
 		font-size:12px;
 		color:#666;
+
 		font-family:'Raleway', sans-serif;
+
 		position:relative;
 		float:left;
 	}
@@ -1293,7 +1306,9 @@ body{
 	.hosting_table_div{
 		width:100%;
 		position:relative;
+
 		font-family: 'Raleway', sans-serif;
+
 		font-size: 13px;
 		font-weight: normal;
 		color: rgb(49, 49, 49);	
@@ -1339,9 +1354,11 @@ body{
 	#header1{
 		min-height:68px;
 		font-size:16px;  
+
 		font-family:'Raleway', sans-serif;
 		font-weight: normal;
 		text-shadow: 1px 1px 2px #000000;
+
 		line-height: 20px;
 		color: rgb(255, 255, 255);    
 		border-radius: 9px 9px 0px 0px;
@@ -1354,9 +1371,11 @@ body{
 	#first_header1{
 		min-height:68px;
 		font-size:16px;  
+
 		font-family:'Raleway', sans-serif;
 		font-weight: normal;
 		text-shadow: 1px 1px 2px #000000;
+
 		line-height: 20px;
 		color: rgb(255, 255, 255);    
 		border-radius: 9px 9px 0px 0px;

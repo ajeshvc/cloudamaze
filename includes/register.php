@@ -39,7 +39,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     </div>
                     <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']) )) { ?>
                         <div class="domain_container">
-                            <div class="domail_text_wrapper">
+                            <div class="domail_text_wrapper" id="selectedtld">
                                 .com
                             </div>
                             <div class="arrow_wrapper">
@@ -66,11 +66,11 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                                <br/>
                                 <br/>
                                <?php    $tldmostarray=array('net','in','biz','org','us','eu','co.uk','co.in','info','mobi'); ?>
-                                <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> />com 
+                                <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" />com 
                               <?php  $i=1;         
                             foreach ($tldmostarray as $value) {
                                    if($i%7==0){?><br/><?php   } ?>
-                                 <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> /><?php echo $value; ?>
+                                 <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" /><?php echo $value; ?>
                                  <?php  if($i%7==0){   $i=0; } 
                                     $i++; } ?>
                                 <div class="arrow_wrapper">
@@ -151,7 +151,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             foreach ($tldmorearray as $value) {
                                    if($i%8==0){?><div class="cust_row_div"><?php  } ?>
                                    <div class="cust_col_div">
-                                       <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> /><?php echo $value; ?>
+                                       <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" /><?php echo $value; ?>
                                  </div>
                                     <?php  if($i%8==0){?></div><?php $i=0; } 
                                     $i++; } ?>

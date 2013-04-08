@@ -34,4 +34,36 @@ function moredomainToggle(moretag,domaintxt,content)
     content.style.visibility = "hidden";  
 //    content.style.height = "1px";
   }
-} 
+}
+
+
+
+function selectCheckBox()
+{
+  var e= document.f1.elements.length;
+  var cnt=0;
+  var selected=0;
+  var value='';
+  for(cnt=0;cnt<e;cnt++)
+  {
+    if(document.f1.elements[cnt].name=="tld[]"   ){
+        if(document.f1.elements[cnt].checked){
+            var selected=selected+1;
+            value=document.f1.elements[cnt].value;
+        }
+    // alert(document.frm.elements[cnt].value)
+    }
+  }
+  if(selected==1){
+      //alert(value);
+      value="."+value;
+  }
+  else if(selected!=0){
+      value="Multiple";
+  }
+  else{
+      value="Select";
+  }
+  
+  document.getElementById("selectedtld").innerHTML = value;  
+}
