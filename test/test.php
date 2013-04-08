@@ -51,8 +51,8 @@ function helloinfinityCallAPI($method, $url, $data = false) {
          $selectedtld="dot".$selectedtld;
 }
    
-    echo $selectedtld;
-    echo $datajson[$selectedtld]["addnewdomain"][1];
+    echo $selectedtld." : ";
+    echo $datajson[$selectedtld]["addnewdomain"][1]." INR";
                                 
    ?>
 <form action="test.php" method="post">
