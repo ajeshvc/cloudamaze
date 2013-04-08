@@ -1,7 +1,14 @@
 <?php
 
-  $split=explode(".", "siddique.org", 2);
-   $selectedtld=$split[1];
+  //$split=explode(".", "siddique.org", 2);
+  // $selectedtld=$split[1];
+  if(isset($_POST['submit'])){
+     $selectedtld=$_POST['tld']; 
+  }
+ else {
+     $split=explode(".", "siddique.org", 2);
+     $selectedtld=$split[1];
+}
   
 function helloinfinityCallAPI($method, $url, $data = false) {
                             $curl = curl_init();
@@ -36,7 +43,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     $data = helloinfinityCallAPI('GET', $url, $data);
     $datajson = json_decode($data, TRUE);
    // print_r($datajson);
-    $selectedtld="us";
+   // $selectedtld="us";
     $domarray=array("org","biz","us","cno");
     if (in_array($selectedtld, $domarray)) {
        $selectedtld="dom".$selectedtld;  
@@ -48,3 +55,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     echo $datajson[$selectedtld]["addnewdomain"][1];
                                 
    ?>
+<form action="test.php" method="post">
+    <input type="text" name="tld"/>
+    <input type="submit" name="submit"/>
+</form>
