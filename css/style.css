@@ -1205,6 +1205,7 @@ body{
 		font-family:"Trebuchet MS", sans-serif;
 		position:relative;
 		float:left;
+                min-width: 50%;
                 
 	}
 	.arrow_wrapper{
