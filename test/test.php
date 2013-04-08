@@ -36,7 +36,13 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     $data = helloinfinityCallAPI('GET', $url, $data);
     $datajson = json_decode($data, TRUE);
    // print_r($datajson);
-    $selectedtld="dot".$selectedtld;
+    $selectedtld="org";
+    if($selectedtld=='org'){
+       $selectedtld="dom".$selectedtld;  
+    }  else {
+         $selectedtld="dot".$selectedtld;
+}
+   
     echo $selectedtld;
     echo $datajson['$selectedtld']["addnewdomain"][1];
                                 
