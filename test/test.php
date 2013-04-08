@@ -31,7 +31,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
 
 
 
-    $url = 'https://test.httpapi.com/api/products/customer-price.json?auth-userid=455193&api-key=mkHR4Hg0VkGtkcccABJ5PV9G6efZoiGd';
+    $url = 'https://test.httpapi.com/api/products/customer-price.json?auth-userid=408467&api-key=8m1GgBU964O70VLpdQkDjMZDYbg9xX32';
     $data = "";
     $data = helloinfinityCallAPI('GET', $url, $data);
     $datajson = json_decode($data, TRUE);
