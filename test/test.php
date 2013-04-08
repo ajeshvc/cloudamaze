@@ -37,6 +37,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     $datajson = json_decode($data, TRUE);
    // print_r($datajson);
     $selectedtld="dot".$selectedtld;
-    echo $datajson[$selectedtld]["addnewdomain"][1];
+    echo $selectedtld;
+    echo $datajson['$selectedtld']["addnewdomain"][1];
                                 
    ?>
