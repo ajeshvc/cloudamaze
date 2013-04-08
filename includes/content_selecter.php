@@ -10,6 +10,7 @@ break;
 case 2: include 'connection.php';
 include 'lib/emailcheck.php';
 require_once('captcha/recaptchalib.php');
+include 'api/helloinfinitycallapi.php';
 include 'hosting.php';
 include 'connectionclose.php';
 break;
