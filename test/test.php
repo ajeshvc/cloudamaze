@@ -36,8 +36,9 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     $data = helloinfinityCallAPI('GET', $url, $data);
     $datajson = json_decode($data, TRUE);
    // print_r($datajson);
-    $selectedtld="name";
-    if($selectedtld=='org'){
+    $selectedtld="us";
+    $domarray=array("org","biz","us","cno");
+    if (in_array($selectedtld, $domarray)) {
        $selectedtld="dom".$selectedtld;  
     }  else {
          $selectedtld="dot".$selectedtld;
