@@ -1,6 +1,6 @@
 <?php
 
-  $split=explode(".", "siddique.co.in", 2);
+  $split=explode(".", "siddique.org", 2);
    $selectedtld=$split[1];
   
 function helloinfinityCallAPI($method, $url, $data = false) {
@@ -36,6 +36,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     $data = helloinfinityCallAPI('GET', $url, $data);
     $datajson = json_decode($data, TRUE);
    // print_r($datajson);
-    echo $datajson["dotbz"]["addnewdomain"][1];
+    $selectedtld="dot".$selectedtld;
+    echo $datajson[$selectedtld]["addnewdomain"][1];
                                 
    ?>
