@@ -1,6 +1,8 @@
 <?php
 include '../includes/lib/resellerclubtld.php';
 $domarray=array("org","biz","us","cno","info");
+$standardcomarray=array("us","eu","de","qc","kr","ae","gr");
+$premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
   //$split=explode(".", "siddique.org", 2);
   // $selectedtld=$split[1];
   if(isset($_POST['tld'])){
@@ -21,7 +23,19 @@ $domarray=array("org","biz","us","cno","info");
      }
      if($count==2){
         $split=explode(".", $selectedtld, 3);
-     $selectedtld="thirdleveldot".$split[2]; 
+        if($split[2]=="com"){
+            
+      if (in_array($split[1], $standardcomarray)) {
+       $selectedtld="centralnicstandard";  
+    }elseif(in_array($split[1], $premiumcomarray)){
+        $selectedtld="centralnicpremium";
+    }
+            
+            
+        }  else {
+             $selectedtld="thirdleveldot".$split[2]; 
+        }
+    
      
      }
      
