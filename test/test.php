@@ -15,7 +15,9 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
      
      if (in_array($selectedtld, $domarray)) {
        $selectedtld="dom".$selectedtld;  
-    }  else {
+    }  elseif($split[1]=="com"){
+        $selectedtld="domcno";
+    }else{
          $selectedtld="dot".$selectedtld;
 }
      
@@ -100,6 +102,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
                                 
    ?>
 <form action="test.php" method="post">
+ <input type="radio" name="tld" value="com"  onclick="this.form.submit()" /><?php echo "com"; ?>
   
    <?php  
                             
