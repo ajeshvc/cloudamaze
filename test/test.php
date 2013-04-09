@@ -56,8 +56,8 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
      
   }
  else {
-     $split=explode(".", "siddique.org", 2);
-     $selectedtld=$split[1];
+     
+     $selectedtld="test.com";
 }
 
 
