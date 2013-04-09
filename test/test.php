@@ -2,7 +2,7 @@
 include '../includes/lib/resellerclubtld.php';
   //$split=explode(".", "siddique.org", 2);
   // $selectedtld=$split[1];
-  if(isset($_POST['submit'])){
+  if(isset($_POST['tld'])){
      $selectedtld=$_POST['tld']; 
   }
  else {
@@ -60,7 +60,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
    <?php  
                             
 foreach ($tldmostarray as $value) { ?>
-<input type="checkbox" name="tld[]" value="<?php echo $value; ?>"  onchange="this.form.submit()" /><?php echo $value; ?>
+<input type="checkbox" name="tld[]" value="<?php echo $value; ?>"  onchange="this.form.submit();" /><?php echo $value; ?>
                                       <br/>  
  <?php } 
  foreach ($tldmorearray as $value) { ?>
