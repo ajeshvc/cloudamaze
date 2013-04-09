@@ -7,7 +7,8 @@
                                          'gb.net','de.com','cn.com','qc.com','kr.com','ae.org','br.com',
                                          'hu.com','jpn.com','no.com','ru.com','sa.com','se.com','se.net',
                                          'uy.com','za.com','co','gr.com','co.nz','net.nz','org.nz','com.co',
-                                         'net.co','nom.co','ca','de','es','com.au','net.au','xxx','ru','com.ru','net.ru',
+                                         'net.co','nom.co','ca','de','es','xxx','ru','com.ru','net.ru',
                                          'org.ru','pro','nl','sx','cn','com.cn','net.cn','org.cn','com.de');
    
-?>
+//'com.au','net.au', in $tldmorearray 1 year not available
+   ?>
