@@ -105,12 +105,12 @@ function helloinfinityCallAPI($method, $url, $data = false) {
                             
 foreach ($tldmostarray as $value) { ?>
 <input type="radio" name="tld" value="<?php echo $value; ?>"  onclick="this.form.submit()" /><?php echo $value; ?>
-                                      <br/>  
- <?php } 
+                                        
+ <?php echo " "; } 
  foreach ($tldmorearray as $value) { ?>
 <input type="radio" name="tld" value="<?php echo $value; ?>"  onclick="this.form.submit()"  /><?php echo $value; ?>
-                                      <br/>  
- <?php } ?>
+                                      
+ <?php echo " "; } ?>
 
     
 </form>
