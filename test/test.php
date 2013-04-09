@@ -91,7 +91,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     $data = "";
     $data = helloinfinityCallAPI('GET', $url, $data);
     $datajson = json_decode($data, TRUE);
-    print_r($datajson);
+    //print_r($datajson);
    // $selectedtld="us";
    
    
