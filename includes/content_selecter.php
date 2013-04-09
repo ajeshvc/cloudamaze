@@ -5,6 +5,7 @@ switch ($page) { case 0: include 'home.php';
 break;
 case 1: include 'api/domainavail.php';
 include 'lib/tld.php';
+include 'lib/resellerclubtld.php';
 include 'register.php';
 break;
 case 2: include 'connection.php';
