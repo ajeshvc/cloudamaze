@@ -65,7 +65,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                                Most Popular Domain Extensions:
                                <br/>
                                 <br/>
-                               <?php    $tldmostarray=array('net','in','biz','org','us','eu','co.uk','co.in','info','mobi'); ?>
+                               <?php  //$tldmostarray is in lib/resellerclubtld.php ?>
                                 <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" />com 
                               <?php  $i=1;         
                             foreach ($tldmostarray as $value) {
@@ -139,14 +139,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                         <div class="cust_table_div">
                             Other Domain Extensions: 
                             <?php 
-                            $tldmorearray=array('asia','name','tel','tv','me','ws','bz',
-                                         'cc','org.uk','me.uk','net.in','org.in','ind.in','firm.in',
-                                         'gen.in','mn','us.com','eu.com','uk.com','uk.net','gb.com',
-                                         'gb.net','de.com','cn.com','qc.com','kr.com','ae.org','br.com',
-                                         'hu.com','jpn.com','no.com','ru.com','sa.com','se.com','se.net',
-                                         'uy.com','za.com','co','gr.com','co.nz','net.nz','org.nz','com.co',
-                                         'net.co','nom.co','ca','de','es','com.au','net.au','xxx','ru','com.ru','net.ru',
-                                         'org.ru','pro','nl','sx','cn','com.cn','net.cn','org.cn','com.de');
+                           //$tldmorearray is in resellerclubtld.php
                             $i=8;         
                             foreach ($tldmorearray as $value) {
                                    if($i%8==0){?><div class="cust_row_div"><?php  } ?>
