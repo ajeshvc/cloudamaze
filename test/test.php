@@ -4,6 +4,16 @@ include '../includes/lib/resellerclubtld.php';
   // $selectedtld=$split[1];
   if(isset($_POST['tld'])){
      $selectedtld=$_POST['tld']; 
+     $count=substr_count($selectedtld, '.');
+     if($count==1){
+     $split=explode(".", $selectedtld, 2);
+     $selectedtld=$split[1];
+     }
+     if($count==2){
+        $split=explode(".", $selectedtld, 3);
+     $selectedtld="thirdleveldot".$split[2]; 
+     
+     }
   }
  else {
      $split=explode(".", "siddique.org", 2);
@@ -44,7 +54,7 @@ function helloinfinityCallAPI($method, $url, $data = false) {
     $datajson = json_decode($data, TRUE);
     print_r($datajson);
    // $selectedtld="us";
-    $domarray=array("org","biz","us","cno");
+    $domarray=array("org","biz","us","cno","info");
     if (in_array($selectedtld, $domarray)) {
        $selectedtld="dom".$selectedtld;  
     }  else {
