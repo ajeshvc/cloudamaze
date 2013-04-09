@@ -32,7 +32,10 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
     }
             
             
-        }  else {
+        }  else if($split[2]=="de" && $split[1]=="com" ){ 
+           $selectedtld="centralniccomde";
+        }
+            else{
              $selectedtld="thirdleveldot".$split[2]; 
         }
     
