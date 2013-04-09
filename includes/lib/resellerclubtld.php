@@ -11,4 +11,5 @@
                                          'org.ru','pro','nl','sx','cn','com.cn','net.cn','org.cn','com.de');
    
 //'com.au','net.au', in $tldmorearray 1 year not available
+   // add .com in $tldmostarray
    ?>

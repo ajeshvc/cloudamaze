@@ -1,7 +1,7 @@
 <?php
 include '../includes/lib/resellerclubtld.php';
 $domarray=array("org","biz","us","cno","info");
-$standardcomarray=array("us","eu","de","qc","kr","ae","gr");
+$standardcomarray=array("us","eu","de","qc","kr","gr");
 $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
   //$split=explode(".", "siddique.org", 2);
   // $selectedtld=$split[1];
@@ -37,6 +37,9 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
            $selectedtld="centralniccncom";
         }     
         }  else if($split[2]=="de" && $split[1]=="com" ){ 
+           $selectedtld="centralniccomde";
+        }
+         else if($split[2]=="org" && $split[1]=="ae" ){ 
            $selectedtld="centralniccomde";
         }
        
