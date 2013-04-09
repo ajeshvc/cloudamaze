@@ -23,7 +23,7 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
      }
      if($count==2){
         $split=explode(".", $selectedtld, 3);
-        if($split[2]=="com"){
+        if($split[2]=="com"||$split[2]=="net"){
             
       if (in_array($split[1], $standardcomarray)) {
        $selectedtld="centralnicstandard";  
