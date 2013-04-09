@@ -40,7 +40,7 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
            $selectedtld="centralniccomde";
         }
          else if($split[2]=="org" && $split[1]=="ae" ){ 
-           $selectedtld="centralniccomde";
+           $selectedtld="centralnicstandard"; 
         }
        
             else{
