@@ -60,11 +60,11 @@ function helloinfinityCallAPI($method, $url, $data = false) {
    <?php  
                             
 foreach ($tldmostarray as $value) { ?>
-<input type="checkbox" name="tld[]" value="<?php echo $value; ?>"  onchange="this.form.submit();" /><?php echo $value; ?>
+<input type="radio" name="tld" value="<?php echo $value; ?>"  onchange="this.form.submit();" /><?php echo $value; ?>
                                       <br/>  
  <?php } 
  foreach ($tldmorearray as $value) { ?>
-<input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" /><?php echo $value; ?>
+<input type="radio" name="tld" value="<?php echo $value; ?>"  onchange="this.form.submit();"  /><?php echo $value; ?>
                                       <br/>  
  <?php } ?>
                                       
