@@ -31,10 +31,13 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
         $selectedtld="centralnicpremium";
     }
             
-            
+        else if($split[1]=="cn" && $split[2]=="com" ){ 
+           $selectedtld="centralniccncom";
+        }     
         }  else if($split[2]=="de" && $split[1]=="com" ){ 
            $selectedtld="centralniccomde";
         }
+       
             else{
              $selectedtld="thirdleveldot".$split[2]; 
         }
