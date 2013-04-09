@@ -4,8 +4,9 @@ $domarray=array("org","biz","us","cno","info");
   //$split=explode(".", "siddique.org", 2);
   // $selectedtld=$split[1];
   if(isset($_POST['tld'])){
-     $selectedtld=$_POST['tld']; 
+     $selectedtld="siddique.".$_POST['tld']; 
      $count=substr_count($selectedtld, '.');
+     echo $count;
      if($count==1){
      $split=explode(".", $selectedtld, 2);
      $selectedtld=$split[1];
