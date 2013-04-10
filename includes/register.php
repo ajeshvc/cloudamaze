@@ -56,7 +56,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
             <?php// if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
                 
     // echo $domainprice." INR only";
-             //   } ?>
+             //   //} ?>
             
             
             <table>
