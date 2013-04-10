@@ -396,7 +396,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                                     $hostingdetails.="|" . $row['name'] . "-" . $row['value'];
                                     if ($row['pr_id'] == '11') {
                                         $peryear = $row['value'] * 12;
-                                        $hostingdetails.="||Total RS :" . $peryear . ".00 INR Only .";
+                                       // $hostingdetails.="||Total RS :" . $peryear . ".00 INR Only .";
                                         $_SESSION['total'] = $peryear;
                                     }
                                 }
