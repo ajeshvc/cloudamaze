@@ -181,19 +181,7 @@ if(isset($_POST['name'])){
                 $hostingdetails = $_POST["hostingdetails"];
                 $currentdate = date("Y/m/d");
                 
-                
-                $domain = $_SESSION['domain'];
-               
-                $hostingdetailstodb = "|" . $name . "|" . $phone . "|" . $_POST["email"] . $hostingdetails.$coupontext;
-                $hostingdetailstodb = str_replace("+", "", $hostingdetailstodb);
-                mysql_query("INSERT INTO hosting_details(date,domain,details) 
-                VALUES('$currentdate','$domain','$hostingdetailstodb') ");
-                 $id=mysql_insert_id();
-                $invoice = "#hi00". $id;
-                
-                $_SESSION['invoice'] = $invoice;
-               
-                //---------------------
+                             //---------------------
                  if (isset($_POST["coupon"])&& $_POST["coupon"]!=""){
                      
                 $couponcode=$_POST["coupon"];
@@ -226,6 +214,22 @@ if(isset($_POST['name'])){
                } 
     }
                 //---------------------
+                
+                if($coupontext==""){
+                    $coupontext="|Total : ".$_SESSION['total'];
+                }
+                $domain = $_SESSION['domain'];
+               
+                $hostingdetailstodb = "|" . $name . "|" . $phone . "|" . $_POST["email"] . $hostingdetails.$coupontext;
+                $hostingdetailstodb = str_replace("+", "", $hostingdetailstodb);
+                mysql_query("INSERT INTO hosting_details(date,domain,details) 
+                VALUES('$currentdate','$domain','$hostingdetailstodb') ");
+                 $id=mysql_insert_id();
+                $invoice = "#hi00". $id;
+                
+                $_SESSION['invoice'] = $invoice;
+               
+   
     
                 $from = $_POST["email"];
 
@@ -233,7 +237,7 @@ if(isset($_POST['name'])){
                 if ($from != "" && $phone != "" && $hostingdetails != "") {
 
 
-                    $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails;
+                    $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails.$coupontext;
                     $subject = $name . "- New Hosting Request";
                     $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
                     $message = str_replace("|", "\n\n", $message);
@@ -247,7 +251,7 @@ if(isset($_POST['name'])){
                             ||  This is a notice that an invoice has been generated on " . $currentdate . "
                             ||<b>Invoice Id </i>" . $invoice . "</i></b>
                             
-                            ||<b>Details of Hosting Package you Purchased for your Domain Name - " . $domain . "</b>|" . $hostingdetails .$coupontext. "</b> 
+                            ||<b>Details of Hosting Package you Purchased for your Domain Name - " . $domain . "</b>|" . $hostingdetails ."|".$coupontext. "</b> 
                             |" . "-----------------------------------------------
                             ||<i>Your account will activated as soon as you complete the payment process.|you can pay your Hosting bill through NEFT.</i>
                             ||<b>Our bank account details are:</b>
