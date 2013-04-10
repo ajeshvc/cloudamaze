@@ -104,7 +104,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             $fulldomainname = $domainname . "." . $arrayitem;
 
                             if ($datajson[$fulldomainname]["status"] == "available") {
-                                $domainprice=getdomainpriceapi($domainname);
+                                $domainprice=getdomainpriceapi($fulldomainname);
                                 ?> <tr><td align="left"><input type="radio" value="<?php echo $fulldomainname; ?>" name="domainradio" onclick="this.form.submit();" /> <?php echo $fulldomainname; ?> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td></tr> 
                                 <?php
                             }
