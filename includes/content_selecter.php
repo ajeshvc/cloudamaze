@@ -3,10 +3,10 @@
 }
 switch ($page) { case 0: include 'home.php';
 break;
-case 1: include 'api/domainavail.php';
+case 1: include 'api/helloinfinitycallapi.php';
+include 'api/domainavail.php';
 include 'lib/tld.php';
 include 'lib/resellerclubtld.php';
-include 'api/helloinfinitycallapi.php';
 include 'api/domainprice.php';
 include 'register.php';
 break;
