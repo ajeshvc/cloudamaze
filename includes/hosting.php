@@ -199,7 +199,7 @@ if(isset($_POST['name'])){
                     if($flag==1){
                       $finalprice=$_SESSION['total']-$discount;
                     $_SESSION['total']=$finalprice;
-                    $coupontext="|"."Coupon Code Valid : ".$couponcode."|"."Discount RS : ".$discount."||"."+Grand Total RS : ".$finalprice." INR Only . ";  
+                    $coupontext="|"."Coupon Code Valid : ".$couponcode."|"."Discount RS : ".$discount." INR ||"."+Grand Total RS : ".$finalprice." INR Only . ";  
                         //select offer type    
                       $coupontype=getcoupontype($couponcode);      
                       if($coupontype=="multiple"){
@@ -216,7 +216,7 @@ if(isset($_POST['name'])){
                 //---------------------
                 
                 if($coupontext==""){
-                    $coupontext="|Total : ".$_SESSION['total'];
+                    $coupontext="||"."+Grand Total RS : ".$_SESSION['total']." INR Only . ";
                 }
                 $domain = $_SESSION['domain'];
                
