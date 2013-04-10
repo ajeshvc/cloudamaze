@@ -6,6 +6,8 @@ break;
 case 1: include 'api/domainavail.php';
 include 'lib/tld.php';
 include 'lib/resellerclubtld.php';
+include 'api/helloinfinitycallapi.php';
+include 'api/domainprice.php';
 include 'register.php';
 break;
 case 2: include 'connection.php';
