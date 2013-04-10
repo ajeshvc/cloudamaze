@@ -10,8 +10,7 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
   if($domainname!=""){
      $selectedtld=$domainname; 
      $count=substr_count($selectedtld, '.');
-     echo $count;
-     if($count==1){
+    if($count==1){
      $split=explode(".", $selectedtld, 2);
      $selectedtld=$split[1];
      
