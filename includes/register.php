@@ -113,7 +113,8 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                         if ($status != "") {
                             ?> <tr><td id="tdhead"><?php echo 'Suggested Domains:'; ?> </td></tr>
                             <?php foreach ($domainsuggestionsarray as $value) {
-                                ?> <tr><td align="left"><input type="radio" value="<?php echo $value; ?>" name="domainradio" onclick="this.form.submit();" /><?php echo $value; ?> </td></tr>
+                                 $domainprice=getdomainpriceapi($value);
+                                ?> <tr><td align="left"><input type="radio" value="<?php echo $value; ?>" name="domainradio" onclick="this.form.submit();" /><?php echo $value; ?> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font> </td></tr>
                                 <?php
                             }
                         }
