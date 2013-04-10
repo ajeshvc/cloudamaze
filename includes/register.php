@@ -166,7 +166,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
    </form>  
             
 			<!-- Link team images-->
-            
+           <?php  if (!isset($domainprice) || (isset($domainprice)&& $domainprice=="")){?> 
             <div id="link_team_thumbs">
                 <a id="link_team_capanel" href="http://capanel.cloudamaze.com"><img src="images/capanel.png" alt=""/></a>
                 <a id="link_team_webftp" href="http://webftp.cloudamaze.com"><img src="images/wftp.png" alt=""/></a>
@@ -174,7 +174,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                 <a id="link_team_phpadmin" href="http://db.cloudamaze.com"><img src="images/pmadmin.png" alt=""/></a>
                 <span class="link_team_stretch"></span>
             </div>
-        
+           <?php } ?>
 </div>
             
             
