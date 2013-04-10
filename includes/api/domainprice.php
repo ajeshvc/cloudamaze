@@ -67,7 +67,10 @@ $premiumcomarray=array("uk","gb","br","hu","jpn","no","ru","sa","se","uy","za");
    
    
     
-     return $datajson[$selectedtld]["addnewdomain"][1];
-    
+     $domainprice=$datajson[$selectedtld]["addnewdomain"][1];
+     if($domainprice==""){
+       $domainprice="Not Available";  
+     } 
+     return $domainprice;
 }
    ?>
