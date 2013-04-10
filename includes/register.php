@@ -16,6 +16,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
     }
 } elseif (isset($_POST['domainradio']) && $_POST['domainradio'] != "") {
     $domainname = $_POST['domainradio'];
+    $domainprice=  getdomainpriceapi($domainname);
 }
 ?>
 <div id="content" >
@@ -52,7 +53,10 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                 </div>
             </div>
             
-            
+            <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
+                
+     echo $domainprice." INR only";
+                } ?>
             
             
             <table>
