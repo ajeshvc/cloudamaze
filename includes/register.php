@@ -16,7 +16,8 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
     }
 } elseif (isset($_POST['domainradio']) && $_POST['domainradio'] != "") {
     $domainname = $_POST['domainradio'];
-    //$domainprice=  getdomainpriceapi($domainname);
+    $domainprice=  getdomainpriceapi($domainname);
+    $_SESSION['domainprice']=$domainprice;
 }
 ?>
 <div id="content" >
@@ -38,7 +39,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             <input type="text" name="domain" placeholder="" value="<?php echo $domainname; ?>" id="txt_domain" <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> readonly="readonly" <?php } ?> />
                         </div>
                     </div>
-                    <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']) )) { ?>
+                 <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']) )) { ?>
                         <div class="domain_container">
                             <div class="domail_text_wrapper" id="selectedtld">
                                 .com
@@ -52,6 +53,12 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     <input type="submit" id="search_btn_container" class="btnclass" name="check" <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'true' ) || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> value="Submit"  <?php } else { ?> value="Check" <?php } ?>  />        
                 </div>
             </div>
+             
+             
+              <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
+                
+        ?><font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font> 
+              <?php  } ?>
             <table>
                 <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']))) { ?>
                     <div id="helptxt" style="display: none">     
