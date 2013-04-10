@@ -16,7 +16,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
     }
 } elseif (isset($_POST['domainradio']) && $_POST['domainradio'] != "") {
     $domainname = $_POST['domainradio'];
-    $domainprice=  getdomainpriceapi($domainname);
+    //$domainprice=  getdomainpriceapi($domainname);
 }
 ?>
 <div id="content" >
@@ -53,10 +53,10 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                 </div>
             </div>
             
-            <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
+            <?php// if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
                 
-     echo $domainprice." INR only";
-                } ?>
+    // echo $domainprice." INR only";
+             //   } ?>
             
             
             <table>
@@ -111,7 +111,8 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             $fulldomainname = $domainname . "." . $arrayitem;
 
                             if ($datajson[$fulldomainname]["status"] == "available") {
-                                ?> <tr><td align="left"><input type="radio" value="<?php echo $fulldomainname; ?>" name="domainradio" onclick="this.form.submit();" /> <?php echo $fulldomainname; ?> </td></tr> 
+                                $domainprice=getdomainpriceapi($domainname);
+                                ?> <tr><td align="left"><input type="radio" value="<?php echo $fulldomainname; ?>" name="domainradio" onclick="this.form.submit();" /> <?php echo $fulldomainname; ?> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td></tr> 
                                 <?php
                             }
                         }
