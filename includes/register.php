@@ -105,7 +105,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
 
                             if ($datajson[$fulldomainname]["status"] == "available") {
                                 $domainprice=getdomainpriceapi($fulldomainname);
-                                ?> <tr><td align="left"><input type="radio" value="<?php echo $fulldomainname; ?>" name="domainradio" onclick="this.form.submit();" /> <?php echo $fulldomainname; ?> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td></tr> 
+                                ?> <tr><td align="left"><input type="radio" value="<?php echo $fulldomainname; ?>" name="domainradio" onclick="this.form.submit();" /> <?php echo $fulldomainname; ?></td><td> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td></tr> 
                                 <?php
                             }
                         }
@@ -114,7 +114,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             ?> <tr><td id="tdhead"><?php echo 'Suggested Domains:'; ?> </td></tr>
                             <?php foreach ($domainsuggestionsarray as $value) {
                                  $domainprice=getdomainpriceapi($value);
-                                ?> <tr><td align="left"><input type="radio" value="<?php echo $value; ?>" name="domainradio" onclick="this.form.submit();" /><?php echo $value; ?> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font> </td></tr>
+                                ?> <tr><td align="left"><input type="radio" value="<?php echo $value; ?>" name="domainradio" onclick="this.form.submit();" /><?php echo $value; ?></td><td> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font> </td></tr>
                                 <?php
                             }
                         }
