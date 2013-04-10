@@ -52,13 +52,6 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     <input type="submit" id="search_btn_container" class="btnclass" name="check" <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'true' ) || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> value="Submit"  <?php } else { ?> value="Check" <?php } ?>  />        
                 </div>
             </div>
-            
-            <?php// if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
-                
-    // echo $domainprice." INR only";
-             //   //} ?>
-            
-            
             <table>
                 <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']))) { ?>
                     <div id="helptxt" style="display: none">     
