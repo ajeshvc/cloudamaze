@@ -5,6 +5,10 @@ unset($_SESSION['domain']);
 if(isset($_SESSION['choice'])){
         unset($_SESSION['choice']); 
     }
+    if(isset( $_SESSION['domainprice'])){
+        unset( $_SESSION['domainprice']); 
+    }
+   
      header('Location:index.php?page=1&skip=false');
 ?>
 <div id="content">

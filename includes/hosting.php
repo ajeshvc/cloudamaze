@@ -7,10 +7,7 @@ $couponcode="";
  if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) ) {
   header('Location: index.php?page=0');
   }
-//  function getdomainprice($domain){
-//     // $split=explode ( string $domain , string $string [, int $limit ] )
-//    //   helloinfinityCallAPI(
-//  }
+
   function getcoupontype($couponcode){
       $coupontype="";
  $result = mysql_query(" select coupon_type from coupon_settings where offer_id=( select offer_id from coupon where code='$couponcode' ) ");
@@ -186,7 +183,7 @@ if(isset($_POST['name'])){
                 
                 
                 $domain = $_SESSION['domain'];
-               // $domainprice=getdomainprice($domain);
+               
                 $hostingdetailstodb = "|" . $name . "|" . $phone . "|" . $_POST["email"] . $hostingdetails.$coupontext;
                 $hostingdetailstodb = str_replace("+", "", $hostingdetailstodb);
                 mysql_query("INSERT INTO hosting_details(date,domain,details) 
@@ -288,6 +285,9 @@ if(isset($_POST['name'])){
 
 
                     unset($_SESSION['choice']);
+                     if(isset( $_SESSION['domainprice'])){
+                        unset( $_SESSION['domainprice']); 
+                }
                     header('Location:index.php?page=4');
                 }
             }
@@ -377,8 +377,13 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                                     $hostingdetails.="|" . $row['name'] . "-" . $row['value'];
                                     if ($row['pr_id'] == '11') {
                                         $peryear = $row['value'] * 12;
+                                        $domainprice=0;
+                                         if(isset( $_SESSION['domainprice'])){
+                                           $hostingdetails.="|Domain Registration Price RS : ".$_SESSION['domainprice'].".00 INR"; 
+                                           $domainprice=$_SESSION['domainprice'];  
+                                        }
                                         $hostingdetails.="|Hosting price RS :" . $peryear . ".00 INR .";
-                                        $_SESSION['total'] = $peryear;
+                                        $_SESSION['total'] = $peryear+$domainprice;
                                     }
                                 }
                             } else {
