@@ -22,6 +22,10 @@ if (isset($_GET['skip']) && $_GET['skip']=='false' ){
 if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" && isset($_POST['tld']) && $_POST['tld'] != "") {
 
     $domainname = $_POST['domain'];
+ if (!preg_match('/[^A-Za-z0-9]/', $domainname)) // '/[^a-z\d]/i' should also work.
+{
+  // string contains only english letters & digits
+  
     $tld = "";
     $i = 0;
     foreach ($_POST['tld'] as $arrayitem) {
@@ -99,7 +103,11 @@ if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" 
     }
     }
     // domain suggestions end
+
+}else{
+     echo '<br/> Invalid Domain Name';      
 }
+        }
  elseif (isset($_POST['check'])){
      
     if(!isset($_POST['tld'])){
