@@ -9,27 +9,47 @@ if(isset($_SESSION['choice'])){
         unset( $_SESSION['domainprice']); 
     }
    
-     header('Location:index.php?page=1&skip=false');
+    // header('Location:index.php?page=1&skip=false');
 ?>
 <div id="content">
 
- <div style="width:100%;height:auto;">
-        <div style="float: left;width: 30%">
-            <img src="images/lemon-slice.png" /> 
+ <div class="offer_outer_container">
+    	
+        <div class="offer_content_container">
+        
+            <div class="offer_cloud_container">                
+                <img src="images/green_cloud.png" />
+                <div class="offer_cloud_text">.in</div>
+                <div class="offer_price_text" style="color: #9cc33c;">Rs.528</div>              
+            </div>
+            
+            <div class="offer_amount_container">   	
+                +
+            </div>
+            
+            <div class="offer_cloud_container">
+                <img src="images/blue_cloud.png" /> 
+                <div class="offer_cloud_text">1GB</div>
+                <div class="offer_price_text" style="color: #60c8d8;">Rs.1020</div>                 			    
+            </div>
+            
+            <div class="offer_amount_container">    	
+                =
+            </div>
+            
+            <div class="offer_amount_container">
+                <span style="color: #60c8d8;">&#8377;</span>1000    
+            </div>
+        
         </div>
-        <div style="width:100%;text-align: right;">
-            <div style="text-align:center;"><h2><font style="color:#9dc33c;"> Easy Peasy </font><font color="#61c8d9"> Lemon squeezy!</font></h2></div>
-            <div style="text-align:center;"><h3> 3 steps away </h3> </div> <div style="text-align:center;"> <i>Note: hitting register now will open a new tab, you can make your domain registration request there and be right back.</i></div>
-        </div>
-       
-    </div>   
-  
-    <div id="buttons">
-        <div id="skip-domain">
-            <a href="index.php?page=13" class="btnclass"> Skip </a>
-        </div>
-        <div id="register-domain">
-            <a href="index.php?page=1&skip=false" class="btnclass"> Register domain </a>
-        </div>
-    </div>
+        <div class="offer_notes_container">
+    		<div class="offer_notes_heading">Notes</div>
+            <div class="offer_notes_content">
+            	This Promo is applicable to the first year of Registration only.
+                <br/>Renewals and Transfer-Ins will not attract this Promo Pricing.
+                <br/>There are no restrictions on the number of Domains that can be Registered during this period.
+                <br/>This offer is valid till 30th April 2013. 
+			</div>        
+    	</div>     
+    </div>            
 </div>
