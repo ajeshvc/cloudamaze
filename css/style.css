@@ -6,6 +6,21 @@
 
 */
 
+.dwnld_block{
+	
+	float:left; 
+        
+        width: 32%; 
+        
+        text-align: left; 
+        
+        padding:2%; 
+        
+        margin-left:5%;
+        
+	
+}
+
 .dwnld_img{
 	
 	width:2em;
@@ -13,7 +28,31 @@
 	height:auto;
 	
 	margin-top:2%;	
+        
+        float: left;
+        
+        position: relative;
 	
+}
+
+.dwnld_item_name{
+	
+	float: left;
+        
+        position: relative;
+        
+        padding-top: 8px;
+	
+}
+
+.single_dwnld_item{
+    
+        width: 100%;
+        
+        height: auto;
+        
+        overflow: hidden;
+    
 }
 
 .dwnld_txt{
