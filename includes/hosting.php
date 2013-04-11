@@ -135,6 +135,7 @@ $couponcode="";
 $offerprice="";
 $discount="";
 $coupontext="";
+$storecoupondetails="";
 if (isset($_POST["back"])) {
     if(isset($_SESSION['choice'])){
         unset($_SESSION['choice']); 
@@ -207,7 +208,8 @@ if(isset($_POST['name'])){
                     mysql_query(" update coupon  set status='0' where code='$couponcode' ");     
                       } 
                       // store invoice and coupon code
-                     mysql_query(" insert into  coupon_details (id,code,coupon_type)values('$id','$couponcode','$coupontype') ");     
+                        $storecoupondetails="YES";
+                      //  mysql_query(" insert into  coupon_details (id,code,coupon_type)values('$id','$couponcode','$coupontype') ");     
                      
                     }
                     
@@ -227,6 +229,9 @@ if(isset($_POST['name'])){
                  $id=mysql_insert_id();
                 $invoice = "#hi00". $id;
                 
+                if($storecoupondetails=="YES"){
+                    mysql_query(" insert into  coupon_details (id,code,coupon_type)values('$id','$couponcode','$coupontype') ");     
+                }
                 $_SESSION['invoice'] = $invoice;
                
    
