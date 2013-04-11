@@ -1,6 +1,6 @@
 <?php
 //include '../includes/lib/resellerclubtld.php';
-// include 'helloinfinitycallapi.php'
+//include 'helloinfinitycallapi.php'
 
 function getdomainpriceapi($domainname){
 $domarray=array("org","biz","us","cno","info");
