@@ -1,5 +1,5 @@
 <?php
-  $tldmostarray=array('net','in','biz','org','us','eu','co.uk','co.in','info','mobi');
+  $tldmostarray=array('net','org','info','biz','us','eu','co.uk','in','co.in','mobi');
   
    $tldmorearray=array('asia','name','tel','tv','me','ws','bz',
                                          'cc','org.uk','me.uk','net.in','org.in','ind.in','firm.in',
