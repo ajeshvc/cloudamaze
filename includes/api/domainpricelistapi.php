@@ -1,5 +1,5 @@
 <?php
-include '../includes/lib/resellerclubtld.php';
+include '../lib/resellerclubtld.php';
 include 'helloinfinitycallapi.php';
 include 'domainprice.php';
 
