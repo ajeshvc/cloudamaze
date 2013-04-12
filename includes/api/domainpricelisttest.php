@@ -33,7 +33,7 @@ xmlhttp.send();
 }
 </script>
 </head>
-<body>
+<body onload="showdomainprice(1)">
 
 <form >
 
