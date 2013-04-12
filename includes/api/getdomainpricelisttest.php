@@ -11,6 +11,8 @@ if(!isset($_SESSION['count'])){
     $_SESSION['count']++;
 }
 $i=$_SESSION['count'];
+echo $i;
+echo count($resellersupporttld);
 if($i<=count($resellersupporttld)){
    
     $domainname="test.".$resellersupporttld[$i];
