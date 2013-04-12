@@ -12,9 +12,11 @@
         var id=0;
         setInterval(function(){
   // Call to your function that performs an ajax call...
-  
- showdomainprice(id+10) 
-}, 3000);
+  id=id+10;
+        if(id<=72){
+ showdomainprice(id) 
+  }
+}, 2000);
     }
 function showdomainprice(id)
 {
