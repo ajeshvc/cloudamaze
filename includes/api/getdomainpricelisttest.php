@@ -19,7 +19,7 @@ if($j<=count($resellersupporttld)){
    
     $domainname="test.".$resellersupporttld[$j];
     $domainprice=getdomainpriceapi($domainname);
-    //sleep(1);
+    sleep(1);
     ?><div>
     
         <div style="float:left"><?php echo $resellersupporttld[$j]; ?></div><div> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></div> 
