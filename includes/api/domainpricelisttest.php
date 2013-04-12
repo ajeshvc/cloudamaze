@@ -1,13 +1,7 @@
 <html>
 <head>
 <script>
-function showUser(str)
-{
-if (str=="")
-  {
-  document.getElementById("txtHint").innerHTML="";
-  return;
-  } 
+
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
@@ -25,7 +19,7 @@ xmlhttp.onreadystatechange=function()
   }
 xmlhttp.open("GET","getdomainpricelisttest.php?q="+str,true);
 xmlhttp.send();
-}
+
 </script>
 </head>
 <body>
