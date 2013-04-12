@@ -32,7 +32,7 @@ xmlhttp.send();
 }
 </script>
 </head>
-<body onload="showdomainprice()">
+<body onload="showdomainprice(0)">
 
 <form >
 
