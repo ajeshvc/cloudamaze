@@ -36,7 +36,7 @@ xmlhttp.send();
 
 </script>
 </head>
-<body onload="showdomainprice(1)">
+<body onload="showdomainprice(0)">
 
 <form >
 
