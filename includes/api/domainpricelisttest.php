@@ -1,13 +1,13 @@
 <html>
 <head>
 <script>
-   var id=0; 
-  var int=self.setInterval(function(){
-        id++;
-        showdomainprice(id);
-      
-    
-    },1000); 
+//   var id=0; 
+//  var int=self.setInterval(function(){
+//        id++;
+//        showdomainprice(id);
+//      
+//    
+//    },1000); 
     
 function showdomainprice(id)
 {
@@ -36,7 +36,7 @@ xmlhttp.send();
 
 </script>
 </head>
-<body >
+<body onload="showdomainprice(1)">
 
 <form >
 
