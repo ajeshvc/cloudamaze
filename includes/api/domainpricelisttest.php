@@ -1,7 +1,9 @@
 <html>
 <head>
 <script>
-function showdomainprice()
+    var id=0;
+setInterval("showdomainprice(id++)",1000);    
+function showdomainprice(id)
 {
 if (id=='')
   {
@@ -25,7 +27,7 @@ xmlhttp.onreadystatechange=function()
        
     }
   }
-xmlhttp.open("GET","getdomainpricelisttest.php",true);
+xmlhttp.open("GET","getdomainpricelisttest.php?id="+id,true);
 xmlhttp.send();
 }
 </script>

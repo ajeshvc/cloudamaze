@@ -2,17 +2,17 @@
 include '../lib/resellerclubtld.php';
 include 'helloinfinitycallapi.php';
 include 'domainprice.php';
-
+$i=$_GET['id'];
 $comarray=array("com");
 $resellersupporttld=array_merge($comarray,$tldmostarray,$tldmorearray);
-if(!isset($_SESSION['count'])){
-   $_SESSION['count']=0; 
-}else{
-    $_SESSION['count']++;
-}
-$i=$_SESSION['count'];
-echo $i;
-echo count($resellersupporttld);
+//if(!isset($_SESSION['count'])){
+//   $_SESSION['count']=0; 
+//}else{
+//    $_SESSION['count']++;
+//}
+//$i=$_SESSION['count'];
+//echo $i;
+//echo count($resellersupporttld);
 if($i<=count($resellersupporttld)){
    
     $domainname="test.".$resellersupporttld[$i];
@@ -23,8 +23,8 @@ if($i<=count($resellersupporttld)){
     </tr></table>
  <?php }
  else {
-     if(isset($_SESSION['count'])){
-         unset($_SESSION['count']);
-     }
+//     if(isset($_SESSION['count'])){
+//         unset($_SESSION['count']);
+//     }
  }
 ?>
