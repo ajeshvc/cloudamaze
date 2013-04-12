@@ -12,7 +12,7 @@
         var id=-1;
         setInterval(function(){
   // Call to your function that performs an ajax call...
- showdomainprice(id++); 
+ showdomainprice(id++) 
 }, 0.1 * 60 * 1000);
     }
 function showdomainprice(id)
@@ -42,7 +42,7 @@ xmlhttp.send();
 
 </script>
 </head>
-<body onload="repeate()">
+<body onload="repeat()">
 
 <form >
 
