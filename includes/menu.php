@@ -3,7 +3,7 @@
                     
     <ul id="menu-bar">
      <li <?php if(!isset($_GET['page']) || (isset($_GET['page']) && $_GET['page']==0)){ ?>   class="current" <?php  } ?> ><a href="index.php">Home</a></li>
-     <li <?php if(isset($_GET['page']) && $_GET['page']==1){ ?>   class="current" <?php  } ?>><a href="index.php?page=1&skip=false">Domain</a></li>
+     <li <?php if(isset($_GET['page']) && $_GET['page']==1 || (isset($_GET['page']) && $_GET['page']==2) ){ ?>   class="current" <?php  } ?>><a href="index.php?page=1&skip=false">Domain</a></li>
      <li <?php if((isset($_GET['page']) && $_GET['page']==5) || (isset($_GET['page']) && $_GET['page']==11) || (isset($_GET['page']) && $_GET['page']==13) ){ ?>   class="current"  <?php  } ?> ><a href="index.php?page=13">Hosting</a>
          <ul>
            <li><a href="index.php?page=13">Shared Hosting</a></li>
