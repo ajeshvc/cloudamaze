@@ -1432,11 +1432,121 @@ body{
 	}
         
         
-      #frame{
-position:absolute;
-left:0;
-width:100%;
-height:200%;
-z-index:0;
-border-style: none;
-      }  
+        #frame{
+                position:absolute;
+                left:0;
+                width:100%;
+                height:200%;
+                z-index:0;
+                border-style: none;
+        } 
+        
+        .offer_outer_container{
+		
+		position:absolute;
+		
+		height:auto;
+		
+		overflow:hidden;
+		
+		width:100%;	
+		
+		text-align:center;	
+	}
+	
+	.offer_content_container{
+		
+		height:auto;
+		
+		overflow:hidden;
+		
+		width:100%;
+		
+		position:relative;
+		
+		text-align:center;
+		
+		margin-left:30%;
+			
+		
+	}
+	
+	.offer_cloud_container{
+		
+		float:left;
+		
+		width:128px;
+		
+		height:auto;
+		
+		text-align:center;				
+		
+	}
+	
+	.offer_cloud_text{
+		
+		color:#FFF;
+		
+		margin-top:-60px;
+		
+		text-align:center;
+		
+		font-size:18px;				
+		
+	}
+	.offer_price_text{
+		
+		margin-top:36px;
+		
+		font-size:18px;				
+		
+	}
+	
+	.offer_amount_container{
+		float:left;
+		
+		width:auto;
+		
+		height:98px;
+		
+		font-size:60px;
+		
+		color:#9cc33c;
+		
+		padding:16px 16px;
+		
+		text-align:center;				
+	
+	}
+	
+	.offer_notes_container{
+		
+		position:relative;
+		
+		text-align:center;
+			
+	}
+	
+	.offer_notes_heading{
+		
+		position:relative;
+		
+		text-align:center;
+		
+		color: #9cc33c;
+		
+		font-size:48px;
+			
+	}
+	
+	.offer_notes_content{
+		
+		text-align:center;
+		
+		position:relative;
+		
+		font-size:14px;
+		
+		color: #60c8d8;
+		
+	}
