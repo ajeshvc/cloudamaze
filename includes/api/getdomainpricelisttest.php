@@ -13,13 +13,13 @@ $resellersupporttld=array_merge($comarray,$tldmostarray,$tldmorearray);
 //$i=$_SESSION['count'];
 //echo $i;
 //echo count($resellersupporttld);
-if($i<=count($resellersupporttld)){
+for($j=$i-10;$j<=count($resellersupporttld);$j++){
    
-    $domainname="test.".$resellersupporttld[$i];
+    $domainname="test.".$resellersupporttld[$j];
     $domainprice=getdomainpriceapi($domainname);
     ?><div>
     
-        <div style="float:left"><?php echo $resellersupporttld[$i]; ?></div><div> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></div> 
+        <div style="float:left"><?php echo $resellersupporttld[$j]; ?></div><div> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></div> 
    </div>
  <?php }
  
