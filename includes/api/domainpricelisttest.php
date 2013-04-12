@@ -38,9 +38,10 @@ xmlhttp.send();
 <form >
 
 <a onclick="showdomainprice(1)">More</a>
-<input type="text" onkeyup="showdomainprice(2)">
+<input type="text" onkeyup="showdomainprice(1)">
 <div id=content1> loaded page goes here </div>
 <a onclick="showdomainprice(2)">More</a>
+<input type="text" onkeyup="showdomainprice(2)">
 <div id=content2> loaded page goes here </div>
 </form>
 <br>
