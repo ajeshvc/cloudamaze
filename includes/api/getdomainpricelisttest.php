@@ -1,15 +1,37 @@
 <?php
-$q=$_GET["id"];
-
+include '../lib/resellerclubtld.php';
+include 'helloinfinitycallapi.php';
+include 'domainprice.php';
+$q=$_GET["id"]; 
+?><table><?php 
 if($q==1){
-echo "<table border='1'>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-<th>Age</th>
-<th>Hometown</th>
-<th>Job</th>
-</tr></table>";
+    
+    $tld="com";
+    $domainname="test.com";
+    $domainprice=getdomainpriceapi($domainname);
+    ?>
+    <tr>
+        <th><?php echo $tld; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
+    </tr>
+    
+    <?php    foreach ($tldmostarray as $tld) { 
+        $domainname="test.".$tld;
+        $domainprice=getdomainpriceapi($domainname);   ?>
+    <tr>
+        <th><?php echo $tld; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
+    </tr>
+  <?php   } 
+    
+  
+    
 }
-
-?>
+elseif($q==2){ 
+    foreach ($tldmorearray as $tld) { 
+        $domainname="test.".$tld;
+        $domainprice=getdomainpriceapi($domainname);   ?>
+    <tr>
+        <th><?php echo $tld; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
+    </tr>
+  <?php   }
+  }?>
+</table>

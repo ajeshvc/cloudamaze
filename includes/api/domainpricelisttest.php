@@ -31,8 +31,11 @@ xmlhttp.send();
 <body>
 
 <form >
-<div id=content> loaded page goes here </div>
-<a onclick="$('div#content').load('getdomainpricelisttest.php?id=1')">click</a>
+
+<a onclick="$('div#content1').load('getdomainpricelisttest.php?id=1')">More</a>
+<div id=content1> loaded page goes here </div>
+<a onclick="$('div#content1').load('getdomainpricelisttest.php?id=2')">More</a>
+<div id=content2> loaded page goes here </div>
 </form>
 <br>
 <div id="txtHint"><b>Person info will be listed here.</b></div>
