@@ -17,14 +17,10 @@ if($i<=count($resellersupporttld)){
    
     $domainname="test.".$resellersupporttld[$i];
     $domainprice=getdomainpriceapi($domainname);
-    ?><table>
-    <tr>
-        <th><?php echo $resellersupporttld[$i]; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
-    </tr></table>
+    ?><div>
+    
+        <div style="float:left"><?php echo $resellersupporttld[$i]; ?></div><div> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></div> 
+   </div>
  <?php }
- else {
-//     if(isset($_SESSION['count'])){
-//         unset($_SESSION['count']);
-//     }
- }
+ 
 ?>

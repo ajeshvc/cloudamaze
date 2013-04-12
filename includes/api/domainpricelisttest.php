@@ -23,7 +23,7 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
        
-    document.getElementById("content1").innerHTML+=xmlhttp.responseText;
+    document.getElementById("content").innerHTML+=xmlhttp.responseText;
        
     }
   }
@@ -32,12 +32,12 @@ xmlhttp.send();
 }
 </script>
 </head>
-<body onload="showdomainprice(0)">
+<body onload="showdomainprice(1)">
 
 <form >
 
-
-<div id=content1> loaded page goes here </div>
+    
+<div id=content> loaded page goes here </div>
 
 </form>
 <br>
