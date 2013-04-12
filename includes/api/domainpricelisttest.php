@@ -1,8 +1,13 @@
 <html>
 <head>
-     
- <script type="text/javascript">
-
+<script>
+function showdomainprice(id)
+{
+if (id=="")
+  {
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  } 
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
@@ -15,26 +20,30 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+        if(id==1){
+    document.getElementById("content1").innerHTML=xmlhttp.responseText;
+        }
+        if(id==2){
+    document.getElementById("content2").innerHTML=xmlhttp.responseText;
+        }
     }
   }
-xmlhttp.open("GET","getdomainpricelisttest.php?q="+str,true);
+xmlhttp.open("GET","getdomainpricelisttest.php?q="+id,true);
 xmlhttp.send();
-
+}
 </script>
 </head>
 <body>
 
 <form >
 
-<a onclick="$('div#content1').load('getdomainpricelisttest.php?id=1')">More</a>
-<a href="javascript:$('#content1').load('getdomainpricelisttest.php?id=1')">click</a>
+<a onclick="showdomainprice(1)">More</a>
 <div id=content1> loaded page goes here </div>
-<a onclick="$('div#content1').load('getdomainpricelisttest.php?id=2')">More</a>
+<a onclick="showdomainprice(2)">More</a>
 <div id=content2> loaded page goes here </div>
 </form>
 <br>
-<div id="txtHint"><b>Person info will be listed here.</b></div>
+
 
 </body>
 </html>
