@@ -15,8 +15,6 @@
   id=id+3;
         if(id<=72){
  showdomainprice(id) 
-  }else{
-      clearInterval();
   }
 }, 2000);
     }
