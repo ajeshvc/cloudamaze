@@ -1,6 +1,7 @@
 <html>
 <head>
-<script>
+     
+ <script type="text/javascript">
 
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -27,6 +28,7 @@ xmlhttp.send();
 <form >
 
 <a onclick="$('div#content1').load('getdomainpricelisttest.php?id=1')">More</a>
+<a href="javascript:$('#content1').load('getdomainpricelisttest.php?id=1')">click</a>
 <div id=content1> loaded page goes here </div>
 <a onclick="$('div#content1').load('getdomainpricelisttest.php?id=2')">More</a>
 <div id=content2> loaded page goes here </div>
