@@ -2,7 +2,7 @@
 <head>
 <script>
    var id=0; 
-  var int=self.setInterval(function(){showdomainprice(id++)},1000); 
+  var int=self.setInterval(function(){showdomainprice(id++);},1000); 
     
 function showdomainprice(id)
 {
