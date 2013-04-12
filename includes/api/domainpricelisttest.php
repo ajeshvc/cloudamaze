@@ -50,7 +50,7 @@ xmlhttp.send();
 <form >
 
     
-<div id=content>  </div>
+<div id=content> Loading... </div>
 
 </form>
 
