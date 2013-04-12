@@ -8,7 +8,13 @@
 //      
 //    
 //    },1000); 
-    
+    function repeat(){
+        var id=-1;
+        setInterval(function(){
+  // Call to your function that performs an ajax call...
+ showdomainprice(id++) 
+}, 0.1 * 60 * 1000);
+    }
 function showdomainprice(id)
 {
 
@@ -36,10 +42,7 @@ xmlhttp.send();
 
 </script>
 </head>
-<body onload="setInterval(function(){
-  // Call to your function that performs an ajax call...
- showdomainprice(id++) 
-}, 0.1 * 60 * 1000);">
+<body onload="repeate()">
 
 <form >
 
