@@ -1,8 +1,11 @@
 <html>
 <head>
 <script>
-    var id=0;
-setInterval("showdomainprice(id)",2000);    
+   var id=0; 
+  var int=self.setInterval(function(){
+//      id++;
+        showdomainprice(id++)},1000); 
+    
 function showdomainprice(id)
 {
 if (id=='')
@@ -23,16 +26,18 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
        
-    document.getElementById("content").innerHTML+=xmlhttp.responseText;
+    document.getElementById("content").innerHTML+='<br/>'+xmlhttp.responseText;
        
     }
   }
 xmlhttp.open("GET","getdomainpricelisttest.php?id="+id,true);
 xmlhttp.send();
 }
+
+
 </script>
 </head>
-<body onload="showdomainprice(1)">
+<body >
 
 <form >
 
@@ -40,8 +45,10 @@ xmlhttp.send();
 <div id=content>  </div>
 
 </form>
-<br>
-
 
 </body>
 </html>
+
+
+
+<!--<button onclick="int=window.clearInterval(int)">Stop</button>-->
