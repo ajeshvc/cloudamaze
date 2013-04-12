@@ -14,7 +14,7 @@
   // Call to your function that performs an ajax call...
   
  showdomainprice(id+10) 
-}, 2000);
+}, 3000);
     }
 function showdomainprice(id)
 {
