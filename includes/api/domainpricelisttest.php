@@ -13,7 +13,7 @@
         setInterval(function(){
   // Call to your function that performs an ajax call...
  showdomainprice(id++) 
-}, 0.01 * 60 * 1000);
+}, 60*1000);
     }
 function showdomainprice(id)
 {
@@ -31,7 +31,7 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
        
-    document.getElementById("content").innerHTML+=xmlhttp.responseText;
+    document.getElementById("content").innerHTML=xmlhttp.responseText;
        
     }
   }
