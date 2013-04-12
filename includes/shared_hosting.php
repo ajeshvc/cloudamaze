@@ -136,7 +136,7 @@ $couponcode="";
 $offerprice="";
 $discount="";
 $coupontext="";
-
+$storecoupondetails="";
 if (isset($_POST["back"])) {
     if(isset($_SESSION['choice'])){
         unset($_SESSION['choice']); 
@@ -198,18 +198,7 @@ if(isset($_POST['name'])){
                 $hostingdetails = $_POST["hostingdetails"];
                 $currentdate = date("Y/m/d");
                 
-                
-                $domain = $_SESSION['domain'];
-                $hostingdetailstodb = "|" . $name . "|" . $phone . "|" . $_POST["email"] . $hostingdetails.$coupontext;
-                $hostingdetailstodb = str_replace("+", "", $hostingdetailstodb);
-                mysql_query("INSERT INTO hosting_details(date,domain,details) 
-                VALUES('$currentdate','$domain','$hostingdetailstodb') ");
-                 $id=mysql_insert_id();
-                $invoice = "#hi00". $id;
-                
-                $_SESSION['invoice'] = $invoice;
-               
-                //---------------------
+                  //---------------------
                  if (isset($_POST["coupon"])&& $_POST["coupon"]!=""){
                      
                 $couponcode=$_POST["coupon"];
@@ -227,7 +216,7 @@ if(isset($_POST['name'])){
                     if($flag==1){
                       $finalprice=$_SESSION['total']-$discount;
                     $_SESSION['total']=$finalprice;
-                    $coupontext="|"."Coupon Code Valid : ".$couponcode."|"."Discount RS : ".$discount."||"."+Grand Total RS : ".$finalprice." INR Only . ";  
+                    $coupontext="|"."Coupon Code Valid : ".$couponcode."|"."Discount RS : ".$discount." INR ||"."+Grand Total RS : ".$finalprice." INR Only . ";  
                         //select offer type    
                       $coupontype=getcoupontype($couponcode);      
                       if($coupontype=="multiple"){
@@ -235,13 +224,31 @@ if(isset($_POST['name'])){
                     mysql_query(" update coupon  set status='0' where code='$couponcode' ");     
                       } 
                       // store invoice and coupon code
-                     mysql_query(" insert into  coupon_details (id,code,coupon_type)values('$id','$couponcode','$coupontype') ");     
-                     
+                   //  mysql_query(" insert into  coupon_details (id,code,coupon_type)values('$id','$couponcode','$coupontype') ");     
+                       $storecoupondetails="YES";
                     }
                     
                } 
     }
                 //---------------------
+    if($coupontext==""){
+                    $coupontext="||"."+Grand Total RS : ".$_SESSION['total']." INR Only . ";
+                }
+                
+                $domain = $_SESSION['domain'];
+                $hostingdetailstodb = "|" . $name . "|" . $phone . "|" . $_POST["email"] . $hostingdetails.$coupontext;
+                $hostingdetailstodb = str_replace("+", "", $hostingdetailstodb);
+                mysql_query("INSERT INTO hosting_details(date,domain,details) 
+                VALUES('$currentdate','$domain','$hostingdetailstodb') ");
+                 $id=mysql_insert_id();
+                $invoice = "#hi00". $id;
+                
+                if($storecoupondetails=="YES"){
+                    mysql_query(" insert into  coupon_details (id,code,coupon_type)values('$id','$couponcode','$coupontype') ");     
+                }
+                $_SESSION['invoice'] = $invoice;
+               
+              
     
                 $from = $_POST["email"];
 
@@ -249,7 +256,7 @@ if(isset($_POST['name'])){
                 if ($from != "" && $phone != "" && $hostingdetails != "") {
 
 
-                    $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails;
+                    $message = "|Hosting Details of - " . $domain . "|Invoice Id " . $invoice . $hostingdetails.$coupontext;
                     $subject = $name . "- New Hosting Request";
                     $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
                     $message = str_replace("|", "\n\n", $message);
@@ -392,7 +399,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                                     $hostingdetails.="|" . $row['name'] . "-" . $row['value'];
                                     if ($row['pr_id'] == '11') {
                                         $peryear = $row['value'] * 12;
-                                        $hostingdetails.="||Total RS :" . $peryear . ".00 INR Only .";
+                                        $hostingdetails.="|Hosting price RS :" . $peryear . ".00 INR Only .";
                                         $_SESSION['total'] = $peryear;
                                     }
                                 }
