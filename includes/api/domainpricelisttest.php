@@ -2,7 +2,7 @@
 <head>
 <script>
     var id=0;
-setInterval("showdomainprice(id++)",100);    
+setInterval("showdomainprice(id)",2000);    
 function showdomainprice(id)
 {
 if (id=='')
