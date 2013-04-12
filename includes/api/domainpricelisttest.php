@@ -2,7 +2,7 @@
 <head>
 <script>
     var id=0;
-setInterval("showdomainprice(id++)",1000);    
+setInterval("showdomainprice(id++)",100);    
 function showdomainprice(id)
 {
 if (id=='')
@@ -32,12 +32,12 @@ xmlhttp.send();
 }
 </script>
 </head>
-<body onload="showdomainprice(1)">
+<body onload="showdomainprice(0)">
 
 <form >
 
     
-<div id=content> loaded page goes here </div>
+<div id=content>  </div>
 
 </form>
 <br>
