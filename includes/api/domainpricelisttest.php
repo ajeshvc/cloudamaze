@@ -1,7 +1,7 @@
 <html>
 <head>
 <script>
-function showdomainprice(id)
+function showdomainprice()
 {
 if (id=='')
   {
@@ -20,29 +20,23 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-        if(id==1){
-    document.getElementById("content1").innerHTML=xmlhttp.responseText;
-        }
-        if(id==2){
-    document.getElementById("content2").innerHTML=xmlhttp.responseText;
-        }
+       
+    document.getElementById("content1").innerHTML+=xmlhttp.responseText;
+       
     }
   }
-xmlhttp.open("GET","getdomainpricelisttest.php?id="+id,true);
+xmlhttp.open("GET","getdomainpricelisttest.php",true);
 xmlhttp.send();
 }
 </script>
 </head>
-<body onload="showdomainprice(1)">
+<body onload="showdomainprice()">
 
 <form >
 
-<a onclick="showdomainprice(1)">More</a>
-<input type="text" onkeyup="showdomainprice(1)">
+
 <div id=content1> loaded page goes here </div>
-<a onclick="showdomainprice(2)">More</a>
-<input type="text" onkeyup="showdomainprice(2)">
-<div id=content2> loaded page goes here </div>
+
 </form>
 <br>
 

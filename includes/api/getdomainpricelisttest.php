@@ -2,36 +2,27 @@
 include '../lib/resellerclubtld.php';
 include 'helloinfinitycallapi.php';
 include 'domainprice.php';
-$q=$_GET["id"]; 
-?><table><?php 
-if($q==1){
-    
-    $tld="com";
-    $domainname="test.com";
-    $domainprice=getdomainpriceapi($domainname);
-    ?>
-    <tr>
-        <th><?php echo $tld; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
-    </tr>
-    
-    <?php    foreach ($tldmostarray as $tld) { 
-        $domainname="test.".$tld;
-        $domainprice=getdomainpriceapi($domainname);   ?>
-    <tr>
-        <th><?php echo $tld; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
-    </tr>
-  <?php   } 
-    
-  
-    
+
+$comarray=array("com");
+$resellersupporttld=array_merge($comarray,$tldmostarray,$tldmorearray);
+if(!isset($_SESSION['count'])){
+   $_SESSION['count']=0; 
+}else{
+    $_SESSION['count']++;
 }
-elseif($q==2){ 
-    foreach ($tldmorearray as $tld) { 
-        $domainname="test.".$tld;
-        $domainprice=getdomainpriceapi($domainname);   ?>
+$i=$_SESSION['count'];
+if($i<=count($resellersupporttld)){
+   
+    $domainname="test.".$resellersupporttld[$i];
+    $domainprice=getdomainpriceapi($domainname);
+    ?><table>
     <tr>
         <th><?php echo $tld; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
-    </tr>
-  <?php   }
-  }?>
-</table>
+    </tr></table>
+ <?php }
+ else {
+     if(isset($_SESSION['count'])){
+         unset($_SESSION['count']);
+     }
+ }
+?>
