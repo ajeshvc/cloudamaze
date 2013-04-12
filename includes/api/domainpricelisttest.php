@@ -28,7 +28,7 @@ xmlhttp.onreadystatechange=function()
         }
     }
   }
-xmlhttp.open("GET","getdomainpricelisttest.php?q="+id,true);
+xmlhttp.open("GET","getdomainpricelisttest.php?id="+id,true);
 xmlhttp.send();
 }
 </script>
