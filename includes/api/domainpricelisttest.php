@@ -2,7 +2,12 @@
 <head>
 <script>
    var id=0; 
-  var int=self.setInterval(function(){showdomainprice(id++);},1000); 
+  var int=self.setInterval(function(){
+        id++;
+        showdomainprice(id);
+      
+    
+    },1000); 
     
 function showdomainprice(id)
 {
@@ -20,7 +25,7 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
        
-    document.getElementById("content").innerHTML+='<br/>'+xmlhttp.responseText;
+    document.getElementById("content").innerHTML=xmlhttp.responseText;
        
     }
   }
