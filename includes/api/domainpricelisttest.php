@@ -16,7 +16,7 @@
         if(id<=72){
  showdomainprice(id++) 
   }
-}, 2000);
+}, 3000);
     }
 function showdomainprice(id)
 {
