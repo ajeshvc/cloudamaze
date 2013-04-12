@@ -17,7 +17,7 @@ if($i<=count($resellersupporttld)){
     $domainprice=getdomainpriceapi($domainname);
     ?><table>
     <tr>
-        <th><?php echo $tld; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
+        <th><?php echo $resellersupporttld[$i]; ?></th><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td>   
     </tr></table>
  <?php }
  else {
