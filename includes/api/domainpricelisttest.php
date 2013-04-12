@@ -30,14 +30,9 @@ xmlhttp.send();
 </head>
 <body>
 
-<form>
-<select name="users" onchange="showUser(this.value)">
-<option value="">Select a person:</option>
-<option value="1">Peter Griffin</option>
-<option value="2">Lois Griffin</option>
-<option value="3">Glenn Quagmire</option>
-<option value="4">Joseph Swanson</option>
-</select>
+<form >
+<div id=content> loaded page goes here </div>
+<a onclick="$('div#content').load('getdomainpricelisttest.php?id=1')">click</a>
 </form>
 <br>
 <div id="txtHint"><b>Person info will be listed here.</b></div>

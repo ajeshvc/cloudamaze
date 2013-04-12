@@ -1,8 +1,7 @@
 <?php
-//$q=$_GET["q"];
+$q=$_GET["id"];
 
-
-
+if($q==1){
 echo "<table border='1'>
 <tr>
 <th>Firstname</th>
@@ -10,7 +9,7 @@ echo "<table border='1'>
 <th>Age</th>
 <th>Hometown</th>
 <th>Job</th>
-</tr>";
-
+</tr></table>";
+}
 
 ?>
