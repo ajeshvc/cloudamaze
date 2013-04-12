@@ -36,7 +36,10 @@ xmlhttp.send();
 
 </script>
 </head>
-<body onload="showdomainprice(0)">
+<body onload="setInterval(function(){
+  // Call to your function that performs an ajax call...
+ showdomainprice(0) 
+}, 0.5 * 60 * 1000);">
 
 <form >
 
