@@ -2,17 +2,11 @@
 <head>
 <script>
    var id=0; 
-  var int=self.setInterval(function(){
-//      id++;
-        showdomainprice(id++)},1000); 
+  var int=self.setInterval(function(){showdomainprice(id++)},1000); 
     
 function showdomainprice(id)
 {
-if (id=='')
-  {
-  document.getElementById("txtHint").innerHTML="";
-  return;
-  } 
+
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
