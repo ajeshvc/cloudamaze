@@ -86,7 +86,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     </div>
 
 
-        <div class="banner_outer">
+        <div class="banner_outer" style="min-width: 0%">
             <table>
                     <?php
                     // to display given Domain Available or Not
