@@ -74,4 +74,17 @@
         </div>
     </div>
     
+     <div class="dwnld_block">
+        <h4>Hosting Plans</h4>
+        <div class="single_dwnld_item">
+            <div> 
+                <a href="uploads/web_plan.pdf" target="_blank">
+                    <img src="images/dwnld.PNG" class="dwnld_img">
+                </a>
+            </div>
+          
+        </div>         
+        
+    </div>
+    
 </div>
