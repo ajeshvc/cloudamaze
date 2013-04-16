@@ -86,7 +86,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     </div>
 
 
-        <div class="banner_outer" <?php  if (!($status != "" && $exist)|| !$flag || ($status == "") ){ ?> style="border: 0px solid #CCC" <?php } ?> >
+        <div class="banner_outer" <?php  if (($status != "" && $exist)|| $flag || ($status != "") ){ ?> style="border: 1px solid #CCC" <?php }else{ ?> style="border: 0px solid #CCC" <?php } ?> >
             <table>
                     <?php
                     // to display given Domain Available or Not
