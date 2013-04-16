@@ -66,19 +66,18 @@
         </div>         
         <div class="single_dwnld_item">
             <div> 
-                <a href="uploads/cloudamaze.pdf" target="_blank">
+                <a href="uploads/cloudamaze_email_advantage.pdf" target="_blank">
                     <img src="images/dwnld.PNG" class="dwnld_img">
                 </a>
             </div>
             <div class="dwnld_item_name">Advantages of Cloudamaze email</div>
         </div>
     </div>
-    
-     <div class="dwnld_block">
+    <div class="dwnld_block">
         <h4>Hosting Plans</h4>
         <div class="single_dwnld_item">
             <div> 
-                <a href="uploads/web_plan.pdf" target="_blank">
+                <a href="uploads/web_plan.pdf" target="_blank">Hosting Plans
                     <img src="images/dwnld.PNG" class="dwnld_img">
                 </a>
             </div>
