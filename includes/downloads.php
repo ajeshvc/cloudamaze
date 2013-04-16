@@ -3,14 +3,15 @@
         <h4>Browser</h4>
       
         <div class="single_dwnld_item">
-               <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">
+              
             <div>
-               
+               <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank"> 
                     <img src="images/dwnld.PNG" class="dwnld_img">
-                
+                     <div class="dwnld_item_name">Firefox</div>
+                </a>      
             </div>
-            <div class="dwnld_item_name">Firefox</div>
-             </a>
+           
+            
         </div>
             
         
