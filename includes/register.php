@@ -86,13 +86,13 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     </div>
 
 
-        <div class="banner_outer" style="min-width: 0%;width: 0% ">
-            <table>
+        <div class="banner_outer">
+           
                     <?php
                     // to display given Domain Available or Not
                     if ($status != "" && $exist) {
                         ?>
-
+                         <table>
                         <tr><td id="tdheadNot"> Domain Already Exist :</td></tr> <?php
                         foreach ($tldarray as $arrayitem) {
                             $fulldomainname = $domainname . "." . $arrayitem;
@@ -102,8 +102,9 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             }
                         }
                         ?> 
+                         </table>
                     <?php
-                    }
+                    } ?> <table> <?php 
                     // to activate radio button to select Available Domains
                     if ($flag) {
                         ?> <tr><td id="tdhead">  Available Domains : </td></tr>
