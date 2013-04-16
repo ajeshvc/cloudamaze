@@ -59,7 +59,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                 
         ?><font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font> 
               <?php  } ?>
-            <table>
+            <!--<table>-->
                 <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']))) { ?>
                     <div id="helptxt" style="display: none">     
                         <div class="hidden_container">
@@ -86,6 +86,8 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     </div>
 
 
+        <div class="banner_outer">
+            <table>
                     <?php
                     // to display given Domain Available or Not
                     if ($status != "" && $exist) {
@@ -126,9 +128,10 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             }
                         }
                     }
+                    ?> </table> </div> <?php
                 }
                 ?>
-            </table> 
+            <!--</table>--> 
             
 
 
