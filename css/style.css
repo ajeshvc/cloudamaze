@@ -6,6 +6,23 @@
 
 */
 
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+.dwnld_block{
+	
+	float:left; 
+        
+        width: 32%; 
+        
+        text-align: left; 
+        
+        padding:2%; 
+        
+        margin-left:5%;
+        
+	
+}
+
 .dwnld_img{
 	
 	width:2em;
@@ -13,7 +30,31 @@
 	height:auto;
 	
 	margin-top:2%;	
+        
+        float: left;
+        
+        position: relative;
 	
+}
+
+.dwnld_item_name{
+	
+	float: left;
+        
+        position: relative;
+        
+        padding-top: 8px;
+	
+}
+
+.single_dwnld_item{
+    
+        width: 100%;
+        
+        height: auto;
+        
+        overflow: hidden;
+    
 }
 
 .dwnld_txt{
@@ -25,15 +66,13 @@
 blockquote{		
 	
 	font-size:16px;
-
-	font-family:"Trebuchet MS", sans-serif;
-	
+	font-family:'Raleway', sans-serif;
 }
 
 #link_team_thumbs { 
   
-	width: 90%;
-	margin-top:35%;
+        width: 100%;
+	bottom:10%;
 	margin-left: auto; 
 	margin-right: auto;	
 	text-align: center;
@@ -41,8 +80,6 @@ blockquote{
 	text-justify: distribute-all-lines;	
 	position:absolute;
 	z-index:-8;
-        left:3%;
-
 }
 
 #link_team_thumbs a {
@@ -153,7 +190,7 @@ img.adjusted{
 
     font-weight: bold;
 
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: 1px 1px 2px #000000;
 
     float: right;
 
@@ -289,7 +326,8 @@ img.adjusted{
 
 body{
 
-    font-family: 'Trebuchet MS',sans-serif;
+    font-family: 'Raleway', sans-serif;
+
 
 }
 
@@ -679,11 +717,13 @@ body{
 
 	font-size:16px;
 
-	font-family:"Trebuchet MS", sans-serif;
+	font-family:'Raleway', sans-serif;
 
 	color:#FFF;
 
-	text-shadow: 0px 0px 2px #000000;	
+	text-shadow: 1px 1px 2px #000000;
+
+	color:#FFF;
 
 }
 
@@ -753,11 +793,14 @@ body{
 
   font-weight: normal;
 
-  font-family: 'trebuchet ms';
+
+  font-family: 'Raleway', sans-serif;
 
   font-style: normal;
 
-  font-size: 14px;
+  font-size: 16px;
+
+  font-style: normal;
 
   color: #FFFFFF;
 
@@ -767,23 +810,24 @@ body{
 
   padding: 8px 10px 8px 10px;
 
-  text-shadow: 0px 0px 2px #000000;
+  text-shadow: 1px 1px 2px #000000;
 
 }
 
 #menu-bar .current a, #menu-bar li:hover > a {
 
-  background: #60c9d9;
 
-  color: #FFFFFF;
+    background: #60c9d9;
+    
+    color: #FFFFFF;
 
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
 
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
 
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
 
-/*  text-shadow: 0px 0px 2px #000000;*/
+    text-shadow: 1px 1px 2px #000000;
 
 }
 
@@ -871,7 +915,8 @@ body{
 
   font-style:normal;
 
-  font-family:'trebuchet ms';
+  font-family:'Raleway', sans-serif;
+
 
   font-weight: normal;
 
@@ -970,7 +1015,8 @@ body{
 
 	color:#ffffff;
 
-	font-family:"Trebuchet MS", sans-serif;
+	font-family:'Raleway', sans-serif;
+
 
 	font-size:16px;
 
@@ -978,7 +1024,9 @@ body{
 
 	text-decoration:none;
 
-	text-shadow: 0px 0px 2px #000000;
+
+	text-shadow: 1px 1px 2px #000000;
+
 	
 	
 	/*position: relative; 
@@ -1193,7 +1241,9 @@ body{
 		padding-top:6px;	
 		font-size:18px;
 		color:#666;
-		font-family:"Trebuchet MS", sans-serif;	
+
+		font-family:'Raleway', sans-serif;	
+
                 outline-width: 0;
 	}
 	.domail_text_wrapper{
@@ -1202,9 +1252,11 @@ body{
 		padding:15% 0% 0% 18%;	
 		font-size:18px;
 		color:#666;
-		font-family:"Trebuchet MS", sans-serif;
+
+		font-family:'Raleway', sans-serif;
 		position:relative;
 		float:left;
+
                 
 	}
 	.arrow_wrapper{
@@ -1213,7 +1265,9 @@ body{
 		padding:20% 5%;	
 		font-size:12px;
 		color:#666;
-		font-family:"Trebuchet MS", sans-serif;
+
+		font-family:'Raleway', sans-serif;
+
 		position:relative;
 		float:left;
 	}
@@ -1293,7 +1347,9 @@ body{
 	.hosting_table_div{
 		width:100%;
 		position:relative;
-		font-family: 'Trebuchet MS',sans-serif;
+
+		font-family: 'Raleway', sans-serif;
+
 		font-size: 13px;
 		font-weight: normal;
 		color: rgb(49, 49, 49);	
@@ -1339,9 +1395,11 @@ body{
 	#header1{
 		min-height:68px;
 		font-size:16px;  
-		font-family:'trebuchet ms';
+
+		font-family:'Raleway', sans-serif;
 		font-weight: normal;
-		text-shadow: 0px 0px 15px #000000;
+		text-shadow: 1px 1px 2px #000000;
+
 		line-height: 20px;
 		color: rgb(255, 255, 255);    
 		border-radius: 9px 9px 0px 0px;
@@ -1354,9 +1412,11 @@ body{
 	#first_header1{
 		min-height:68px;
 		font-size:16px;  
-		font-family:'trebuchet ms';
+
+		font-family:'Raleway', sans-serif;
 		font-weight: normal;
-		text-shadow: 0px 0px 15px #000000;
+		text-shadow: 1px 1px 2px #000000;
+
 		line-height: 20px;
 		color: rgb(255, 255, 255);    
 		border-radius: 9px 9px 0px 0px;
@@ -1374,11 +1434,121 @@ body{
 	}
         
         
-      #frame{
-position:absolute;
-left:0;
-width:100%;
-height:200%;
-z-index:0;
-border-style: none;
-      }  
+        #frame{
+                position:absolute;
+                left:0;
+                width:100%;
+                height:200%;
+                z-index:0;
+                border-style: none;
+        } 
+        
+        .offer_outer_container{
+		
+		position:absolute;
+		
+		height:auto;
+		
+		overflow:hidden;
+		
+		width:100%;	
+		
+		text-align:center;	
+	}
+	
+	.offer_content_container{
+		
+		height:auto;
+		
+		overflow:hidden;
+		
+		width:100%;
+		
+		position:relative;
+		
+		text-align:center;
+		
+		margin-left:30%;
+			
+		
+	}
+	
+	.offer_cloud_container{
+		
+		float:left;
+		
+		width:128px;
+		
+		height:auto;
+		
+		text-align:center;				
+		
+	}
+	
+	.offer_cloud_text{
+		
+		color:#FFF;
+		
+		margin-top:-60px;
+		
+		text-align:center;
+		
+		font-size:18px;				
+		
+	}
+	.offer_price_text{
+		
+		margin-top:36px;
+		
+		font-size:18px;				
+		
+	}
+	
+	.offer_amount_container{
+		float:left;
+		
+		width:auto;
+		
+		height:98px;
+		
+		font-size:60px;
+		
+		color:#9cc33c;
+		
+		padding:16px 16px;
+		
+		text-align:center;				
+	
+	}
+	
+	.offer_notes_container{
+		
+		position:relative;
+		
+		text-align:center;
+			
+	}
+	
+	.offer_notes_heading{
+		
+		position:relative;
+		
+		text-align:center;
+		
+		color: #9cc33c;
+		
+		font-size:48px;
+			
+	}
+	
+	.offer_notes_content{
+		
+		text-align:center;
+		
+		position:relative;
+		
+		font-size:14px;
+		
+		color: #60c8d8;
+		
+	}

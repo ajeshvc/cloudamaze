@@ -16,6 +16,8 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
     }
 } elseif (isset($_POST['domainradio']) && $_POST['domainradio'] != "") {
     $domainname = $_POST['domainradio'];
+    $domainprice=  getdomainpriceapi($domainname);
+    $_SESSION['domainprice']=$domainprice;
 }
 ?>
 <div id="content" >
@@ -37,9 +39,9 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             <input type="text" name="domain" placeholder="" value="<?php echo $domainname; ?>" id="txt_domain" <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> readonly="readonly" <?php } ?> />
                         </div>
                     </div>
-                    <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']) )) { ?>
+                 <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']) )) { ?>
                         <div class="domain_container">
-                            <div class="domail_text_wrapper">
+                            <div class="domail_text_wrapper" id="selectedtld">
                                 .com
                             </div>
                             <div class="arrow_wrapper">
@@ -51,11 +53,13 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     <input type="submit" id="search_btn_container" class="btnclass" name="check" <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'true' ) || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> value="Submit"  <?php } else { ?> value="Check" <?php } ?>  />        
                 </div>
             </div>
-            
-            
-            
-            
-            <table>
+             
+             
+              <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
+                
+        ?><font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font> 
+              <?php  } ?>
+            <!--<table>-->
                 <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'false' ) && (!isset($_POST['domainradio']))) { ?>
                     <div id="helptxt" style="display: none">     
                         <div class="hidden_container">
@@ -65,12 +69,12 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                                Most Popular Domain Extensions:
                                <br/>
                                 <br/>
-                               <?php    $tldmostarray=array('net','in','biz','org','us','eu','co.uk','co.in','info','mobi'); ?>
-                                <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> />com 
+                               <?php  //$tldmostarray is in lib/resellerclubtld.php ?>
+                                <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" />com 
                               <?php  $i=1;         
                             foreach ($tldmostarray as $value) {
                                    if($i%7==0){?><br/><?php   } ?>
-                                 <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> /><?php echo $value; ?>
+                                 <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" /><?php echo $value; ?>
                                  <?php  if($i%7==0){   $i=0; } 
                                     $i++; } ?>
                                 <div class="arrow_wrapper">
@@ -82,6 +86,8 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     </div>
 
 
+        <div class="banner_outer" <?php  if (($status != "" && $exist)|| $flag || ($status != "") ){ ?> style="border: 1px solid #CCC;margin-left: 10px" <?php }else{ ?> style="border: 0px solid #CCC" <?php } ?> >
+            <table>
                     <?php
                     // to display given Domain Available or Not
                     if ($status != "" && $exist) {
@@ -107,7 +113,8 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                             $fulldomainname = $domainname . "." . $arrayitem;
 
                             if ($datajson[$fulldomainname]["status"] == "available") {
-                                ?> <tr><td align="left"><input type="radio" value="<?php echo $fulldomainname; ?>" name="domainradio" onclick="this.form.submit();" /> <?php echo $fulldomainname; ?> </td></tr> 
+                                $domainprice=getdomainpriceapi($fulldomainname);
+                                ?> <tr><td align="left"><input type="radio" value="<?php echo $fulldomainname; ?>" name="domainradio" onclick="this.form.submit();" /> <?php echo $fulldomainname; ?></td><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font></td></tr> 
                                 <?php
                             }
                         }
@@ -115,14 +122,16 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                         if ($status != "") {
                             ?> <tr><td id="tdhead"><?php echo 'Suggested Domains:'; ?> </td></tr>
                             <?php foreach ($domainsuggestionsarray as $value) {
-                                ?> <tr><td align="left"><input type="radio" value="<?php echo $value; ?>" name="domainradio" onclick="this.form.submit();" /><?php echo $value; ?> </td></tr>
+                                 $domainprice=getdomainpriceapi($value);
+                                ?> <tr><td align="left"><input type="radio" value="<?php echo $value; ?>" name="domainradio" onclick="this.form.submit();" /><?php echo $value; ?></td><td align="left"> <font style="color: green" > &#8377; <?php echo " ".$domainprice; ?></font> </td></tr>
                                 <?php
                             }
                         }
                     }
+                    ?> </table> </div> <?php
                 }
                 ?>
-            </table> 
+            <!--</table>--> 
             
 
 
@@ -139,19 +148,12 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                         <div class="cust_table_div">
                             Other Domain Extensions: 
                             <?php 
-                            $tldmorearray=array('asia','name','tel','tv','me','ws','bz',
-                                         'cc','org.uk','me.uk','net.in','org.in','ind.in','firm.in',
-                                         'gen.in','mn','us.com','eu.com','uk.com','uk.net','gb.com',
-                                         'gb.net','de.com','cn.com','qc.com','kr.com','ae.org','br.com',
-                                         'hu.com','jpn.com','no.com','ru.com','sa.com','se.com','se.net',
-                                         'uy.com','za.com','co','gr.com','co.nz','net.nz','org.nz','com.co',
-                                         'net.co','nom.co','ca','de','es','com.au','net.au','xxx','ru','com.ru','net.ru',
-                                         'org.ru','pro','nl','sx','cn','com.cn','net.cn','org.cn','com.de');
+                           //$tldmorearray is in resellerclubtld.php
                             $i=8;         
                             foreach ($tldmorearray as $value) {
                                    if($i%8==0){?><div class="cust_row_div"><?php  } ?>
                                    <div class="cust_col_div">
-                                       <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> /><?php echo $value; ?>
+                                       <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" /><?php echo $value; ?>
                                  </div>
                                     <?php  if($i%8==0){?></div><?php $i=0; } 
                                     $i++; } ?>
@@ -174,7 +176,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
    </form>  
             
 			<!-- Link team images-->
-            
+           <?php  if (!isset($domainprice) || (isset($domainprice)&& $domainprice=="")){?> 
             <div id="link_team_thumbs">
                 <a id="link_team_capanel" href="http://capanel.cloudamaze.com"><img src="images/capanel.png" alt=""/></a>
                 <a id="link_team_webftp" href="http://webftp.cloudamaze.com"><img src="images/wftp.png" alt=""/></a>
@@ -182,7 +184,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                 <a id="link_team_phpadmin" href="http://db.cloudamaze.com"><img src="images/pmadmin.png" alt=""/></a>
                 <span class="link_team_stretch"></span>
             </div>
-        
+           <?php } ?>
 </div>
             
             

@@ -7,34 +7,7 @@ include '../../config.php';
 // Method: GET,POST, PUT
 // Data: array("param" => "value") ==> sample.php?param=value
 
-function helloInfinityCallAPI($method, $url, $data = false) {
-    $curl = curl_init();
-
-    switch ($method) {
-        case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
-
-            if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            break;
-        case "PUT":
-            curl_setopt($curl, CURLOPT_PUT, 1);
-            break;
-        default:
-            if ($data)
-                $url = sprintf("%s?%s", $url, http_build_query($data));
-    }
-
-    // Optional Authentication: - Need not touch this
-    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    return curl_exec($curl);
-}
-?>
-
-<?php
+//include api/helloinfinitycallapi.php
 //Example Call to see available domains and suggestions
 $url = '';
 $tldarray[] = "";
@@ -49,6 +22,10 @@ if (isset($_GET['skip']) && $_GET['skip']=='false' ){
 if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" && isset($_POST['tld']) && $_POST['tld'] != "") {
 
     $domainname = $_POST['domain'];
+ if (!preg_match('/[^A-Za-z0-9]/', $domainname)) // '/[^a-z\d]/i' should also work.
+{
+  // string contains only english letters & digits
+  
     $tld = "";
     $i = 0;
     foreach ($_POST['tld'] as $arrayitem) {
@@ -126,7 +103,11 @@ if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" 
     }
     }
     // domain suggestions end
+
+}else{
+     echo '<br/> Invalid Domain Name';      
 }
+        }
  elseif (isset($_POST['check'])){
      
     if(!isset($_POST['tld'])){

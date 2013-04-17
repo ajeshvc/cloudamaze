@@ -2,8 +2,8 @@
   
                     
     <ul id="menu-bar">
-     <li <?php if(isset($_GET['page']) && $_GET['page']==1){ ?>   class="current" <?php  } ?> ><a href="index.php">Home</a></li>
-     <li><a href="index.php?page=1&skip=false">Domain</a></li>
+     <li <?php if(!isset($_GET['page']) || (isset($_GET['page']) && $_GET['page']==0)){ ?>   class="current" <?php  } ?> ><a href="index.php">Home</a></li>
+     <li <?php if(isset($_GET['page']) && $_GET['page']==1 || (isset($_GET['page']) && $_GET['page']==2) ){ ?>   class="current" <?php  } ?>><a href="index.php?page=1&skip=false">Domain</a></li>
      <li <?php if((isset($_GET['page']) && $_GET['page']==5) || (isset($_GET['page']) && $_GET['page']==11) || (isset($_GET['page']) && $_GET['page']==13) ){ ?>   class="current"  <?php  } ?> ><a href="index.php?page=13">Hosting</a>
          <ul>
            <li><a href="index.php?page=13">Shared Hosting</a></li>
@@ -23,7 +23,7 @@
      <li><a href="http://blog.cloudamaze.com/" target="_blank">Blog</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==6){ ?>   class="current" <?php  } ?> ><a href="index.php?page=6">Testimonials</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==14){ ?>   class="current" <?php  } ?>><a href="index.php?page=14">Downloads</a></li>
-     <li><a href="index.php?page=15" >24/7 Support</a></li>
+     <li <?php if(isset($_GET['page']) && $_GET['page']==15){ ?>   class="current" <?php  } ?> ><a href="index.php?page=15" >Support</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">Contact Us</a></li>
     </ul>
 </div>
