@@ -102,7 +102,7 @@ foreach ($resellersupporttld as $value) {
                 <div class="hosting_col_div" <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?>>
                     <?php echo $domainprice ?>
                 </div>
-                ?>
+               
             </div> 
         <?php 
        // echo $value . ": " . $domainprice . "<br/>";
