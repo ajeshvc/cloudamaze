@@ -77,7 +77,7 @@ $domainprice=$datajson[$selectedtld]["addnewdomain"][1];
      if($domainprice==""){
        $domainprice="Not Available";  
      }else{
-         echo $selectedtld.": ".$domainprice."\n";
+         echo $value.": ".$domainprice."<br/>";
      } 
     
 
