@@ -94,7 +94,7 @@ foreach ($resellersupporttld as $value) {
         $domainprice = "Not Available";
     } else {
         ?>
-        <div style="float: left">
+        <div style="float: none">
         <div class="hosting_row_div">      
                 <div class="first_hosting_col_div" <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?> >
                     <span id="header2">
