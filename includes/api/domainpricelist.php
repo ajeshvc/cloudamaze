@@ -38,6 +38,10 @@ $datajson = json_decode($data, TRUE);
             </div>   
 
         </div>
+     </div>   
+
+   </div>  
+        
 <?php 
  $i = 0;
 $colorid = 1;
@@ -92,7 +96,9 @@ foreach ($resellersupporttld as $value) {
         $domainprice = "Not Available";
     } else {
         ?>
-         <div class="hosting_row_div">      
+        <div class="hosting_content_outer">
+    <div class="hosting_table_div">      
+        <div class="hosting_row_div">      
                 <div class="first_hosting_col_div" <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?> >
                     <span id="header2">
                              <?php echo " ".$value; ?>
@@ -104,6 +110,8 @@ foreach ($resellersupporttld as $value) {
                 </div>
                
             </div> 
+        </div>
+</div>
         <?php 
        // echo $value . ": " . $domainprice . "<br/>";
             $colorid++;
@@ -114,8 +122,7 @@ foreach ($resellersupporttld as $value) {
 
 ?>
 
-    </div>
-</div>
+    
 </body>
     </head>
 </html>
