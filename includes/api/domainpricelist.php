@@ -95,12 +95,12 @@ foreach ($resellersupporttld as $value) {
          <div class="hosting_row_div">      
                 <div class="first_hosting_col_div" <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?> >
                     <span id="header2">
-                            &#8377; <?php echo " ".$value; ?>
+                             <?php echo " ".$value; ?>
                     </span>
                 </div>
 
                 <div class="hosting_col_div" <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?>>
-                    <?php echo $domainprice ?>
+                   &#8377; <?php echo $domainprice ?>
                 </div>
                
             </div> 
