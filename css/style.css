@@ -57,6 +57,43 @@
     
 }
 
+
+.single_dwnld_item a {
+	
+	text-decoration: none; 
+	
+	color:#000;
+}
+
+.single_dwnld_item a { 
+
+	text-decoration: none; 
+	
+	color:#000;
+}
+
+.single_dwnld_item a { 
+	
+	text-decoration: none; 
+	
+	color:#000;
+}
+
+.single_dwnld_item a {
+	 
+	text-decoration: none; 
+	
+	color:#000;
+}
+
+.single_dwnld_item a { 
+	
+	text-decoration: none; 
+	
+	color:#000;
+	
+}
+
 .dwnld_txt{
 	
 	margin-bottom:2%;
@@ -1468,7 +1505,7 @@ body{
 		
 		text-align:center;
 		
-		margin-left:30%;
+		margin-left:22%;
 			
 		
 	}
@@ -1537,7 +1574,7 @@ body{
 		
 		color: #9cc33c;
 		
-		font-size:48px;
+		font-size:12px;
 			
 	}
 	
@@ -1547,7 +1584,7 @@ body{
 		
 		position:relative;
 		
-		font-size:14px;
+		font-size:10px;
 		
 		color: #60c8d8;
 		
