@@ -24,7 +24,9 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
    
         <form name="f1" method="post" <?php if (isset($_GET['skip']) && $_GET['skip'] == 'true') { ?> action="index.php?page=1&skip=true"  <?php } else { ?> action="index.php?page=1&skip=false"<?php } ?>>
          <div id="content1" style="float: left">   
+             <div style="text-align: right;"> <a href="index.php?page=16"> View Pricing >> </a></div>
             <div class="search_outer">
+               
                 <div class="search_container"> 
                 
                 	<div class="w3_container">
@@ -52,8 +54,9 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     <?php } ?>
                     <input type="submit" id="search_btn_container" class="btnclass" name="check" <?php if (( isset($_GET['skip']) && $_GET['skip'] == 'true' ) || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> value="Submit"  <?php } else { ?> value="Check" <?php } ?>  />        
                 </div>
+              
             </div>
-             
+              
              
               <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
                 
