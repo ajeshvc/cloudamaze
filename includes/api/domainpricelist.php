@@ -20,11 +20,11 @@ $datajson = json_decode($data, TRUE);
 
 
 ?>
-<html>
+<!--<html>
     <head>
          <link rel="stylesheet" href="../../css/style.css" type="text/css"/>
     <body>
-           
+           -->
     
 <div class="hosting_content_outer">
     <div class="hosting_table_div"> 
@@ -121,6 +121,6 @@ foreach ($resellersupporttld as $value) {
 
   </div>
 </div>  
-</body>
+<!--</body>
     </head>
-</html>
+</html>-->

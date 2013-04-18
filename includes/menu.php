@@ -144,6 +144,9 @@
                         case 15: 
                              echo '24/7 Support';
                             break;
+                         case 16: 
+                             echo 'Domain Price List';
+                            break;
                         default : echo 'Home';
                             break;
                     }
