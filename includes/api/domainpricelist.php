@@ -1,6 +1,6 @@
 <?php
-include '../lib/resellerclubtld.php';
-include 'helloinfinitycallapi.php';
+//include '../lib/resellerclubtld.php';
+//include 'helloinfinitycallapi.php';
 
 $comarray = array("com");
 $resellersupporttld = array_merge($comarray, $tldmostarray, $tldmorearray);

@@ -76,8 +76,10 @@ case 14: include 'downloads.php';
 break;
 case 15: include 'support.php';
 break;
-case 16: include 'api/domainpricelist.php';
-break;
+case 16:    include 'lib/resellerclubtld.php';
+            include 'api/helloinfinitycallapi.php';
+            include 'api/domainpricelist.php';
+            break;
 default:        include 'home.php';        
     
                  break;
