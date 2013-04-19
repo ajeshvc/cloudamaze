@@ -31,12 +31,10 @@ $datajson = json_decode($data, TRUE);
         <?php for($i=0;$i<=4;$i++){ ?>
         <div class="hosting_row_div">
             <div class="first_hosting_col_div" id="first_header1">
-                Domain Name
+                Domain Name 
             </div>
 
-            <div class="hosting_col_div" id="header1">
-                Price
-            </div>   
+            
 
         </div>
         <?php } ?>
@@ -100,12 +98,12 @@ foreach ($resellersupporttld as $value) {
             <div class="first_hosting_col_div"  <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?> style="text-align: right;" >
                     <span id="header2">
                              <?php echo " ".$value; ?>
+                             
                     </span>
+                              &#8377; <?php echo $domainprice ?>
                 </div>
 
-                <div class="hosting_col_div" <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?>  >
-                   &#8377; <?php echo $domainprice ?>
-                </div>
+               
                
             </div> 
         </div>
