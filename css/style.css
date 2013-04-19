@@ -1415,7 +1415,7 @@ body{
 		text-align:left;
                 
 	}
-        first_hosting_col_div:hover{
+        .first_hosting_col_div:hover{
            background-color:  rgb(96, 201, 217);
         }
 	#odd{
