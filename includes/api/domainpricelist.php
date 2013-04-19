@@ -28,10 +28,10 @@ $datajson = json_decode($data, TRUE);
     
 <div class="hosting_content_outer">
     <div class="hosting_table_div"> 
-        <?php for($i=0;$i<=4;$i++){ ?>
+        <?php for($i=0;$i<=8;$i++){ ?>
         <div class="hosting_row_div">
             <div class="first_hosting_col_div" id="first_header1">
-                Domain Name 
+                Domain Name / Price
             </div>
 
             
