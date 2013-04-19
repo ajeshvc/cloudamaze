@@ -1597,8 +1597,9 @@ body{
             font-weight: bold;
             font-size: 20px;
             overflow: hidden;
+            float: left;
         }
         .dpricelist_price{
              width: 100%;
-             
+              overflow: hidden;
         }
