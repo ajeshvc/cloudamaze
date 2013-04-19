@@ -1607,8 +1607,8 @@ body{
         .dpricelist_price{
              width: 95%;
               overflow: hidden;
-               padding-right:  5%;
+               padding-left:   5%;
                color: green;
-               margin-bottom: 1%;
+               margin-top: 3px;
                
         }
