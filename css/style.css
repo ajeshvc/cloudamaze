@@ -1413,8 +1413,11 @@ body{
 		float:left;
 		margin-right:1px;
 		text-align:left;
+                
 	}
-	
+        a.first_hosting_col_div{
+           background-color:  rgb(96, 201, 217);
+        }
 	#odd{
 		background-color: rgb(246, 246, 246);
     	border-bottom: 1px solid rgb(204, 204, 204);
