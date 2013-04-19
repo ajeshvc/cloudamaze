@@ -24,7 +24,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
    
         <form name="f1" method="post" <?php if (isset($_GET['skip']) && $_GET['skip'] == 'true') { ?> action="index.php?page=1&skip=true"  <?php } else { ?> action="index.php?page=1&skip=false"<?php } ?>>
          <div id="content1" style="float: left">   
-             <div style="text-align: right;"> <a href="index.php?page=16"> View Pricing >> </a></div>
+             <div style="text-align: right;"> <a href="index.php?page=16" class="btnclass"> View Pricing >> </a></div>
             <div class="search_outer">
                
                 <div class="search_container"> 
