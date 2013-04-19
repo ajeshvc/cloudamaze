@@ -110,4 +110,19 @@
         
     </div>
     
+     <div class="dwnld_block">
+        <h4>Payment Details</h4>
+        <div class="single_dwnld_item">
+            <div> 
+                  <a href="uploads/payment_details.pdf" target="_blank">
+           
+                    <img src="images/dwnld.PNG" class="dwnld_img">
+                     <div class="dwnld_item_name">Payment Info</div>
+                </a>
+            </div>
+          
+        </div>         
+        
+    </div>
+    
 </div>
