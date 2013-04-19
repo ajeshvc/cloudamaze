@@ -1590,6 +1590,9 @@ body{
         /* Domain price list css */
         .dpricelist_name{
             width: 100%;
+            font-family: 'Raleway',sans-serif;
+            font-weight: bold;
+            font-size: 16px;
             overflow: hidden;
         }
         .dpricelist_price{
