@@ -91,7 +91,7 @@ foreach ($resellersupporttld as $value) {
                              <?php echo " ".$value; ?>
                              
                     </span>
-                              &#8377; <?php echo $domainprice ?>
+                             <br/> &#8377; <?php echo $domainprice ?>
                 </div>
 
                
