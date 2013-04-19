@@ -87,11 +87,16 @@ foreach ($resellersupporttld as $value) {
         <div style="float: none">
         <div class="hosting_row_div">      
             <div class="first_hosting_col_div"  <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?> style="text-align: right;" >
-                    <span id="header2">
+                    <span id="header2" class="dpricelist_name">
                              <?php echo " ".$value; ?>
                              
                     </span>
-                             <br/> &#8377; <?php echo $domainprice ?>
+                
+                 <span class="dpricelist_price">
+                             &#8377; <?php echo $domainprice ?>
+                             
+                    </span>
+                             
                 </div>
 
                
