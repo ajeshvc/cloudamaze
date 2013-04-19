@@ -1590,7 +1590,9 @@ body{
         /* Domain price list css */
         .dpricelist_name{
             width: 100%;
+            overflow: hidden;
         }
         .dpricelist_price{
              width: 100%;
+             
         }
