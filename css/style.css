@@ -1415,7 +1415,7 @@ body{
 		text-align:left;
                 
 	}
-        a:hover.first_hosting_col_div{
+        first_hosting_col_div:hover{
            background-color:  rgb(96, 201, 217);
         }
 	#odd{
@@ -1595,7 +1595,7 @@ body{
             width: 100%;
             font-family: 'Raleway',sans-serif;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 20px;
             overflow: hidden;
         }
         .dpricelist_price{
