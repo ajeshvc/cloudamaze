@@ -1598,10 +1598,11 @@ body{
             width: 95%;
             font-family: 'Raleway',sans-serif;
             font-weight: bold;
-            font-size: 27px;
+            font-size: 13px;
             overflow: hidden;
             float: left;
             padding-left: 5%;
+            text-align: left;
         }
         .dpricelist_price{
              width: 95%;
