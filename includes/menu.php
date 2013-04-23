@@ -25,11 +25,12 @@
      <li <?php if(isset($_GET['page']) && $_GET['page']==14){ ?>   class="current" <?php  } ?>><a href="index.php?page=14">Downloads</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==15){ ?>   class="current" <?php  } ?> ><a href="index.php?page=15" >Support</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">Contact Us</a></li>
-     <li <?php if((isset($_GET['page']) && $_GET['page']==17) || (isset($_GET['page']) && $_GET['page']==18) || (isset($_GET['page']) && $_GET['page']==19)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="index.php?page=17">More Info</a>
+     <li <?php if((isset($_GET['page']) && $_GET['page']==17) || (isset($_GET['page']) && $_GET['page']==18) || (isset($_GET['page']) && $_GET['page']==19) || (isset($_GET['page']) && $_GET['page']==20)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="index.php?page=17">More Info</a>
             <ul>
            <li><a href="index.php?page=17">About Us</a></li>
            <li><a href="index.php?page=18">Terms and Conditions </a></li>
            <li><a href="index.php?page=19">Privacy policies</a></li>
+           <li><a href="index.php?page=20">Refund and Cancellation</a></li>
          </ul>
     
     </ul></li>
@@ -163,7 +164,9 @@
                          case 19: 
                              echo ' Privacy policies';
                             break;
-                       
+                        case 20: 
+                             echo ' Refund and Cancellation';
+                            break;
                         default : echo 'Home';
                             break;
                     }
