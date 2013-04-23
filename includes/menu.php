@@ -25,14 +25,14 @@
      <li <?php if(isset($_GET['page']) && $_GET['page']==14){ ?>   class="current" <?php  } ?>><a href="index.php?page=14">Downloads</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==15){ ?>   class="current" <?php  } ?> ><a href="index.php?page=15" >Support</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">Contact Us</a></li>
-     <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">More Info</a></li>
+     <li <?php if((isset($_GET['page']) && $_GET['page']==17) || (isset($_GET['page']) && $_GET['page']==18) || (isset($_GET['page']) && $_GET['page']==19)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="index.php?page=17">More Info</a>
             <ul>
            <li><a href="index.php?page=17">About Us</a></li>
            <li><a href="index.php?page=18">Terms and Conditions </a></li>
            <li><a href="index.php?page=19">Privacy policies</a></li>
          </ul>
     
-    </ul>
+    </ul></li>
 </div>
 <?php if ( (isset($_GET['page']) &&  $_GET['page']==2) || (isset($_GET['page']) &&  $_GET['page']==3) || (isset($_GET['page']) &&  $_GET['page']==4)  ){ ?>
 <div id="tab_bar_wrapper">	
@@ -161,7 +161,7 @@
                              echo 'Terms and Conditions';
                             break;
                          case 19: 
-                             echo ' privacy policies';
+                             echo ' Privacy policies';
                             break;
                        
                         default : echo 'Home';
