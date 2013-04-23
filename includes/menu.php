@@ -25,6 +25,13 @@
      <li <?php if(isset($_GET['page']) && $_GET['page']==14){ ?>   class="current" <?php  } ?>><a href="index.php?page=14">Downloads</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==15){ ?>   class="current" <?php  } ?> ><a href="index.php?page=15" >Support</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">Contact Us</a></li>
+     <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">More Info</a></li>
+            <ul>
+           <li><a href="index.php?page=17">About Us</a></li>
+           <li><a href="index.php?page=18">Terms and Conditions </a></li>
+           <li><a href="index.php?page=19">Privacy policies</a></li>
+         </ul>
+    
     </ul>
 </div>
 <?php if ( (isset($_GET['page']) &&  $_GET['page']==2) || (isset($_GET['page']) &&  $_GET['page']==3) || (isset($_GET['page']) &&  $_GET['page']==4)  ){ ?>
@@ -147,6 +154,16 @@
                          case 16: 
                              echo 'Domain Price List / Year ';
                             break;
+                         case 17: 
+                             echo 'About Us';
+                            break;
+                        case 18: 
+                             echo 'Terms and Conditions';
+                            break;
+                         case 19: 
+                             echo ' privacy policies';
+                            break;
+                       
                         default : echo 'Home';
                             break;
                     }
