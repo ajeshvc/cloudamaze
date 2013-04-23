@@ -162,10 +162,10 @@
                              echo 'Terms and Conditions';
                             break;
                          case 19: 
-                             echo ' Privacy policies';
+                             echo ' Privacy Policies';
                             break;
                         case 20: 
-                             echo ' Refund and Cancellation';
+                             echo ' Refund and Cancellation Policies';
                             break;
                         default : echo 'Home';
                             break;
