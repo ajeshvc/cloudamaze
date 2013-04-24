@@ -25,7 +25,15 @@
      <li <?php if(isset($_GET['page']) && $_GET['page']==14){ ?>   class="current" <?php  } ?>><a href="index.php?page=14">Downloads</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==15){ ?>   class="current" <?php  } ?> ><a href="index.php?page=15" >Support</a></li>
      <li <?php if(isset($_GET['page']) && $_GET['page']==12){ ?>   class="current" <?php  } ?> ><a href="index.php?page=12">Contact Us</a></li>
-    </ul>
+     <li <?php if((isset($_GET['page']) && $_GET['page']==17) || (isset($_GET['page']) && $_GET['page']==18) || (isset($_GET['page']) && $_GET['page']==19) || (isset($_GET['page']) && $_GET['page']==20)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="index.php?page=17">More Info</a>
+            <ul>
+           <li><a href="index.php?page=17">About Us</a></li>
+           <li><a href="index.php?page=18">Terms and Conditions </a></li>
+           <li><a href="index.php?page=19">Privacy policies</a></li>
+           <li><a href="index.php?page=20">Refund and Cancellation</a></li>
+         </ul>
+    
+    </ul></li>
 </div>
 <?php if ( (isset($_GET['page']) &&  $_GET['page']==2) || (isset($_GET['page']) &&  $_GET['page']==3) || (isset($_GET['page']) &&  $_GET['page']==4)  ){ ?>
 <div id="tab_bar_wrapper">	
@@ -143,6 +151,21 @@
                             break;
                         case 15: 
                              echo '24/7 Support';
+                            break;
+                         case 16: 
+                             echo 'Domain Price List / Year ';
+                            break;
+                         case 17: 
+                             echo 'About Us';
+                            break;
+                        case 18: 
+                             echo 'Terms and Conditions';
+                            break;
+                         case 19: 
+                             echo ' Privacy Policies';
+                            break;
+                        case 20: 
+                             echo ' Refund and Cancellation Policies';
                             break;
                         default : echo 'Home';
                             break;
