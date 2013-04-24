@@ -27,7 +27,7 @@ $datajson = json_decode($data, TRUE);
            -->
     
 <div class="hosting_content_outer">
-    <div class="hosting_table_div"> 
+    <div class="hosting_table_div" style="font-size: 20px;"> 
         
         
 <?php 
