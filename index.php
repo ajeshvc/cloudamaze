@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'includes/content_selector_page_name.php';
 session_start();
 if ($DEBUG) {
     error_reporting(E_ALL);
@@ -43,7 +44,7 @@ ob_start();
             </script>
             <!--End of Zopim Live Chat Script-->
     </head>
-    <body <?php if (isset($_GET['page']) &&  $_GET['page']==1){ ?> onLoad="document.f1.domain.focus()" <?php } ?> >
+    <body <?php if (isset($page) &&  $page==1){ ?> onLoad="document.f1.domain.focus()" <?php } ?> >
         <div id="container">
             <?php require 'includes/header.php'; ?>
             <div id="outer-content">
@@ -53,7 +54,7 @@ ob_start();
                 </div>                  
             </div>    
             <?php
-            if ((isset($_GET['page']) && $_GET['page'] == 1) || !isset($_GET['page'])) {
+            if ((isset($page) && $page == 1) || !isset($page)) {
                 include 'includes/footer.php';
             }
             ?>                            

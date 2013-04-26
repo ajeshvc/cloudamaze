@@ -1,4 +1,4 @@
-<?php if (isset($_GET['page'])) { $page = $_GET['page'];
+<?php if (isset($page)) { 
 } else { $page = -1;
 }
 switch ($page) { case 0: include 'home.php';
