@@ -5,7 +5,7 @@ $email="";
 $couponcode="";
 
  if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) ) {
-  header('Location: index.php?page=home');
+  header('Location: /cloudamaze/home');
   }
 
   function getcoupontype($couponcode){
@@ -297,7 +297,7 @@ if(isset($_POST['name'])){
                      if(isset( $_SESSION['domainprice'])){
                         unset( $_SESSION['domainprice']); 
                 }
-                    header('Location:index.php?page=congrats');
+                    header('Location:/cloudamaze/congrats');
                 }
             }
         }
@@ -332,7 +332,7 @@ while ($row = mysql_fetch_array($result)) {
 ?>
 <div id="content" style="alignment-adjust: central; ">
 
-    <form  name="form" method="post" action="index.php?page=hosting">   
+    <form  name="form" method="post" action="/cloudamaze/hosting">   
         <div class="hosting_content_outer">
         <div class="hosting_table_div">                
            <div class="hosting_row_div">

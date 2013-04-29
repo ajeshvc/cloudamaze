@@ -1,6 +1,6 @@
 <?php
 if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) || !isset($_SESSION['total']) || !isset($_SESSION['invoice']) ) {
-  header('Location: index.php?page=home');
+  header('Location: /cloudamaze/home');
 }
 
 ?>
@@ -37,7 +37,7 @@ if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION[
       
     <div id="buttons" >
         <div id="skip-domain" class="button">
-            <a href="index.php?page=home" id="OpenContact" class="btnclass"> Home </a>
+            <a href="/cloudamaze/home" id="OpenContact" class="btnclass"> Home </a>
         </div>
     </div>
 
