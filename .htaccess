@@ -1,1 +1,4 @@
-## Default .htaccess file
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule (.*)/ index.php?page=$1
