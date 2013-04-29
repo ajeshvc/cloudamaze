@@ -1,6 +1,6 @@
 <div class="form_outer">
   <div class="banner_outer">
-  This Privacy Policy governs the manner in which Cloudamaze collects, uses, maintains and discloses information collected from users (each, a "User") of the <a href="http://cloudamaze.com">Cloudamaze.com</a> website ("Site"). This privacy policy applies to the Site and all products and services offered by Cloudamaze.<br><br>
+  This Privacy Policy governs the manner in which Cloudamaze collects, uses, maintains and discloses information collected from users (each, a "User") of the <a href="http:/.com">Cloudamaze.com</a> website ("Site"). This privacy policy applies to the Site and all products and services offered by Cloudamaze.<br><br>
 
 <b>Personal identification information</b><br><br>
 

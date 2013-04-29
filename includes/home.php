@@ -9,7 +9,7 @@ if(isset($_SESSION['choice'])){
         unset( $_SESSION['domainprice']); 
     }
    
-    // header('Location:/cloudamaze/1&skip=false');
+    // header('Location:/1&skip=false');
 ?>
 <div id="content">
 

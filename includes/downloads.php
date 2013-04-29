@@ -86,7 +86,7 @@
         </div>         
         <div class="single_dwnld_item">
             <div> 
-                   <a href="uploads/cloudamaze_email_advantage.pdf" target="_blank">
+                   <a href="uploads_email_advantage.pdf" target="_blank">
                      <img src="images/dwnld.PNG" class="dwnld_img">
                      <div class="dwnld_item_name">Advantages of Cloudamaze email</div>
                     </a>

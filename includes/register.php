@@ -11,7 +11,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
         //validate domain
         if (preg_match("/^($label)\\.($tld)$/", $domain, $match) && in_array($match[2], $tld_list)) {
             $_SESSION['domain'] = $domain;
-            header('Location: /cloudamaze/hosting');
+            header('Location: /hosting');
         }
     }
 } elseif (isset($_POST['domainradio']) && $_POST['domainradio'] != "") {
@@ -22,9 +22,9 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
 ?>
 <div id="content" >
    
-        <form name="f1" method="post"  action="/cloudamaze/register" >
+        <form name="f1" method="post"  action="/register" >
          <div id="content1" style="float: left">   
-             <div style="text-align: right;"> <a href="/cloudamaze/domain-pricelist" class="btnclass"> View Pricing  </a></div>
+             <div style="text-align: right;"> <a href="/domain-pricelist" class="btnclass"> View Pricing  </a></div>
             <div class="search_outer">
                
                 <div class="search_container"> 

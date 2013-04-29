@@ -2,35 +2,35 @@
   
                     
     <ul id="menu-bar">
-     <li <?php if(!isset($page) || (isset($page) && $page==0)){ ?>   class="current" <?php  } ?> ><a href="/cloudamaze/home">Home</a></li>
-     <li <?php if(isset($page) && $page==1 || (isset($page) && $page==2) ){ ?>   class="current" <?php  } ?>><?php $_SESSION['skip']="false" ?><a href="/cloudamaze/register">Domain</a></li>
-     <li <?php if((isset($page) && $page==5) || (isset($page) && $page==11) || (isset($page) && $page==13) ){ ?>   class="current"  <?php  } ?> ><a href="/cloudamaze/shared-hosting">Hosting</a>
+     <li <?php if(!isset($page) || (isset($page) && $page==0)){ ?>   class="current" <?php  } ?> ><a href="/home">Home</a></li>
+     <li <?php if(isset($page) && $page==1 || (isset($page) && $page==2) ){ ?>   class="current" <?php  } ?>><?php $_SESSION['skip']="false" ?><a href="/register">Domain</a></li>
+     <li <?php if((isset($page) && $page==5) || (isset($page) && $page==11) || (isset($page) && $page==13) ){ ?>   class="current"  <?php  } ?> ><a href="/shared-hosting">Hosting</a>
          <ul>
-           <li><a href="/cloudamaze/shared-hosting">Shared Hosting</a></li>
-           <li><a href="/cloudamaze/vps">Virtual Private Servers</a></li>
-           <li><a href="/cloudamaze/dedicated-hosting">Dedicated Hosting</a></li>
+           <li><a href="/shared-hosting">Shared Hosting</a></li>
+           <li><a href="/vps">Virtual Private Servers</a></li>
+           <li><a href="/dedicated-hosting">Dedicated Hosting</a></li>
          </ul>
      </li>     
      
-     <li  <?php if((isset($page) && $page==7) || (isset($page) && $page==8) || (isset($page) && $page==9) || (isset($page) && $page==10) ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/cloudamaze/corporate-email">Services</a>
+     <li  <?php if((isset($page) && $page==7) || (isset($page) && $page==8) || (isset($page) && $page==9) || (isset($page) && $page==10) ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/corporate-email">Services</a>
      	<ul>
-        	<li><a href="/cloudamaze/corporate-email">Corporate Email</a></li>
-            <li><a href="/cloudamaze/ssl-certificate">SSL Certificate</a></li>
-           	<li><a href="/cloudamaze/payment-gateway">Payment Gateway</a></li>
-           	<li><a href="/cloudamaze/server-management">Server Management</a></li>
+        	<li><a href="/corporate-email">Corporate Email</a></li>
+            <li><a href="/ssl-certificate">SSL Certificate</a></li>
+           	<li><a href="/payment-gateway">Payment Gateway</a></li>
+           	<li><a href="/server-management">Server Management</a></li>
         </ul>
      </li>
      <li><a href="http://blog.cloudamaze.com/" target="_blank">Blog</a></li>
-     <li <?php if(isset($page) && $page==6){ ?>   class="current" <?php  } ?> ><a href="/cloudamaze/testimonials">Testimonials</a></li>
-     <li <?php if(isset($page) && $page==14){ ?>   class="current" <?php  } ?>><a href="/cloudamaze/downloads">Downloads</a></li>
-     <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/cloudamaze/support" >Support</a></li>
-     <li <?php if(isset($page) && $page==12){ ?>   class="current" <?php  } ?> ><a href="/cloudamaze/contact-us">Contact Us</a></li>
-     <li <?php if((isset($page) && $page==17) || (isset($page) && $page==18) || (isset($page) && $page==19) || (isset($page) && $page==20)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/cloudamaze/about-us">More Info</a>
+     <li <?php if(isset($page) && $page==6){ ?>   class="current" <?php  } ?> ><a href="/testimonials">Testimonials</a></li>
+     <li <?php if(isset($page) && $page==14){ ?>   class="current" <?php  } ?>><a href="/downloads">Downloads</a></li>
+     <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/support" >Support</a></li>
+     <li <?php if(isset($page) && $page==12){ ?>   class="current" <?php  } ?> ><a href="/contact-us">Contact Us</a></li>
+     <li <?php if((isset($page) && $page==17) || (isset($page) && $page==18) || (isset($page) && $page==19) || (isset($page) && $page==20)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/about-us">More Info</a>
             <ul>
-           <li><a href="/cloudamaze/about-us">About Us</a></li>
-           <li><a href="/cloudamaze/terms">Terms and Conditions </a></li>
-           <li><a href="/cloudamaze/privacy-policies">Privacy policies</a></li>
-           <li><a href="/cloudamaze/refund">Refund and Cancellation</a></li>
+           <li><a href="/about-us">About Us</a></li>
+           <li><a href="/terms">Terms and Conditions </a></li>
+           <li><a href="/privacy-policies">Privacy policies</a></li>
+           <li><a href="/refund">Refund and Cancellation</a></li>
          </ul>
     
     </ul></li>

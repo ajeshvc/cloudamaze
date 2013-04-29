@@ -304,7 +304,7 @@ if(isset($_POST['name'])){
 
 
                     unset($_SESSION['choice']);
-                    header('Location:/cloudamaze/congrats');
+                    header('Location:/congrats');
                 }
             }
         }
@@ -340,7 +340,7 @@ while ($row = mysql_fetch_array($result)) {
 ?>
 <div id="content" style="alignment-adjust: central; ">
 
-    <form  name="form" method="post" action="/cloudamaze/shared-hosting">   
+    <form  name="form" method="post" action="/shared-hosting">   
         
 <div class="hosting_content_outer">
         <div class="hosting_table_div">                

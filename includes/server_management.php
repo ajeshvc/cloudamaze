@@ -89,7 +89,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
     <div class="form_content">
     	<div id="stylized" class="myform">
             <?php if($invoice==""){ ?>
-            <form id="form" name="form" method="post" action="/cloudamaze/server-management">
+            <form id="form" name="form" method="post" action="/server-management">
                 <h1>Query From</h1>
                 <p>Server Management</p>
                 
@@ -148,7 +148,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
                     <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> We will contact you.
                     <br/>You can call +91 890 750 9611 for any inquires if needed.
                     <div class="btn_wrapper_cnfrm" id="confirm_page_btn">
-                            <a href="/cloudamaze/home" id="OpenContact" class="btnclass"> Home </a>
+                            <a href="/home" id="OpenContact" class="btnclass"> Home </a>
                     </div>
             	</div>
                 </br>

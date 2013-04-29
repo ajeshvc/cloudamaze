@@ -1,6 +1,6 @@
 <?php
 //if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) ) {
-    header('Location: /cloudamaze/home');
+    header('Location: /home');
 //}
    
 ?>
@@ -9,3 +9,4 @@
 
 
 </div>
+
