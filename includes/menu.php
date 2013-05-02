@@ -167,6 +167,9 @@
                         case 20: 
                              echo ' Refund and Cancellation Policies';
                             break;
+                        case 21: 
+                             echo ' Domain Offer';
+                            break;
                         default : echo 'Home';
                             break;
                     }

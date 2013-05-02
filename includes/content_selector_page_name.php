@@ -47,6 +47,9 @@ case "privacy-policies": $page=19;
 case "refund":  $page=20;  
          
             break;
+case "domain-offer":  $page=21;  
+         
+            break;
                 
 default:      
             $page=0;
