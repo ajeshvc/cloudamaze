@@ -3,11 +3,7 @@ $name="";
 $phone="";
 $email="";
 $couponcode="";
-/*
- if ((isset($_SESSION['domain']) && $_SESSION['domain']=='' )|| !isset($_SESSION['domain']) ) {
-  header('Location: index.php?page=0');
-  }
-*/
+
 $_SESSION['domain']="";
   function getcoupontype($couponcode){
       $coupontype="";
@@ -308,7 +304,7 @@ if(isset($_POST['name'])){
 
 
                     unset($_SESSION['choice']);
-                    header('Location:index.php?page=4');
+                    header('Location:/congrats');
                 }
             }
         }
@@ -344,7 +340,7 @@ while ($row = mysql_fetch_array($result)) {
 ?>
 <div id="content" style="alignment-adjust: central; ">
 
-    <form  name="form" method="post" action="index.php?page=13">   
+    <form  name="form" method="post" action="/shared-hosting">   
         
 <div class="hosting_content_outer">
         <div class="hosting_table_div">                

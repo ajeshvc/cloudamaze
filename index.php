@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'includes/content_selector_page_name.php';
 session_start();
 if ($DEBUG) {
     error_reporting(E_ALL);
@@ -16,6 +17,7 @@ ob_start();
             <meta name="keywords" content="cloud hosting india,cloud hosting service,web mail,email hosting,corporate email,cloud mail server,cloud server ,indian host">
                 <title>Cloudamaze | High uptime cheap cloud hosting in india</title>
             <link rel="stylesheet" href="css/style.css" type="text/css"/>
+            
             <script type="text/javascript" src="js/jquery.min.js"></script>
              <script type="text/javascript" src="js/toggletld.js"></script>
             <link rel="stylesheet" type="text/css" href="css/formstyle.css" />
@@ -43,7 +45,7 @@ ob_start();
             </script>
             <!--End of Zopim Live Chat Script-->
     </head>
-    <body <?php if (isset($_GET['page']) &&  $_GET['page']==1){ ?> onLoad="document.f1.domain.focus()" <?php } ?> >
+    <body <?php if (isset($page) &&  $page==1){ ?> onLoad="document.f1.domain.focus()" <?php } ?> >
         <div id="container">
             <?php require 'includes/header.php'; ?>
             <div id="outer-content">
@@ -53,7 +55,7 @@ ob_start();
                 </div>                  
             </div>    
             <?php
-            if ((isset($_GET['page']) && $_GET['page'] == 1) || !isset($_GET['page'])) {
+            if ((isset($page) && $page == 1) || !isset($page)) {
                 include 'includes/footer.php';
             }
             ?>                            

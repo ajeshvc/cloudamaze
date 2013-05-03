@@ -25,9 +25,10 @@ $datajson = json_decode($data, TRUE);
          <link rel="stylesheet" href="../../css/style.css" type="text/css"/>
     <body>
            -->
-    
+ <div style="text-align: left; margin-bottom: 10px;"> <a href="/domain-offer" class="btnclass"> View Offers  </a></div>
+     
 <div class="hosting_content_outer">
-    <div class="hosting_table_div"> 
+      <div class="hosting_table_div" style="font-size: 20px;"> 
         
         
 <?php 

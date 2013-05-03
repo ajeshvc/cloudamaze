@@ -1,5 +1,5 @@
 <?php
-include '../../config.php';
+//include '../../config.php';
 
 //Code By : HelloInfinity
 //Date : March 6 2013
@@ -18,7 +18,7 @@ $flag=0;
 $status="";
 $exist=false;
 $limit=7;
-if (isset($_GET['skip']) && $_GET['skip']=='false' ){
+if (isset($_SESSION['skip']) && $_SESSION['skip']=='false' ){
 if (isset($_POST['check']) && isset($_POST['domain']) && $_POST['domain'] != "" && isset($_POST['tld']) && $_POST['tld'] != "") {
 
     $domainname = $_POST['domain'];

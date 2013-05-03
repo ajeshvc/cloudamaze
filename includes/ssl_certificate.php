@@ -210,7 +210,7 @@
 
 </div>
 
-  <form  name="form" method="post" action="index.php?page=10">   
+  <form  name="form" method="post" action="/ssl-certificate">   
      <?php if (!isset($_POST['sslradio']) && $invoice=="" &&  !isset($_SESSION['choice'])) { ?>
 <div class="table_container">
     <div class="pricing_table pricing_six">
@@ -289,7 +289,7 @@
                <div class="form_content">
     	<div id="stylized" class="myform">
            
-            <form id="form" name="form" method="post" action="index.php?page=10">
+            <form id="form" name="form" method="post" action="/ssl-certificate">
                 <div id="register-domain" class="button">
                         <input  type="submit" name="back" value="Change Plan" class="btnclass" style="background-color: #60c8d8;width: 100%; "/>
                      </div>
@@ -358,7 +358,7 @@
                     <b>Your request has been received</b> (Request ID :<?php echo $invoice; ?> ).<br/> We will contact you.
                     <br/>You can call +91 890 750 9611 for any inquires if needed.
                     <div class="btn_wrapper_cnfrm" id="confirm_page_btn">
-                            <a href="index.php?page=0" id="OpenContact" class="btnclass"> Home </a>
+                            <a href="/home" id="OpenContact" class="btnclass"> Home </a>
                     </div>
             	</div>
                 </br>

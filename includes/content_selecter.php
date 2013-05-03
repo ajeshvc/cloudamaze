@@ -1,14 +1,16 @@
-<?php if (isset($_GET['page'])) { $page = $_GET['page'];
+<?php if (isset($page)) { 
 } else { $page = -1;
 }
 switch ($page) { case 0: include 'home.php';
 break;
-case 1: include 'api/helloinfinitycallapi.php';
+case 1: include 'connection.php';
+include 'api/helloinfinitycallapi.php';
 include 'api/domainavail.php';
 include 'lib/tld.php';
 include 'lib/resellerclubtld.php';
 include 'api/domainprice.php';
 include 'register.php';
+include 'connectionclose.php';
 break;
 case 2: include 'connection.php';
 include 'lib/emailcheck.php';
@@ -91,6 +93,11 @@ case 19:
             break;
 case 20:    
             include 'refund.php';
+            break;
+case 21:    
+            include 'connection.php';
+            include 'domain_offer.php';
+            include 'connectionclose.php';
             break;
                 
 default:        include 'home.php';        

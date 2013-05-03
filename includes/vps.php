@@ -224,7 +224,7 @@ if (isset($_POST["back"])) {
                           $_SESSION['invoice'] = $invoice;
                           $_SESSION['domain'] = $hostingname;
                           unset($_SESSION['planchoice']);
-                          header('Location:index.php?page=4');
+                          header('Location:/congrats');
                          
                     }
                 }
@@ -235,7 +235,7 @@ if (isset($_POST["back"])) {
 ?>
 
 <div id="content" style="alignment-adjust: central; padding-bottom:5%;left:10%;">
-    <form  name="form" method="post" action="index.php?page=5">   
+    <form  name="form" method="post" action="/vps">   
         <div style="float: left;text-align: left; width: 5%">&nbsp;</div>
         <div></div> 
 
