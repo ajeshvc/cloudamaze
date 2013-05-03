@@ -8,7 +8,7 @@ while ($row = mysql_fetch_array($result)) {
 
 <div style="width: 100%;float: none;">
     <div class="hosting_content_outer">
-       <div class="hosting_table_div" style="font-size: 22px;"> 
+       <div class="hosting_table_div" style="font-size: 20px;"> 
             <div style="float: none">
                 <div class="hosting_row_div">      
                     <div class="first_hosting_col_div"  <?php if ($colorid % 2 == 0) { ?> id="even" <?php } else { ?> id="odd"<?php } ?> style="text-align: left; width: 20%" >
