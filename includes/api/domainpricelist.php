@@ -27,6 +27,7 @@ $datajson = json_decode($data, TRUE);
            -->
     
 <div class="hosting_content_outer">
+    <div style="text-align: right;"> <a href="/domain-offer" class="btnclass"> View Offers  </a></div>
     <div class="hosting_table_div" style="font-size: 20px;"> 
         
         
