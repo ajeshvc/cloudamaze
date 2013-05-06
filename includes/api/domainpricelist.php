@@ -9,7 +9,7 @@
     
     $offerdomainnamearray[];
     $offerdomainoriginalpricearray[];
-    $offerdomainofferpricearray=[];
+    $offerdomainofferpricearray[];
     $sql = "select * FROM domain_offer ";
     $result = mysql_query($sql) or die(mysql_error());
     $row = mysql_fetch_array($result);
