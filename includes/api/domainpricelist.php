@@ -6,19 +6,17 @@
 
 
     //fetch tld's details is in offer table
-    $i=0;
-    $offerdomainnamearray[]="";
+    
+    $offerdomainnamearray=array("");
     $offerdomainoriginalpricearray=array("");
     $offerdomainofferpricearray=array("");
     $sql = "select domain_name FROM domain_offer ";
     $result = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($result);
-    
-    while ($row != NULL) {
-        echo $row['domain_name'];
+    while ($row = mysql_fetch_array($result)) {
+       
         array_push($offerdomainnamearray,$row['domain_name'] );
-//        array_push($offerdomainoriginalpricearray,$row['original_price'] );
-//        array_push($offerdomainofferpricearray,$row['offer_price'] );
+        array_push($offerdomainoriginalpricearray,$row['original_price'] );
+        array_push($offerdomainofferpricearray,$row['offer_price'] );
         } 
 
 $comarray = array("com");
