@@ -15,6 +15,7 @@
     $row = mysql_fetch_array($result);
     
     while ($row != NULL) {
+        echo $row['domain_name'];
         array_push($offerdomainnamearray,$row['domain_name'] );
 //        array_push($offerdomainoriginalpricearray,$row['original_price'] );
 //        array_push($offerdomainofferpricearray,$row['offer_price'] );
