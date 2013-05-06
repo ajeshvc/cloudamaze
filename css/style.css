@@ -1614,16 +1614,23 @@ body{
             text-align: center;
             margin-top: 3px;
         }
-        .dpricelist_price{
+        .doriginalprice{
             width: 95%;
             font-family: 'Raleway',sans-serif;
-            font-size: 14px;
+            font-size: 12px;
             overflow: hidden;
             color: green;
             float: left;
-            font-weight: bold;
             text-align: center;
             margin-top: 3px;
         }
-        
-             
+        .dpricelist_price{
+             width: 100%;
+             overflow: hidden;
+             color: green;
+             text-align: center;
+             margin-top: 3px;
+             font-family: 'Raleway',sans-serif;
+             float: left;
+            
+        }
