@@ -153,7 +153,7 @@
                              echo '24/7 Support';
                             break;
                          case 16: 
-                             echo 'Domain Price List / Year ';
+                             echo 'Domain Registration Price for First Year ';
                             break;
                          case 17: 
                              echo 'About Us';
