@@ -15,9 +15,12 @@
     $row = mysql_fetch_array($result);
     $i=0;
     while ($row != NULL) {
-     $offerdomainnamearray[$i][]=$row['domain_name'];   
-     $offerdomainoriginalpricearray[$i][]=$row['original_price'];  
-     $offerdomainofferpricearray[$i][]=$row['offer_price'];  
+//     $offerdomainnamearray[$i][]=$row['domain_name'];   
+//     $offerdomainoriginalpricearray[$i][]=$row['original_price'];  
+//     $offerdomainofferpricearray[$i][]=$row['offer_price'];  
+    echo $row['domain_name']; 
+    echo $row['original_price'];  
+    echo $row['offer_price'];  
      $i++;   
     } 
 
