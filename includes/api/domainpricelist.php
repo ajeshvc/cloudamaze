@@ -17,7 +17,7 @@
     while ($row != NULL) {
         array_push($offerdomainnamearray,$row['domain_name'] );
         array_push($offerdomainoriginalpricearray,$row['original_price'] );
-        array_push($offerdomainofferpricearray,$row['offer_price'] );
+       // array_push($offerdomainofferpricearray,$row['offer_price'] );
         } 
 
        
