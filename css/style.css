@@ -1604,6 +1604,14 @@ body{
             padding-left: 5%;
             text-align: left;
         }
+        .doriginalprice{
+            width: 95%;
+            font-family: 'Raleway',sans-serif;
+            font-size: 10px;
+            overflow: hidden;
+            color: green;
+            margin-top: 3px;
+        }
         .dpricelist_price{
              width: 95%;
               overflow: hidden;

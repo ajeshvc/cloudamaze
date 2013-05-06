@@ -116,7 +116,14 @@ if (in_array($value, $offerdomainnamearray)) {
                              <?php echo " ".$value; ?>
                              
                     </span>
-                
+                <span class="doriginalprice">
+                   <strike><?php
+                    if (in_array($value, $offerdomainnamearray)) {
+                    $position = array_search($value, $offerdomainnamearray);
+                    echo $offerdomainoriginalpricearray[$position];
+                    }
+                    ?></strike>
+                </span>
                  <span class="dpricelist_price">
                              &#8377; <?php echo $domainprice ?>
                              
