@@ -1610,6 +1610,7 @@ body{
             font-size: 10px;
             overflow: hidden;
             color: green;
+            float: left;
             margin-top: 3px;
         }
         .dpricelist_price{
