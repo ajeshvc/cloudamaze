@@ -4,6 +4,30 @@
 //include '../lib/resellerclubtld.php';
 //include 'helloinfinitycallapi.php';
 
+
+    //fetch tld's details is in offer table
+    
+    $offerdomainnamearray=array("");
+    $offerdomainoriginalpricearray=array("");
+    $offerdomainofferpricearray=array("");
+    $sql = "select * FROM domain_offer ";
+    $result = mysql_query($sql) or die(mysql_error());
+    $row = mysql_fetch_array($result);
+    $i=0;
+    while ($row != NULL) {
+     $offerdomainnamearray[$i]=$row['domain_name'];   
+     $offerdomainoriginalpricearray[$i]=$row['original_price'];  
+     $offerdomainofferpricearray[$i]=$row['offer_price'];  
+     $i++;   
+    } 
+
+       
+    
+    
+
+
+
+
 $comarray = array("com");
 $resellersupporttld = array_merge($comarray, $tldmostarray, $tldmorearray);
 
@@ -38,8 +62,12 @@ $datajson = json_decode($data, TRUE);
 $colorid = 1;
 foreach ($resellersupporttld as $value) {
 
-
-
+   
+if (in_array($value, $offerdomainnamearray)) {
+    $position = array_search($value, $offerdomainnamearray);
+    $domainprice=$offerdomainofferpricearray[$position];
+}else{
+    
 
     $domainname = "test." . $value;
     if ($domainname != "") {
@@ -83,6 +111,9 @@ foreach ($resellersupporttld as $value) {
     }
 
     $domainprice = $datajson[$selectedtld]["addnewdomain"][1];
+    
+} 
+    
     if ($domainprice == "") {
         $domainprice = "Not Available";
     } else {
@@ -118,6 +149,3 @@ foreach ($resellersupporttld as $value) {
 
   </div>
 </div>  
-<!--</body>
-    </head>
-</html>-->
