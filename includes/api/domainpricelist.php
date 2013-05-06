@@ -117,10 +117,10 @@ if (in_array($value, $offerdomainnamearray)) {
                              
                     </span>
                 <span class="doriginalprice">
-                   <strike>&#8377;<?php
+                   <strike><?php
                     if (in_array($value, $offerdomainnamearray)) {
                     $position = array_search($value, $offerdomainnamearray);
-                    echo $offerdomainoriginalpricearray[$position];
+                    echo '&#8377;'.$offerdomainoriginalpricearray[$position];
                     }  else {
                        echo "";  
                     }
