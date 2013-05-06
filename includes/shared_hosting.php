@@ -343,8 +343,9 @@ while ($row = mysql_fetch_array($result)) {
     <form  name="form" method="post" action="/shared-hosting">   
         
 <div class="hosting_content_outer">
-        <div class="hosting_table_div">                
-           <div class="hosting_row_div">
+        <div class="hosting_table_div">   
+            
+            <div class="hosting_row_div" >
                 <div class="first_hosting_col_div" id="first_header1">
                  	Plan Name 
                 </div>
@@ -354,6 +355,7 @@ while ($row = mysql_fetch_array($result)) {
                     </div>   
                     <?php } ?>
             </div>
+            
                     <?php
                     $i = 0;
                     $colorid = 1;
@@ -362,7 +364,7 @@ while ($row = mysql_fetch_array($result)) {
                         ?>
             
                     
-                <div class="hosting_row_div">      
+            <div class="hosting_row_div" onmouseover="chbg('red')" onmouseout="chbg('white')" >      
                 <div class="first_hosting_col_div" <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd"<?php } ?> >
                  	<span id="header2">
                             <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])   ) { ?>  <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php

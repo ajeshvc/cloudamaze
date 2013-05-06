@@ -67,3 +67,10 @@ function selectCheckBox()
   
   document.getElementById("selectedtld").innerHTML = value;  
 }
+
+
+
+function chbg(color) {
+    document.getElementById('odd').style.backgroundColor = color;
+     document.getElementById('even').style.backgroundColor = color;
+}   
