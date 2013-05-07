@@ -353,8 +353,8 @@ while ($row = mysql_fetch_array($result)) {
                         ?>
             
                     
-                <div class="hosting_row_div">      
-                <div class="first_hosting_col_div" <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd"<?php } ?> >
+                <div class="hosting_row_div" <?php  if ($colorid % 2 == 0) {  ?> onmouseover="chbg('#9CC33C','<?php echo $colorid;?>')" onmouseout="chbg('#EFEFEF','<?php echo $colorid;?>')" <?php  } else { ?> onmouseover="chbg('#9CC33C','<?php echo $colorid;?>')" onmouseout="chbg('#F6F6F6','<?php echo $colorid;?>')" <?php } ?>>      
+                <div class="first_hosting_col_div" id="<?php echo $colorid;?>" <?php  if ($colorid % 2 == 0) {  ?> style="background-color: rgb(239, 239, 239);"  <?php  } else { ?> style="background-color: rgb(246, 246, 246);" <?php } ?> >
                  	<span id="header2">
                             <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])   ) { ?>  <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
                             if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
