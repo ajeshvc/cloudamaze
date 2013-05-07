@@ -1419,10 +1419,10 @@ body{
 		min-height:40px; 
                 
 	}
-        #odd:hover{
+        #odd:hover {
            background-color:  rgb(96, 201, 217);
         }
-        #even:hover{
+        #even:hover {
            background-color:  rgb(96, 201, 217);
         }
 	#odd{

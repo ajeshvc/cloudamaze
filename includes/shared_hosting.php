@@ -378,7 +378,7 @@ while ($row = mysql_fetch_array($result)) {
                 </div>
                         <?php
                         foreach ($hostingprpid as $prpid) {
-                            ?>  <div class="hosting_col_div" <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd"<?php } ?> style="text-decoration-style:  none">
+                            ?>  <div class="hosting_col_div"   <?php  if ($colorid % 2 == 0) {  ?> id="even" <?php  } else { ?> id="odd" <?php } ?> style="text-decoration-style:  none;">
                     <?php
 
                             $result = mysql_query(" 

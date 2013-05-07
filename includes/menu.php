@@ -168,7 +168,7 @@
                              echo ' Refund and Cancellation Policies';
                             break;
                         case 21: 
-                             echo ' Domain Offer';
+                             echo ' Domain Slash Down Price';
                             break;
                         default : echo 'Home';
                             break;

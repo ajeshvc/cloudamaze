@@ -72,14 +72,11 @@ function selectCheckBox()
 
 function chbg(color,colorid) {
     
-    if(colorid%2==0){
-        var id1='header2';
+    
      document.getElementById(colorid).style.backgroundColor = color;   
+//     document.getElementById('odd').style.hover=none;
+//     document.getElementById('even').style.hover=none;
      
-    }else{
-         var id2='';
-       document.getElementById(colorid).style.backgroundColor = color; 
-    }
     
      
 }   
