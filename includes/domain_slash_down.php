@@ -4,7 +4,7 @@
     	
      <div class="offer_content_container" >
         <?php
-        $sql = "select * FROM domain_offer ORDER BY RAND()";
+        $sql = "select * FROM domain_offer ";
         $result = mysql_query($sql) or die(mysql_error());
         while ($row = mysql_fetch_array($result)) {
         ?>
@@ -20,12 +20,9 @@
             </div>
             
         <?php  } ?> 
-            
-            
-           
-        
         </div>
-<!--        <div class="offer_notes_container">
+  
+        <div class="offer_notes_container">
     		<div class="offer_notes_heading">Notes</div>
             <div class="offer_notes_content">
             	This Promo is applicable to the first year of Registration only.
@@ -33,6 +30,6 @@
                 <br/>There are no restrictions on the number of Domains that can be Registered during this period.
                 <br/>This offer is valid till 30th April 2013. 
 			</div>        
-    	</div>     -->
+    	</div>     
     </div>            
 </div>
