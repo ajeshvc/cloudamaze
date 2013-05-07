@@ -97,9 +97,9 @@ case 20:
             include 'refund.php';
             break;
 case 21:    
-           
+            include 'connection.php';
             include 'domain_slash_down.php';
-            
+            include 'connectionclose.php';
             break;
                 
 default:        include 'home.php';        
