@@ -2,7 +2,7 @@
 
  <div class="offer_outer_container">
     	
-        <div class="offer_content_container">
+     <div class="offer_content_container" >
         <?php
         $sql = "select * FROM domain_offer ORDER BY RAND()";
         $result = mysql_query($sql) or die(mysql_error());
