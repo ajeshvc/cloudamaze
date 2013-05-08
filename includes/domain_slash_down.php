@@ -1,12 +1,18 @@
+<?php 
+        if(isset($_POST['more'])){
+             $sql = "select * FROM domain_offer ";
+         }  else {
+             $sql = "select * FROM domain_offer LIMIT 0 , 5  ";
+        }
+       
+        $result = mysql_query($sql) or die(mysql_error());
+ ?>
 <div id="content">
-
- <div class="offer_outer_container">
+  <div class="offer_outer_container">
     	
      <div class="offer_content_container" >
         <?php
-        $sql = "select * FROM domain_offer ";
-        $result = mysql_query($sql) or die(mysql_error());
-        while ($row = mysql_fetch_array($result)) {
+            while ($row = mysql_fetch_array($result)) {
         ?>
             <div class="offer_cloud_container">                
                 <img src="images/slash_cloud.png" />
@@ -21,7 +27,12 @@
             
         <?php  } ?> 
         </div>
-  
+   <?php 
+   if(!isset($_POST['more'])){ ?>
+        <form method="post"  action="/domain-slash-down"/>
+        <input type="submit" name="more" class="btnclass" value="View More"  />
+        </form> 
+   <?php  } ?>
         <div class="offer_notes_container">
     		<div class="offer_notes_heading">Notes</div>
             <div class="offer_notes_content">
