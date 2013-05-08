@@ -33,7 +33,7 @@
           <input  type="submit" name="more" class="view_more_button"  value="View More">   
         </form> 
       </div>
-   <?php  } ?>
+  
         <div class="offer_notes_container">
     		<div class="offer_notes_heading">Notes</div>
             <div class="offer_notes_content">
@@ -42,6 +42,7 @@
                 <br/>There are no restrictions on the number of Domains that can be Registered during this period.
                 <br/>This offer is valid till 30th April 2013. 
 			</div>        
-    	</div>     
+    	</div>    
+       <?php  } ?>
     </div>            
 </div>
