@@ -29,9 +29,10 @@
         </div>
    <?php 
    if(!isset($_POST['more'])){ ?>
-        <form method="post"  action="/domain-slash-down"/>
-        <input type="submit" name="more" class="btnclass" value="View More"  />
+      <div style="width: 100%;text-align: right; "  >   <form method="post"  action="/domain-slash-down"/>
+        <input  type="submit" name="more"  style="background:none!important;border:none;padding:0!important;border-bottom:1px solid #444; margin-right: 3px;" value="View More">   
         </form> 
+      </div>
    <?php  } ?>
         <div class="offer_notes_container">
     		<div class="offer_notes_heading">Notes</div>
