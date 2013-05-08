@@ -1406,6 +1406,9 @@ body{
 		margin-right:1px;
 		padding:.5%;
 		text-align:center;
+                border-bottom: 1px solid rgb(204, 204, 204);
+		padding:1.5% .5%;
+		min-height:40px;
 	}
 	
 	.first_hosting_col_div{
@@ -1439,7 +1442,34 @@ body{
 		padding:1.5% .5%;
 		min-height:40px;
 	}
-        
+        .oddclass{
+            background-color: rgb(246, 246, 246);
+    	border-bottom: 1px solid rgb(204, 204, 204);
+		padding:1.5% .5%;
+		min-height:40px;
+                
+                width:7%;
+		height:auto;
+		position:relative;
+		float:left;
+		margin-right:1px;
+		padding:.5%;
+		text-align:center;
+        } 
+        .evenclass{
+            background-color: rgb(239, 239, 239);
+    	border-bottom: 1px solid rgb(204, 204, 204);
+		padding:1.5% .5%;
+		min-height:40px;
+                
+                width:7%;
+		height:auto;
+		position:relative;
+		float:left;
+		margin-right:1px;
+		padding:.5%;
+		text-align:center;
+        }
 	#header1{
 		min-height:68px;
 		font-size:16px;  
@@ -1464,7 +1494,7 @@ body{
 		font-family:'Raleway', sans-serif;
 		font-weight: normal;
 		text-shadow: 1px 1px 2px #000000;
-
+               
 		line-height: 20px;
 		color: rgb(255, 255, 255);    
 		border-radius: 9px 9px 0px 0px;
@@ -1472,8 +1502,7 @@ body{
 		-moz-border-radius: 9px 9px 0px 0px;;
 		-o-border-radius: 9px 9px 0px 0px;
 		background-color: #60c8d8;
-		text-align:center; 		
-		padding:.5%;              
+		             
 	}	
         
 	#header2{

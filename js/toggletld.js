@@ -70,18 +70,34 @@ function selectCheckBox()
 
 
 
-function chbg(color,colorid) {
-    
-     var selector=".1";
-     document.getElementById(colorid).style.backgroundColor = color;  
-     
-//if(color=="1"){
-     document.querySelectorAll(".1");
-     var nodeList = document.querySelectorAll(".1");
-     for (var i = 0, length = nodeList.length; i < length; i++) {
-     nodeList[i].innerHTML = "ha ha";
-//  }
-}
+function chbg(color,colorid,propertycount) {
+   var d=""; 
+   propertycount=10;
+     document.getElementById(colorid).style.backgroundColor = color; 
+      document.getElementById(colorid).style.cursor = 'pointer';
+      
+     for(var i=1;i<=propertycount;i++){
+       d=colorid+"-"+i;
+       document.getElementById(d).style.backgroundColor = color;
+       document.getElementById(d).style.cursor = 'pointer';
+//      document.getElementById(d).onclick =  this.form.submit(); 
+       
+     }
+      
+
+
+//something.style.cursor = 'pointer';
+//something.onclick = function() {
+//    // do something...
+//}; 
+//     
+////if(color=="1"){
+//     document.querySelectorAll(".class");
+//     var nodeList = document.querySelectorAll(".1");
+//     for (var i = 0, length = nodeList.length; i < length; i++) {
+//     nodeList[i].style.backgroundColor = color; 
+////  }
+//}
      
     
      

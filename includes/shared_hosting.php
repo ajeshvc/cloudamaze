@@ -316,6 +316,7 @@ while ($row = mysql_fetch_array($result)) {
     $hostingprpid[$i] = $row['pr_id'];
     $i++;
 }
+$propertycount=10;
 ?>
 <div id="content" style="alignment-adjust: central; ">
 
@@ -344,12 +345,12 @@ while ($row = mysql_fetch_array($result)) {
 
 
 
-                    <label style="background-color: red">
-                        <div class="hosting_row_div" onmouseover="chbg('#9CC33C', '<?php echo $colorid; ?>')" <?php if ($colorid % 2 == 0) { ?>  onmouseout="chbg('#EFEFEF', '<?php echo $colorid; ?>')" <?php } else { ?>  onmouseout="chbg('#F6F6F6', '<?php echo $colorid; ?>')" <?php } ?>  >
-                            <div class="first_hosting_col_div" id="<?php echo $colorid; ?>" <?php if ($colorid % 2 == 0) { ?> style="background-color: rgb(239, 239, 239);"  <?php } else { ?> style="background-color: rgb(246, 246, 246);" <?php } ?> >
+                  
+                <div class="hosting_row_div"  onmouseover="chbg('#9CC33C', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php if ($colorid % 2 == 0) { ?>  onmouseout="chbg('#EFEFEF', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } else { ?>  onmouseout="chbg('#F6F6F6', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } ?>>                        
+                            <div class="first_hosting_col_div"   id="<?php echo $colorid; ?>" <?php if ($colorid % 2 == 0) { ?> style="background-color: rgb(239, 239, 239);"  <?php } else { ?> style="background-color: rgb(246, 246, 246);" <?php } ?> >
 
                                 <span id="header2">
-                                    <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?>  <input type="radio" name="choice" onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
+                                    <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?>  <input type="radio" name="choice"  onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
                                     if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice'] != "" )) {
                                         $hostingdetails.="|" . $plans[$i];
                                     }
@@ -357,8 +358,10 @@ while ($row = mysql_fetch_array($result)) {
                                 </span>
                             </div>
                             <?php
+                            $counter=1;
                             foreach ($hostingprpid as $prpid) {
-                                ?>  <div class="hosting_col_div" class="<?php echo $colorid; ?>" onmouseover="chbg('1', '<?php echo $colorid; ?>')"  <?php if ($colorid % 2 == 0) { ?> onmouseout="chbg('#EFEFEF', '<?php echo $colorid; ?>')"  id="even" <?php } else { ?> id="odd" onmouseout="chbg('#F6F6F6', '<?php echo $colorid; ?>')" <?php } ?> style="text-decoration-style:  none;">
+                                
+                                ?>  <div   id="<?php echo $colorid."-".$counter++; ?>" class="hosting_col_div" <?php if ($colorid % 2 == 0) { ?> style="background-color: rgb(239, 239, 239);"  <?php } else { ?> style="background-color: rgb(246, 246, 246);" <?php } ?>  style="text-decoration-style:  none;">
                                 <?php
                                 $result = mysql_query(" 
      
@@ -392,7 +395,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                             <?php }
                             ?>
                         </div>
-                    </label>  
+                   
                     <?php
                     $colorid++;
                     $i++;

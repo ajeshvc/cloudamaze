@@ -27,7 +27,7 @@
      <li><a href="http://blog.cloudamaze.com/" target="_blank">Blog</a></li>
      <li <?php if(isset($page) && $page==6){ ?>   class="current" <?php  } ?> ><a href="/testimonials">Testimonials</a></li>
      <li <?php if(isset($page) && $page==14){ ?>   class="current" <?php  } ?>><a href="/downloads">Downloads</a></li>
-     <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/support" >Support</a></li>
+     <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/support-ticket" >Support</a></li>
      <li <?php if(isset($page) && $page==12){ ?>   class="current" <?php  } ?> ><a href="/contact-us">Contact Us</a></li>
      <li <?php if((isset($page) && $page==17) || (isset($page) && $page==18) || (isset($page) && $page==19) || (isset($page) && $page==20)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/about-us">More Info</a>
             <ul>
