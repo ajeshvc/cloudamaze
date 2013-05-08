@@ -76,7 +76,7 @@ include 'connectionclose.php';
 break;
 case 14: include 'downloads.php';
 break;
-case 15: include 'support.php';
+case 15: include 'support_ticket.php';
 break;
 case 16:    include 'connection.php';
             include 'lib/resellerclubtld.php';

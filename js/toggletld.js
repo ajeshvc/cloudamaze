@@ -72,10 +72,16 @@ function selectCheckBox()
 
 function chbg(color,colorid) {
     
-    
-     document.getElementById(colorid).style.backgroundColor = color;   
-//     document.getElementById('odd').style.hover=none;
-//     document.getElementById('even').style.hover=none;
+     var selector=".1";
+     document.getElementById(colorid).style.backgroundColor = color;  
+     
+//if(color=="1"){
+     document.querySelectorAll(".1");
+     var nodeList = document.querySelectorAll(".1");
+     for (var i = 0, length = nodeList.length; i < length; i++) {
+     nodeList[i].innerHTML = "ha ha";
+//  }
+}
      
     
      
