@@ -1644,4 +1644,10 @@ body{
             margin-top: 50px;
             height: 22px;
         }
-        
+        .view_more_button{
+           background:none!important;
+           border:none;
+           padding:0!important;
+           border-bottom:1px solid #444; 
+           margin-right: 3px;
+        }       

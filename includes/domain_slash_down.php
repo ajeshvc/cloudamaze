@@ -30,7 +30,7 @@
    <?php 
    if(!isset($_POST['more'])){ ?>
       <div style="width: 100%;text-align: right; "  >   <form method="post"  action="/domain-slash-down"/>
-        <input  type="submit" name="more"  style="background:none!important;border:none;padding:0!important;border-bottom:1px solid #444; margin-right: 3px;" value="View More">   
+          <input  type="submit" name="more" class="view_more_button"  value="View More">   
         </form> 
       </div>
    <?php  } ?>
