@@ -62,105 +62,81 @@
        //collect data 
       switch ($_SESSION['choice']) {
     case '1-1':
-        $ssldetails = "|Plan Name 	: SSL 123
-                       |1 Year 		: 1,500";
+        $ssldetails = "|Plan Name 	: SSL 123 |1 Year 		: 1,500";
         break;
     case '1-2':
-        $ssldetails = "|Plan Name 	: SSL 123
-                       |2 Year 		: 2,750";
+        $ssldetails = "|Plan Name 	: SSL 123 |2 Year 		: 2,750";
         break;
     case '1-3':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |1 Year Renewal : 1,500";
+        $ssldetails = "|Plan Name 	: Web Server |1 Year Renewal : 1,500";
         break;
     case '1-4':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |2 Year Renewal	: 2,750";
+        $ssldetails = "|Plan Name 	: Web Server |2 Year Renewal	: 2,750";
         break;
     case '1-5':
-        $ssldetails = "|Plan Name 	: SSL 123
-                       |1 Year Add License : 1050";
+        $ssldetails = "|Plan Name 	: SSL 123 |1 Year Add License : 1050";
         break;
     case '1-6':
-        $ssldetails = "|Plan Name 	: SSL 123
-                       |2 Year Add License : 1,800";
+        $ssldetails = "|Plan Name 	: SSL 123 |2 Year Add License : 1,800";
         break;
 
  case '2-1':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |1 Year 	: 4,925";
+        $ssldetails = "|Plan Name 	: Web Server |1 Year 	: 4,925";
         break;
     case '2-2':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |2 Year 	: 8,675";
+        $ssldetails = "|Plan Name 	: Web Server |2 Year 	: 8,675";
         break;
     case '2-3':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |1 Year Renewal : 4,625";
+        $ssldetails = "|Plan Name 	: Web Server |1 Year Renewal : 4,625";
         break;
     case '2-4':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |2 Year Renewal	: 8,050";
+        $ssldetails = "|Plan Name 	: Web Server |2 Year Renewal	: 8,050";
         break;
     case '2-5':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |1 Year Add License : 3,050";
+        $ssldetails = "|Plan Name 	: Web Server |1 Year Add License : 3,050";
         break;
     case '2-6':
-        $ssldetails = "|Plan Name 	: Web Server
-                       |2 Year Add License : 5,555";
+        $ssldetails = "|Plan Name 	: Web Server |2 Year Add License : 5,555";
         break;
 
     case '3-1':
-        $ssldetails = "|Plan Name 	: SGC SuperCert
-                       |1 Year 		: 11,800";
+        $ssldetails = "|Plan Name 	: SGC SuperCert |1 Year 		: 11,800";
         break;
     case '3-2':
-        $ssldetails = "|Plan Name 	: SGC SuperCert
-                       |2 Year 		: 21,750";
+        $ssldetails = "|Plan Name 	: SGC SuperCert |2 Year 		: 21,750";
         break;
     case '3-3':
-        $ssldetails = "|Plan Name 	: SGC SuperCert
-                       |1 Year Renewal  : 9,300";
+        $ssldetails = "|Plan Name 	: SGC SuperCert |1 Year Renewal  : 9,300";
         break;
     case '3-4':
-        $ssldetails = "|Plan Name 	: SGC SuperCert
-                       |2 Year Renewal	: 18,650";
+        $ssldetails = "|Plan Name 	: SGC SuperCert |2 Year Renewal	: 18,650";
         break;
     case '3-5':
-        $ssldetails = "|Plan Name 	: SGC SuperCert
-                       |1 Year Add License : 7,425";
+        $ssldetails = "|Plan Name 	: SGC SuperCert |1 Year Add License : 7,425";
         break;
     case '3-6':
-        $ssldetails = "|Plan Name 	: SGC SuperCert
-                       |2 Year Add License : 14,300";
+        $ssldetails = "|Plan Name 	: SGC SuperCert |2 Year Add License : 14,300";
         break;
 
     case '4-1':
-        $ssldetails = "|Plan Name 	: Web Server Wild Card
-                       |1 Year 		: 21,700";
+        $ssldetails = "|Plan Name 	: Web Server Wild Card |1 Year 		: 21,700";
         break;
     case '4-2':
-        $ssldetails = "|Plan Name 	: Web Server Wild Card
-                       |2 Year 		: 34,250";
+        $ssldetails = "|Plan Name 	: Web Server Wild Card |2 Year 		: 34,250";
         break;  
     case '4-3':
-        $ssldetails = "|Plan Name 	: Web Server Wild Card
-                       |1 Year Renewal  : 21,700";
+        $ssldetails = "|Plan Name 	: Web Server Wild Card |1 Year Renewal  : 21,700";
         break; 
     case '4-4':
-        $ssldetails = "|Plan Name 	: Web Server Wild Card
-                       |2 Year Renewal	: 34,250";
+        $ssldetails = "|Plan Name 	: Web Server Wild Card |2 Year Renewal	: 34,250";
         break; 
                                                 
      case '4-5':
-        $ssldetails = "|Plan Name 	: Web Server Wild Card
-                       |1 Year Add License : 14,300";
+        $ssldetails = "|Plan Name 	: Web Server Wild Card |1 Year Add License : 14,300";
         break; 
                                                 
     case '4-6':
-        $ssldetails = "|Plan Name 	: Web Server Wild Card
-                       |2 Year Add License : 25,000";
+        $ssldetails = "|Plan Name 	: Web Server Wild Card |2 Year Add License : 25,000";
         break;                                             
                                                 
                                               
