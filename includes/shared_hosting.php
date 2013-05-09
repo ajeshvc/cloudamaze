@@ -346,11 +346,11 @@ $propertycount=10;
 
 
                   
-                <div class="hosting_row_div"  onmouseover="chbg('#9CC33C', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php if ($colorid % 2 == 0) { ?>  onmouseout="chbg('#EFEFEF', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } else { ?>  onmouseout="chbg('#F6F6F6', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } ?>>                        
+                <div class="hosting_row_div"  onclick="submitOnClick('radio_<?php echo $value; ?>')" onmouseover="chbg('#9CC33C', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php if ($colorid % 2 == 0) { ?>  onmouseout="chbg('#EFEFEF', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } else { ?>  onmouseout="chbg('#F6F6F6', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } ?>>                        
                             <div class="first_hosting_col_div"   id="<?php echo $colorid; ?>" <?php if ($colorid % 2 == 0) { ?> style="background-color: rgb(239, 239, 239);"  <?php } else { ?> style="background-color: rgb(246, 246, 246);" <?php } ?> >
 
                                 <span id="header2">
-                                    <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?>  <input type="radio" name="choice"  onclick="this.form.submit();" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
+                                    <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?>  <input type="radio" name="choice"  onchange="this.form.submit();" id=radio_<?php echo $value;  ?> style="opacity: 0" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
                                     if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice'] != "" )) {
                                         $hostingdetails.="|" . $plans[$i];
                                     }

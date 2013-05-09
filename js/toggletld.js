@@ -83,22 +83,11 @@ function chbg(color,colorid,propertycount) {
 //      document.getElementById(d).onclick =  this.form.submit(); 
        
      }
-      
+   
+} 
 
-
-//something.style.cursor = 'pointer';
-//something.onclick = function() {
-//    // do something...
-//}; 
-//     
-////if(color=="1"){
-//     document.querySelectorAll(".class");
-//     var nodeList = document.querySelectorAll(".1");
-//     for (var i = 0, length = nodeList.length; i < length; i++) {
-//     nodeList[i].style.backgroundColor = color; 
-////  }
-//}
-     
-    
-     
-}   
+function submitOnClick(radio_id){
+   
+    document.getElementById(radio_id).checked=true;
+    this.form.submit();
+}
