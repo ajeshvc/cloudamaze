@@ -346,7 +346,17 @@ $propertycount=10;
 
 
                   
-                <div class="hosting_row_div"  onclick="submitOnClick('radio_<?php echo $value; ?>')" onmouseover="chbg('#9CC33C', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php if ($colorid % 2 == 0) { ?>  onmouseout="chbg('#EFEFEF', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } else { ?>  onmouseout="chbg('#F6F6F6', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" <?php } ?>>                        
+                <div class="hosting_row_div"  
+                      <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?> 
+                     onclick="submitOnClick('radio_<?php echo $value; ?>')" 
+                     onmouseover="chbg('#9CC33C', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')"
+                      <?php if ($colorid % 2 == 0) { ?> 
+                     onmouseout="chbg('#EFEFEF', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')" 
+                          <?php } else { ?>
+                     onmouseout="chbg('#F6F6F6', '<?php echo $colorid; ?>','<?php echo $propertycount; ?>')"
+                      <?php }
+                      } ?> 
+                   >                        
                             <div class="first_hosting_col_div"   id="<?php echo $colorid; ?>" <?php if ($colorid % 2 == 0) { ?> style="background-color: rgb(239, 239, 239);"  <?php } else { ?> style="background-color: rgb(246, 246, 246);" <?php } ?> >
 
                                 <span id="header2">
