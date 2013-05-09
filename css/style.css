@@ -1579,8 +1579,9 @@ float: right;
 
     margin-top:36px;
 
-    font-size:18px;				
-
+    font-size:18px;	
+    
+    color:rgb(157, 195, 60);
 }
 
 .offer_amount_container{

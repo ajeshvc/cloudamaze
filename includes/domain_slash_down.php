@@ -17,8 +17,8 @@
             <div class="offer_cloud_container">                
                 <img src="images/slash_cloud.png" />
                 <div class="offer_cloud_text">.<?php echo $row['domain_name']; ?> </div>
-                 <div class="doriginalprice" style="color:#9cc33c; margin-top: 20px;"><strike> &#8377; <?php echo $row['original_price']; ?> </strike></div>        
-                <div class="offer_price_text" style="color: #60c8d8;">  &#8377; <?php echo $row['offer_price']; ?></div>              
+                 <div class="doriginalprice" style=" margin-top: 20px;"><strike> &#8377; <?php echo $row['original_price']; ?> </strike></div>        
+                 <div class="offer_price_text" >  &#8377; <?php echo $row['offer_price']; ?></div>              
             </div>
             
             <div class="offer_amount_container">    	
