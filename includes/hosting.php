@@ -368,7 +368,8 @@ $propertycount=$i;
                             <div class="first_hosting_col_div"   id="<?php echo $colorid; ?>" <?php if ($colorid % 2 == 0) { ?> style="background-color: rgb(239, 239, 239);"  <?php } else { ?> style="background-color: rgb(246, 246, 246);" <?php } ?> >
 
                                 <span id="header2">
-                                    <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?>  <input type="radio" name="choice"  onchange="this.form.submit();" id=radio_<?php echo $value;  ?> style="opacity: 0" value="<?php echo $planid[$i]; ?>" /> <?php } ?> <?php echo $plans[$i]; ?><?php
+                                    <?php echo $plans[$i]; ?>  <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?>  <input type="radio" name="choice"  onchange="this.form.submit();" id=radio_<?php echo $value;  ?> style="opacity: 0" value="<?php echo $planid[$i]; ?>" /> <?php } ?>
+                                        <?php
                                     if (isset($_POST["choice"]) || (isset($_SESSION['choice']) && $_SESSION['choice'] != "" )) {
                                         $hostingdetails.="|" . $plans[$i];
                                     }
