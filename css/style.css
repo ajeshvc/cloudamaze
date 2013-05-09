@@ -1423,12 +1423,12 @@ float: right;
     min-height:40px; 
 
 }
-/*        #odd:hover {
-           background-color:  rgb(96, 201, 217);
+        #odd:hover {
+           background-color:  #9CC33C;
         }
         #even:hover {
-           background-color:  rgb(96, 201, 217);
-        }*/
+           background-color:  #9CC33C;
+        }
 #odd{
     background-color: rgb(246, 246, 246);
     border-bottom: 1px solid rgb(204, 204, 204);
