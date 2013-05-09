@@ -58,7 +58,7 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                 
             </div>
              <a href="/domain-pricelist" class="btnclass" id="offerbutton"> View Pricing  </a>
-               
+              <br/> 
              
               <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
                 
