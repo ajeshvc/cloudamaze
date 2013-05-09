@@ -1641,22 +1641,13 @@ float: right;
     padding-left: 5%;
     text-align: center;
 }
+
 .doriginalprice{
     width: 95%;
     font-family: 'Raleway',sans-serif;
     font-size: 12px;
     overflow: hidden;
-    color: green;
-    float: left;
-    text-align: center;
-    margin-top: 3px;
-}
-.doriginalprice{
-    width: 95%;
-    font-family: 'Raleway',sans-serif;
-    font-size: 12px;
-    overflow: hidden;
-    color: green;
+    color: rgb(96, 201, 217);
     float: left;
     text-align: center;
     margin-top: 3px;
