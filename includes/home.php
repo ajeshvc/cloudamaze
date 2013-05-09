@@ -15,7 +15,7 @@ if(isset($_SESSION['choice'])){
 
  <div class="offer_outer_container">
     	
-        <div class="offer_content_container">
+     <div class="offer_content_container" style="margin-left: 20%;">
         
             <div class="offer_cloud_container">                
                 <img src="images/green_cloud.png" />
