@@ -316,7 +316,7 @@ while ($row = mysql_fetch_array($result)) {
     $hostingprpid[$i] = $row['pr_id'];
     $i++;
 }
-$propertycount=10;
+$propertycount=$i;
 ?>
 <div id="content" style="alignment-adjust: central; ">
 
@@ -343,9 +343,6 @@ $propertycount=10;
                 foreach ($planid as $value) {
                     ?>
 
-
-
-                  
                 <div class="hosting_row_div"  
                       <?php if (!isset($_POST["choice"]) && !isset($_SESSION['choice'])) { ?> 
                      onclick="submitOnClick('radio_<?php echo $value; ?>')" 

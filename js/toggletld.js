@@ -72,7 +72,7 @@ function selectCheckBox()
 
 function chbg(color,colorid,propertycount) {
    var d=""; 
-   propertycount=10;
+//   propertycount=10;
      document.getElementById(colorid).style.backgroundColor = color; 
       document.getElementById(colorid).style.cursor = 'pointer';
       
