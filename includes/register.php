@@ -74,14 +74,16 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                                Most Popular Domain Extensions:
                                <br/>
                                 <br/>
+                                 <div style="text-align: center">
                                <?php  //$tldmostarray is in lib/resellerclubtld.php ?>
-                                <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" />com 
-                              <?php  $i=1;         
+                               &nbsp; <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" />com 
+                              <?php  $i=1; 
+                              
                             foreach ($tldmostarray as $value) {
-                                   if($i%7==0){?><br/><?php   } ?>
+                                   if($i%5==0){?><br/><?php   } ?>
                                  <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" /><?php echo $value; ?>
-                                 <?php  if($i%7==0){   $i=0; } 
-                                    $i++; } ?>
+                                 <?php  if($i%5==0){   $i=0; } 
+                                    $i++; } ?></div>
                                 <div class="arrow_wrapper">
                                     <a style="text-decoration: none;" href="javascript:moredomainToggle('moretag','domaintxt','content1');" 
                                        id="moretag"  class="link_more">More>></a>

@@ -1,7 +1,7 @@
 <?php
-  $tldmostarray=array('net','org','info','biz','us','eu','co.uk','in','co.in','mobi');
+  $tldmostarray=array('org','info','in','co.uk','net','biz','mobi','us','co.in');
   
-   $tldmorearray=array('asia','name','tel','tv','me','ws','bz',
+   $tldmorearray=array('eu','asia','name','tel','tv','me','ws','bz',
                                          'cc','org.uk','me.uk','net.in','org.in','ind.in','firm.in',
                                          'gen.in','mn','us.com','eu.com','uk.com','uk.net','gb.com',
                                          'gb.net','de.com','cn.com','qc.com','kr.com','ae.org','br.com',
