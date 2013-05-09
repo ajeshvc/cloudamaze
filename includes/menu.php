@@ -5,8 +5,9 @@
      <li <?php if(!isset($page) || (isset($page) && $page==0)){ ?>   class="current" <?php  } ?> ><a href="/home">Home</a></li>
      <li <?php if(isset($page) && $page==1 || (isset($page) && $page==2) || (isset($page) && $page==21) ){ ?>   class="current" <?php  } ?>><?php $_SESSION['skip']="false" ?><a href="/register">Domain</a>
      <ul>
-           <li><a href="/register">Register</a></li>
-           <li><a href="/domain-slash-down">Offer</a></li>
+           <li><a href="/register">Register New</a></li>
+           <li><a href="/domain-slash-down">Current Offer</a></li>
+           <li><a href="/domain-pricelist">Domain Pricing</a></li>
            </ul> </li>
      <li <?php if((isset($page) && $page==5) || (isset($page) && $page==11) || (isset($page) && $page==13) ){ ?>   class="current"  <?php  } ?> ><a href="/shared-hosting">Hosting</a>
          <ul>
