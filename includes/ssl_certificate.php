@@ -118,8 +118,8 @@
                                    "|Description    :$des";
                     $from = $_POST["email"];
                     $to = $to_email;
-                    $message = "|Corporate Email " . "|Invoice Id " . $invoice . $email_details;
-                    $subject = $name . "- New Corporate Email Request";
+                    $message = "|SSL Certificate " . "|Invoice Id " . $invoice . $email_details;
+                    $subject = $name . "- New SSL Certificate Request";
                     $message = $message . "\n\n" . "-------------------\n". "on-" . $currentdate;
                     $message = str_replace("|", "\n\n", $message);
                     $message = str_replace("+", "", $message);
