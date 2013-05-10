@@ -76,11 +76,13 @@ include 'connectionclose.php';
 break;
 case 14: include 'downloads.php';
 break;
-case 15: include 'support.php';
+case 15: include 'support_ticket.php';
 break;
-case 16:    include 'lib/resellerclubtld.php';
+case 16:    include 'connection.php';
+            include 'lib/resellerclubtld.php';
             include 'api/helloinfinitycallapi.php';
             include 'api/domainpricelist.php';
+            include 'connectionclose.php';
             break;
 case 17:    
             include 'about_us.php';
@@ -96,7 +98,7 @@ case 20:
             break;
 case 21:    
             include 'connection.php';
-            include 'domain_offer.php';
+            include 'domain_slash_down.php';
             include 'connectionclose.php';
             break;
                 

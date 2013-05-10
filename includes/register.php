@@ -24,9 +24,9 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
    
         <form name="f1" method="post"  action="/register" >
          <div id="content1" style="float: left">   
-             <div style="text-align: right;"> <a href="/domain-pricelist" class="btnclass"> View Pricing  </a></div>
+            
               
-            <div class="search_outer">
+            <div class="search_outer" >
                
                 <div class="search_container"> 
                 
@@ -55,9 +55,10 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                     <?php } ?>
                     <input type="submit" id="search_btn_container" class="btnclass" name="check" <?php if (( isset($_SESSION['skip']) && $_SESSION['skip'] == 'true' ) || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { ?> value="Submit"  <?php } else { ?> value="Check" <?php } ?>  />        
                 </div>
-              
+                
             </div>
-              
+             <a href="/domain-pricelist" class="btnclass" id="offerbutton"> View Pricing  </a>
+              <br/> 
              
               <?php if ((isset($_GET['check']) && $_GET['check'] == 'Submit') || ( isset($_POST['domainradio']) && $_POST['domainradio'] != "")) { 
                 
@@ -73,14 +74,16 @@ if (isset($_POST['check']) && $_POST['check'] == "Submit") {
                                Most Popular Domain Extensions:
                                <br/>
                                 <br/>
+                                 <div style="text-align: center">
                                <?php  //$tldmostarray is in lib/resellerclubtld.php ?>
-                                <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" />com 
-                              <?php  $i=1;         
+                               &nbsp; <input type="checkbox" name="tld[]" value="com"  <?php if (!isset($_POST['check'])  ) { ?> checked="checked" <?php } elseif (in_array("com", $tldarray)  ) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" />com 
+                              <?php  $i=1; 
+                              
                             foreach ($tldmostarray as $value) {
-                                   if($i%7==0){?><br/><?php   } ?>
+                                   if($i%5==0){?><br/><?php   } ?>
                                  <input type="checkbox" name="tld[]" value="<?php echo $value; ?>" <?php if (in_array($value, $tldarray)) { ?> checked="checked" <?php } ?> onchange="selectCheckBox()" /><?php echo $value; ?>
-                                 <?php  if($i%7==0){   $i=0; } 
-                                    $i++; } ?>
+                                 <?php  if($i%5==0){   $i=0; } 
+                                    $i++; } ?></div>
                                 <div class="arrow_wrapper">
                                     <a style="text-decoration: none;" href="javascript:moredomainToggle('moretag','domaintxt','content1');" 
                                        id="moretag"  class="link_more">More>></a>

@@ -1,6 +1,23 @@
+
+
 <?php
 //include '../lib/resellerclubtld.php';
 //include 'helloinfinitycallapi.php';
+
+
+    //fetch tld's details is in offer table
+    
+    $offerdomainnamearray=array("");
+    $offerdomainoriginalpricearray=array("");
+    $offerdomainofferpricearray=array("");
+    $sql = "select * FROM domain_offer ";
+    $result = mysql_query($sql) or die(mysql_error());
+    while ($row = mysql_fetch_array($result)) {
+       
+        array_push($offerdomainnamearray,$row['domain_name'] );
+        array_push($offerdomainoriginalpricearray,$row['original_price'] );
+        array_push($offerdomainofferpricearray,$row['offer_price'] );
+        } 
 
 $comarray = array("com");
 $resellersupporttld = array_merge($comarray, $tldmostarray, $tldmorearray);
@@ -25,7 +42,6 @@ $datajson = json_decode($data, TRUE);
          <link rel="stylesheet" href="../../css/style.css" type="text/css"/>
     <body>
            -->
- <div style="text-align: left; margin-bottom: 10px;"> <a href="/domain-offer" class="btnclass"> View Offers  </a></div>
      
 <div class="hosting_content_outer">
       <div class="hosting_table_div" style="font-size: 20px;"> 
@@ -36,8 +52,12 @@ $datajson = json_decode($data, TRUE);
 $colorid = 1;
 foreach ($resellersupporttld as $value) {
 
-
-
+   
+if (in_array($value, $offerdomainnamearray)) {
+    $position = array_search($value, $offerdomainnamearray);
+    $domainprice=$offerdomainofferpricearray[$position];
+}else{
+    
 
     $domainname = "test." . $value;
     if ($domainname != "") {
@@ -81,6 +101,9 @@ foreach ($resellersupporttld as $value) {
     }
 
     $domainprice = $datajson[$selectedtld]["addnewdomain"][1];
+    
+} 
+    
     if ($domainprice == "") {
         $domainprice = "Not Available";
     } else {
@@ -92,7 +115,16 @@ foreach ($resellersupporttld as $value) {
                              <?php echo " ".$value; ?>
                              
                     </span>
-                
+                <span class="doriginalprice">
+                  <?php
+                    if (in_array($value, $offerdomainnamearray)) {
+                    $position = array_search($value, $offerdomainnamearray);
+                    echo '<strike>&#8377;'.$offerdomainoriginalpricearray[$position]."</strike>";
+                    }  else {
+                       echo "&#8239;";  
+                    }
+                    ?>
+                </span>
                  <span class="dpricelist_price">
                              &#8377; <?php echo $domainprice ?>
                              
@@ -116,6 +148,3 @@ foreach ($resellersupporttld as $value) {
 
   </div>
 </div>  
-<!--</body>
-    </head>
-</html>-->

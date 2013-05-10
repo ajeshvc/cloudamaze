@@ -31,7 +31,7 @@ case "shared-hosting": $page=13;
 break;
 case "downloads": $page=14;
 break;
-case "support": $page=15;
+case "support-ticket": $page=15;
 break;
 case "domain-pricelist": $page=16;   
             break;
@@ -47,7 +47,7 @@ case "privacy-policies": $page=19;
 case "refund":  $page=20;  
          
             break;
-case "domain-offer":  $page=21;  
+case "domain-slash-down":  $page=21;  
          
             break;
                 

@@ -3,7 +3,12 @@
                     
     <ul id="menu-bar">
      <li <?php if(!isset($page) || (isset($page) && $page==0)){ ?>   class="current" <?php  } ?> ><a href="/home">Home</a></li>
-     <li <?php if(isset($page) && $page==1 || (isset($page) && $page==2) ){ ?>   class="current" <?php  } ?>><?php $_SESSION['skip']="false" ?><a href="/register">Domain</a></li>
+     <li <?php if(isset($page) && $page==1 || (isset($page) && $page==2) || (isset($page) && $page==21) ){ ?>   class="current" <?php  } ?>><?php $_SESSION['skip']="false" ?><a href="/register">Domain</a>
+     <ul>
+           <li><a href="/register">Register New</a></li>
+           <li><a href="/domain-slash-down">Current Offer</a></li>
+           <li><a href="/domain-pricelist">Domain Pricing</a></li>
+           </ul> </li>
      <li <?php if((isset($page) && $page==5) || (isset($page) && $page==11) || (isset($page) && $page==13) ){ ?>   class="current"  <?php  } ?> ><a href="/shared-hosting">Hosting</a>
          <ul>
            <li><a href="/shared-hosting">Shared Hosting</a></li>
@@ -23,7 +28,7 @@
      <li><a href="http://blog.cloudamaze.com/" target="_blank">Blog</a></li>
      <li <?php if(isset($page) && $page==6){ ?>   class="current" <?php  } ?> ><a href="/testimonials">Testimonials</a></li>
      <li <?php if(isset($page) && $page==14){ ?>   class="current" <?php  } ?>><a href="/downloads">Downloads</a></li>
-     <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/support" >Support</a></li>
+     <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/support-ticket" >Support</a></li>
      <li <?php if(isset($page) && $page==12){ ?>   class="current" <?php  } ?> ><a href="/contact-us">Contact Us</a></li>
      <li <?php if((isset($page) && $page==17) || (isset($page) && $page==18) || (isset($page) && $page==19) || (isset($page) && $page==20)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/about-us">More Info</a>
             <ul>
@@ -153,7 +158,7 @@
                              echo '24/7 Support';
                             break;
                          case 16: 
-                             echo 'Domain Price List / Year ';
+                             echo 'Domain Registration Price for First Year ';
                             break;
                          case 17: 
                              echo 'About Us';
@@ -168,7 +173,7 @@
                              echo ' Refund and Cancellation Policies';
                             break;
                         case 21: 
-                             echo ' Domain Offer';
+                             echo ' Domain Slash Down Price';
                             break;
                         default : echo 'Home';
                             break;

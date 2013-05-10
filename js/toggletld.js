@@ -67,3 +67,27 @@ function selectCheckBox()
   
   document.getElementById("selectedtld").innerHTML = value;  
 }
+
+
+
+function chbg(color,colorid,propertycount) {
+   var d=""; 
+//   propertycount=10;
+     document.getElementById(colorid).style.backgroundColor = color; 
+      document.getElementById(colorid).style.cursor = 'pointer';
+      
+     for(var i=1;i<=propertycount;i++){
+       d=colorid+"-"+i;
+       document.getElementById(d).style.backgroundColor = color;
+       document.getElementById(d).style.cursor = 'pointer';
+//      document.getElementById(d).onclick =  this.form.submit(); 
+       
+     }
+   
+} 
+
+function submitOnClick(radio_id){
+   
+    document.getElementById(radio_id).checked=true;
+    this.form.submit();
+}

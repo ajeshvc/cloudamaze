@@ -66,8 +66,8 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
                                    "|Description    :$des";
                     $from = $_POST["email"];
                     $to = $to_email;
-                    $message = "|Corporate Email " . "|Invoice Id " . $invoice . $email_details;
-                    $subject = $name . "- New Corporate Email Request";
+                    $message = "|Server Management " . "|Invoice Id " . $invoice . $email_details;
+                    $subject = $name . "- New Server Management Request";
                     $message = $message . "\n\n" . "-------------------\n". "on-" . $currentdate;
                     $message = str_replace("|", "\n\n", $message);
                     $message = str_replace("+", "", $message);
