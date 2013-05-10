@@ -20,7 +20,7 @@ if(isset($_SESSION['choice'])){
             <div class="offer_cloud_container">                
                 <img src="images/green_cloud.png" />
                 <div class="offer_cloud_text">.in</div>
-                <div class="offer_price_text" style="color: #9cc33c;">Rs.528</div>              
+                <div class="offer_price_text" style="color: #9cc33c;">Rs.540</div>              
             </div>
             
             <div class="offer_amount_container">   	
