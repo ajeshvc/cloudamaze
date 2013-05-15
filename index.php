@@ -44,6 +44,16 @@ ob_start();
                 })(document, 'script');
             </script>
             <!--End of Zopim Live Chat Script-->
+            <!-- Track Code -->
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-5307819-37', 'cloudamaze.com');
+                ga('send', 'pageview');
+            </script>
     </head>
     <body <?php if (isset($page) &&  $page==1){ ?> onLoad="document.f1.domain.focus()" <?php } ?> >
         <div id="container">
