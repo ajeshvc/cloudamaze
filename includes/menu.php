@@ -107,6 +107,9 @@
                         case 13: 
                              echo 'Hosting';
                             break;
+                       case 13: 
+                             echo 'Badges';
+                            break;
                         
                     }
                     ?>
