@@ -78,7 +78,7 @@
     
      <?php 
                     if(isset($page)){ 
-                    if( $page==5 || $page==7 || $page==8 || $page==9 || $page==10 || $page==11 || $page==13 || $page==22){
+                    if( $page==5 || $page==7 || $page==8 || $page==9 || $page==10 || $page==11 || $page==13 ){
                         ?>
      <div id="tab_wrapper">
         	<div  id="tri_div_back"   ></div>
@@ -107,9 +107,7 @@
                         case 13: 
                              echo 'Hosting';
                             break;
-                       case 22: 
-                             echo 'Badges';
-                            break;
+                      
                         
                     }
                     ?>
@@ -177,6 +175,9 @@
                             break;
                         case 21: 
                              echo ' Domain Slash Down Price';
+                            break;
+                        case 22: 
+                             echo ' Badges';
                             break;
                         default : echo 'Home';
                             break;
