@@ -44,7 +44,7 @@ function eTogglebadges(divid, parameter, picid)
         code.style.display = "block";
         textcode.innerHTML = "&#60;a href='http://cloudamaze.com'>&#60;img src='http://cloudamaze.com/images/badge/" + parameter + "' alt='cloudamaze.com' width='42' height='42'/>&#60;/a>";
         // set position
-        t += -2;
+        t += -5;
         l += -270;
         l = l.toString();
         t = t.toString();
