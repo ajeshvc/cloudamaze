@@ -20,10 +20,6 @@ function issameposition(l,t,divid){
    {
     var p = getleftposition(divid);
     var q = gettopposition(divid);
-    alert(l);
-    alert(p);
-    alert(t);
-    alert(q);
     if(p==l-12 && q-10==t+200){
     flag=true;
     }
@@ -46,10 +42,10 @@ function eTogglebadges(divid, parameter, picid)
     }else
     {
         code.style.display = "block";
-        textcode.innerHTML = "&#60;a href='http://cloudamaze.com'>&#60;img src='http://cloudamaze.com/badge/" + parameter + "' alt='cloudamaze.com' width='42' height='42'/>&#60;/a>";
+        textcode.innerHTML = "&#60;a href='http://cloudamaze.com'>&#60;img src='http://cloudamaze.com/images/badge/" + parameter + "' alt='cloudamaze.com' width='42' height='42'/>&#60;/a>";
         // set position
-        t += 5;
-        l += -250;
+        t += -2;
+        l += -270;
         l = l.toString();
         t = t.toString();
         l += "px";
