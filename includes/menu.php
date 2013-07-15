@@ -107,7 +107,7 @@
                         case 13: 
                              echo 'Hosting';
                             break;
-                       case 13: 
+                       case 22: 
                              echo 'Badges';
                             break;
                         

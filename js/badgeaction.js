@@ -26,7 +26,7 @@ function issameposition(l,t,divid){
    }
 return flag;
 }
-function eToggle(divid, parameter, picid)
+function eTogglebadges(divid, parameter, picid)
 {
     var code = document.getElementById(divid);
     var textcode = document.getElementById("textcode");
