@@ -24,7 +24,7 @@ function issameposition(l,t,divid){
     alert(l);
     alert(t);
     alert(q);
-    if(p+295==l && q+10==t){
+    if(p+70==l && q-203==t){
     flag=true;
     }
    }
