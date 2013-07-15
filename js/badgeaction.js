@@ -42,7 +42,7 @@ function eTogglebadges(divid, parameter, picid)
     }else
     {
         code.style.display = "block";
-        textcode.innerHTML = "&#60;a href='http://cloudamaze.com'>&#60;img src='http://cloudamaze.com/images/badge/" + parameter + "' alt='cloudamaze.com' width='42' height='42'/>&#60;/a>";
+        textcode.innerHTML = "&#60;a href='http://cloudamaze.com'>&#60;img src='http://cloudamaze.com/images/badges/" + parameter + "' alt='cloudamaze.com' width='42' height='42'/>&#60;/a>";
         // set position
         t += -10;
         l += -295;
