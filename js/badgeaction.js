@@ -20,7 +20,7 @@ function issameposition(l,t,divid){
    {
     var p = getleftposition(divid);
     var q = gettopposition(divid);
-    if(p==l-12 && q-10==t+200){
+    if(p+295==l && q+10==t){
     flag=true;
     }
    }
