@@ -101,6 +101,9 @@ case 21:
             include 'domain_slash_down.php';
             include 'connectionclose.php';
             break;
+case 22:    
+            include 'badges.php';
+            break;
                 
 default:        include 'home.php';        
     

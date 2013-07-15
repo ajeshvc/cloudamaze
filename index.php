@@ -17,7 +17,8 @@ ob_start();
             <meta name="keywords" content="cloud hosting india,cloud hosting service,web mail,email hosting,corporate email,cloud mail server,cloud server ,indian host">
                 <title>Cloudamaze | High uptime cheap cloud hosting in india</title>
             <link rel="stylesheet" href="css/style.css" type="text/css"/>
-            
+            <link rel="stylesheet" href="css/badgestyle.css" type="text/css"/>
+            <script type="text/javascript" src="js/badgeaction.js"></script>
             <script type="text/javascript" src="js/jquery.min.js"></script>
              <script type="text/javascript" src="js/toggletld.js"></script>
             <link rel="stylesheet" type="text/css" href="css/formstyle.css" />

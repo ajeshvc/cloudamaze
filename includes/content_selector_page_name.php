@@ -50,6 +50,9 @@ case "refund":  $page=20;
 case "domain-slash-down":  $page=21;  
          
             break;
+case "badges":  $page=22;  
+         
+break;
                 
 default:      
             $page=0;
