@@ -30,12 +30,13 @@
      <li <?php if(isset($page) && $page==14){ ?>   class="current" <?php  } ?>><a href="/downloads">Downloads</a></li>
      <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/support-ticket" >Support</a></li>
      <li <?php if(isset($page) && $page==12){ ?>   class="current" <?php  } ?> ><a href="/contact-us">Contact Us</a></li>
-     <li <?php if((isset($page) && $page==17) || (isset($page) && $page==18) || (isset($page) && $page==19) || (isset($page) && $page==20)  ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/about-us">More Info</a>
+     <li <?php if((isset($page) && $page==17) || (isset($page) && $page==18) || (isset($page) && $page==19) || (isset($page) && $page==20 )  || (isset($page) && $page==22 ) ){ ?>   class="current" style="text-shadow: none;" <?php  } ?> ><a href="/about-us">More</a>
             <ul>
            <li><a href="/about-us">About Us</a></li>
            <li><a href="/terms">Terms and Conditions </a></li>
            <li><a href="/privacy-policies">Privacy policies</a></li>
            <li><a href="/refund">Refund and Cancellation</a></li>
+           <li><a href="/badges">Badges</a></li>
          </ul>
     
     </ul></li>
