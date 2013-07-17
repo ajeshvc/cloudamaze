@@ -25,7 +25,7 @@
            	<li><a href="/server-management">Server Management</a></li>
         </ul>
      </li>
-     <li><a href="http://blog.cloudamaze.com/" target="_blank">Blog</a></li>
+     <li><a href="http://helloinfinity.com/tag/cloud-amaze/" target="_blank">Blog</a></li>
      <li <?php if(isset($page) && $page==6){ ?>   class="current" <?php  } ?> ><a href="/testimonials">Testimonials</a></li>
      <li <?php if(isset($page) && $page==14){ ?>   class="current" <?php  } ?>><a href="/downloads">Downloads</a></li>
      <li <?php if(isset($page) && $page==15){ ?>   class="current" <?php  } ?> ><a href="/support-ticket" >Support</a></li>
