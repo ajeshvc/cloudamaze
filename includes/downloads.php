@@ -76,6 +76,17 @@
         <div class="single_dwnld_item">
             
             <div> 
+                     <a href="uploads/creating_email_accounts.pdf" target="_blank">
+                    <img src="images/dwnld.PNG" class="dwnld_img">
+                    <div class="dwnld_item_name">How to create email account</div>
+                     </a>
+            </div>
+            
+       
+        </div>
+         <div class="single_dwnld_item">
+            
+            <div> 
                      <a href="uploads/configure_outlook.pdf" target="_blank">
                     <img src="images/dwnld.PNG" class="dwnld_img">
                     <div class="dwnld_item_name">How to configure email on outlook</div>
@@ -83,7 +94,7 @@
             </div>
             
        
-        </div>         
+        </div>
         <div class="single_dwnld_item">
             <div> 
                    <a href="uploads_email_advantage.pdf" target="_blank">

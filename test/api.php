@@ -66,11 +66,7 @@ print_r($result);
                 <input type="text" name="email" id="username" class="frm-field" value="" size="35" >
                </td>
             </tr>
-          
-       
-     
-     
-    
+        
       <tr>
         <td class="frmCancel" colspan="2">
             <input name="check" type="submit" value="Check">
