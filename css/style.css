@@ -1675,3 +1675,6 @@ float: right;
     border-bottom:1px solid #444; 
     margin-right: 3px;
 }
+#hiddeninfo{
+    display: none;
+}

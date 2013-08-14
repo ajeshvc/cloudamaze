@@ -422,7 +422,7 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
             ?>
 
 
-            <textarea name="hostingdetails" hidden="hidden" hidden  readonly="readonly">
+        <textarea name="hostingdetails" hidden="hidden" hidden  readonly="readonly" id="hiddeninfo">
                 <?php
                 echo $hostingdetails;
                 ?>
