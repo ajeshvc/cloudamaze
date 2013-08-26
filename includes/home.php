@@ -51,12 +51,13 @@ if(isset($_SESSION['choice'])){
                 <br/>This offer is valid till 30th September 2013. 
 			</div>        
     	</div>     
-    </div>        
-</div>
-<div id="link_team_thumbs">
+    </div>       
+    <div id="link_team_thumbs">
                 <a id="link_team_capanel" href="http://capanel.cloudamaze.com"><img src="images/capanel.png" alt=""/></a>
                 <a id="link_team_webftp" href="http://webftp.cloudamaze.com"><img src="images/wftp.png" alt=""/></a>
                 <a id="link_team_camail" href="http://mail.cloudamaze.com"><img src="images/camail.png" alt=""/></a>
                 <a id="link_team_phpadmin" href="http://db.cloudamaze.com/phpmyadmin"><img src="images/pmadmin.png" alt=""/></a>
                 <span class="link_team_stretch"></span>
     </div>
+</div>
+
