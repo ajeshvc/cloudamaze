@@ -249,6 +249,7 @@ if(isset($_POST['name'])){
                     $message = str_replace("+", "", $message);
                     $headers = "From: " . $name . " " . $from;
                     mail($to, $subject, $message, $headers);
+                    echo $headers;
                     sleep(5);
                     include_once "includes/swift/lib/swift_required.php";
                     $from = array($_POST["email"] => $name);
@@ -297,7 +298,7 @@ if(isset($_POST['name'])){
                      if(isset( $_SESSION['domainprice'])){
                         unset( $_SESSION['domainprice']); 
                 }
-                    header('Location:/congrats');
+                    //header('Location:/congrats');
                 }
             }
         }
