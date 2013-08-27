@@ -1,4 +1,9 @@
 <?php 
+$date=date("Y/m/d");
+$month=date("m"); // month in digit
+$year=date("Y");
+$monthinwords=date("F"); // month in words
+$numberofdays=cal_days_in_month(CAL_GREGORIAN,$month ,$year);
         if(isset($_POST['more'])){
              $sql = "select * FROM domain_offer ";
          }  else {
@@ -40,7 +45,7 @@
             	This Promo is applicable to the first year of Registration only.
                 <br/>Renewals and Transfer-Ins will not attract this Promo Pricing.
                 <br/>There are no restrictions on the number of Domains that can be Registered during this period.
-                <br/>This offer is valid till 30th May 2013. 
+                <br/>This offer is valid till <?php echo $numberofdays ." ". $monthinwords . " ".$year ."." ?> 
 			</div>        
     	</div>    
        <?php  } ?>
