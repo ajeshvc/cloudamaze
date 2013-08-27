@@ -299,7 +299,7 @@ if(isset($_POST['name'])){
                      if(isset( $_SESSION['domainprice'])){
                         unset( $_SESSION['domainprice']); 
                 }
-                    //header('Location:/congrats');
+                    header('Location:/congrats');
                 }
             }
         }

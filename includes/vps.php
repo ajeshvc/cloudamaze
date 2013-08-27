@@ -174,7 +174,7 @@ if (isset($_POST["back"])) {
                     $message = $message . "\n\n" . "-------------------\n" . $name . "\n" . $phone . "\n" . $_POST["email"] . "\n" . "on-" . $currentdate;
                     $message = str_replace("|", "\n\n", $message);
                     $message = str_replace("+", "", $message);
-                    $headers = "From: " . $name . " " . $from;
+                    $headers = "From: " . $name . " <" . $from.">";
                     mail($to, $subject, $message, $headers);
                     sleep(5);
                     //mail via mandrill
