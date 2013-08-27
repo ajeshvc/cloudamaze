@@ -71,7 +71,7 @@ if(isset($_POST['submit'])&&$_POST['submit']=='Submit'){
                     $message = $message . "\n\n" . "-------------------\n". "on-" . $currentdate;
                     $message = str_replace("|", "\n\n", $message);
                     $message = str_replace("+", "", $message);
-                    $headers = "From: " . $name . " " . $from;
+                    $headers = "From: " . $name . " <" . $from.">";
                     mail($to, $subject, $message, $headers);
                   
                 
