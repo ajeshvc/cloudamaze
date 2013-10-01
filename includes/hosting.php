@@ -397,16 +397,11 @@ WHERE hosting_plans.plan_id =$value and hosting_properties.pr_id=$prpid
                            
                             $row = mysql_fetch_array($result);
                             if ($row != NULL) {
-
-                                if ($row['pr_id'] == '11') {
-                                    echo $row['value']*12;
-                                    }else{
-                                        echo $row['value'];
-                                    }
+                                        echo $row['value'];                                   
                                 if (isset($_POST["choice"])  || (isset($_SESSION['choice']) && $_SESSION['choice']!="" ) ) {
                                     $hostingdetails.="|" . $row['name'] . "-" . $row['value'];
                                     if ($row['pr_id'] == '11') {
-                                        $peryear = $row['value'] * 12;
+                                        $peryear = $row['value'];
                                         $domainprice=0;
                                          if(isset( $_SESSION['domainprice'])){
                                            $hostingdetails.="|Domain Registration Price RS : ".$_SESSION['domainprice'].".00 INR"; 
